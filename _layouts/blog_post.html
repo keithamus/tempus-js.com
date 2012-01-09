@@ -1,0 +1,24 @@
+---
+layout: main
+---
+            {% include header.html %}
+
+            <!--{{ page | json }}{{ site }}-->
+
+            <div class="content">
+
+                <nav class="row">
+                    <a class="span6 pagination-left" href="{{ post.previous }}">&laquo; Previous Post</a>
+                    <a class="span6 pagination-right" href="{{ post.next }}">Next Post &raquo;</a>
+                </nav>
+
+                <header class="row">
+                    <h1 class="span12">{{ page.title }}</h2>
+                </header>
+
+                <article class="blog-post row">
+                    <div class="span8">
+                        {{ content }}
+                    </div>
+                </article>
+            </div>

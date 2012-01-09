@@ -1,0 +1,6 @@
+<div class="api-tags">
+    {% for tag in fn.tags %}
+        <p>{{ tag }}</p>
+    {% endfor %}
+</div>
+<a href="/api/{{ fn.category }}" class="api-category">{{ fn.category }}</a>

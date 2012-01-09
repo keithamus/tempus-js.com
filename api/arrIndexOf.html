@@ -1,0 +1,29 @@
+---
+layout: api
+title: arrIndexOf
+permalink: arrIndexOf/index.html
+---
+
+<div class="span8">
+    <p>
+        While many browsers, include <code>Array.prototype.indexOf</code>, 
+        namely Microsoft Internet Explorer 6, 7 &amp; 8 do not. Because of this, 
+        we cannot depend on its existence, and it is therefore easier to use a 
+        custom helper function.
+    </p>
+
+    <p>
+        It is worth noting that <code>arrIndexOf</code> is not a to-spec 
+        replacement of <code>Array.prototype.indexOf</code>. It is not as strict, 
+        does not include the fromIndex argument, and it does not coerce the 
+        <code>length</code> attribute into a number. If you require a to spec
+        implimentation of <code>Array.prototype.indexOf</code>, do not use this.
+    </p>
+
+    <p>
+        <a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array/indexOf">
+            For more information about <code>Array.prototype.indexOf</code>, see the 
+            MDN Article
+        </a>
+    </p>
+</div>

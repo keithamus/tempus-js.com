@@ -1,0 +1,59 @@
+---
+layout: main
+---
+{% for functionGroup in site.api %}
+    {% for apiFunction in functionGroup.functions %}
+        {% if apiFunction.title == page.title %}
+            {% assign fn = apiFunction %}{% assign parentLevel = functionGroup.title %}
+        {% endif %}
+    {% endfor %}
+{% endfor %}
+            {% include header.html %}
+
+            <div id="apiHeader">
+                <div class="breadcrumbs">
+                    <a href="/api/">api</a>
+                    <i>/</i>
+                    <p>{{ parentLevel }}</p>
+                    <i>/</i>
+                    <a href="/api/{{ page.title }}">{{ page.title }}</a>
+                </div>
+                {% include api_tags_category.html %}
+                {% include api_search.html %}
+            </div>
+            <div class="content">
+
+                <div class="row">
+                    <div class="span12 api-method-description">
+                        <h1>{{ fn.title }}</h1>
+                        <h3 class="span12">{{ fn.description }}</h3>
+                    </div>
+                </div>
+
+                <div class="api-method-signatures well">
+                    {% for signature in fn.signatures %}
+                        <div class="method-signature">
+                            <header>
+                                <h3>{% highlight javascript %}{{ signature.signature }}{% endhighlight %}</h3>
+                                {% if signature.returns %}
+                                    <i> &raquo; </i>
+                                    <h3 class="returns">{{ signature.returns }}</h3>
+                                {% endif %}
+                                <div class="api-tags">
+                                    {% if signature.returns == 'this' %}<p title="Chainable"><i class="icon-retweet icon-white"></i></p>{% endif %}
+                                    <p title="Available since this version">v{{ signature.version }}</p>
+                                </div>
+                            </header>
+                            <p class="description">
+                                {{ signature.description }}
+                            </p>
+                        </div>
+                    {% endfor %}
+                </div>
+
+                <article class="api-docs">
+                    <div class="row">
+                        {{ content }}
+                    </div>
+                </article>
+            </div>

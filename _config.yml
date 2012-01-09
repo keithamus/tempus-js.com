@@ -1,0 +1,979 @@
+permalink: /blog/:title
+pygments: true
+exclude:
+  - README.md
+  - config.rb
+  - .sass-cache
+
+api:
+  - title: Top Level
+    functions: 
+      - title: Tempus
+        description: 'Accepts a date, and returns that date as a Tempus object'
+        category: core
+        tags:
+          - v0.1
+        signatures:
+          - signature: '[ new ]Tempus( )'
+            returns: this
+            version: 0.1
+            description: |
+              Creates a new Tempus object with the date set to the current date & time
+
+          - signature: '[ new ]Tempus( int_timestamp )'
+            returns: this
+            version: 0.1
+            description: |
+              Creates a new Tempus object with the date as 
+              <var>int_timestamp</var> seconds from the Epoch 
+              (Thu Jan 01 1970 00:00:00 GMT+0000)
+
+          - signature: '[ new ]Tempus( year, month [, date [, hour [, minute [, second [, millisecond [, timezoneOffset ]]]]]])'
+            returns: this
+            version: 0.1
+            description: |
+              Creates a new Tempus object with the date values from the 
+              <var>arguments</var>.
+
+          - signature: '[ new ]Tempus( tempus_or_date_object )'
+            returns: this
+            version: 0.1
+            description: |
+              Creates a new Tempus object, cloning the date values from 
+              <var>tempus_or_date_object</var>
+
+          - signature: '[ new ]Tempus( date_string [, formatter_string ] )'
+            returns: this
+            version: 0.1
+            description: |
+              Creates a new Tempus object from a recognisable 
+              <var>date_string</var> such as 
+              "2011-01-01T12:00:00.000+0000". If 
+              <var>formatter_string</var> is available, it will use this 
+              as the <a href="/docs/reverse-formatting">reverse-formatter</a> 
+              to parse <var>date_string</var> with
+
+          - signature: '[ new ]Tempus( date_string, array_of_formatter_strings )'
+            returns: this
+            version: 0.1
+            description: |
+              Creates a new Tempus object by running 
+              <var>date_string</var> through 
+              <var>array_of_formatter_strings</var>
+              (see <a href="/docs/reverse-formatting">reverse-formatting</a>)
+
+          - signature: '[ new ]Tempus( array_of_arguments )'
+            returns: this
+            version: 0.1
+            description: |
+              Creates a new Tempus object, extrapolating 
+              <var>array_of_arguments</var> into a set of arguments, 
+              similar to the above signatures
+
+      - title: now
+        description: 'Returns the current seconds since Epoch (Thu Jan 01 1970 00:00:00 GMT+0000)'
+        category: core
+        tags:
+          - v0.1
+        signatures:
+          - signature: 'Tempus.now( )'
+            returns: Number
+            version: 0.1
+            description: |
+              Returns the current seconds since Epoch (Thu Jan 01 1970 00:00:00 GMT+0000)
+
+
+      - title: addParser
+        description: 'Adds a parser function to the <a href="/api/set/">set</a> method'
+        tags:
+          - v0.1
+        category: extending
+        signatures:
+          - signature: 'Tempus.addParser( testerFn , parserFn [, argumentLength], arg1Type [, arg2Type [, ... argNType ] ] )'
+            version: 0.1
+            description: |
+              Adds a parser to the <a href="/api/set/">set</a>, which when all 
+              of the <var>argNType</var> arguments match the arguments 
+              called from set, and <var>testerFn</var> passes, 
+              <var>parserFn</var> will run.
+
+
+  - title: Utility
+    functions: 
+      - title: realTypeOf
+        description: "Returns the type of an object, more precise than 'typeof'"
+        tags:
+          - v0.1
+        category: util
+        signatures:
+          - signature: 'Tempus.util.realTypeOf( mixed_variable )'
+            returns: string
+            version: 0.1
+            description: |
+                Returns the real type of <var>mixed_variable</var>, as 
+                a lower case string, for example 'object', 'array', 'regexp'
+      - title: arrIndexOf
+        description: "Returns the index of which a variable appears in an array"
+        tags:
+          - v0.1
+        category: util
+        signatures:
+          - signature: 'Tempus.util.arrIndexOf( array_haystack, mixed_needle )'
+            returns: number
+            version: 0.1
+            description: |
+                Returns the index at which <var>mixed_needle</var> 
+                appears in <var>array_haystack</var>. If 
+                <var>mixed_needle</var> is not found, <strong>-1</strong>
+                is returned
+      - title: getOrdinal
+        description: "Returns the ordinal suffix of a given number"
+        tags:
+          - v0.1
+          - i18n
+        category: util
+        signatures:
+          - signature: 'Tempus.util.getOrdinal( number )'
+            returns: string
+            version: 0.1
+            description: |
+                Returns the ordinal suffix of <var>number</var>, for example, if 
+                <var>number</var> is 1, the string returned is 'st'.
+      - title: stringPad
+        description: "Returns a string padded with extra leading characters"
+        tags:
+          - v0.1
+        category: util
+        signatures:
+          - signature: 'Tempus.util.stringPad( the_string, number_width [, padString ] )'
+            returns: string
+            version: 0.1
+            description: |
+                Returns <var>the_string</var>, padding to the left with the 
+                <var>padString</var> character until <var>the_string</var> is 
+                <var>number_width</var> long. If not supplied, <var>padString</var>
+                is '0'.
+
+  - title: Instance Core
+    functions: 
+      - title: set
+        description: Sets the Tempus instances' date to the arguments passed
+        tags:
+          - v0.1
+        category: core
+        signatures:
+          - signature: '.set( )'
+            returns: this
+            version: 0.1
+            description: |
+              Sets the Tempus date set to the current date & time. This is the 
+              same as using <code>.set( Tempus.now() )</code>
+
+          - signature: '.set( int_timestamp )'
+            returns: this
+            version: 0.1
+            description: |
+              Sets the Tempus date as <var>int_timestamp</var> seconds 
+              from the Epoch (Thu Jan 01 1970 00:00:00 GMT+0000)
+
+          - signature: '.set( year, month [, date [, hour [, minute [, second [, millisecond [, timezoneOffset ]]]]]])'
+            returns: this
+            version: 0.1
+            description: |
+              Set the Tempus date to values from the <var>arguments</var>.
+
+          - signature: '.set( tempus_or_date_object )'
+            returns: this
+            version: 0.1
+            description: |
+              Clones the date values from <var>tempus_or_date_object</var>
+
+          - signature: '.set( date_string [, formatter_string ] )'
+            returns: this
+            version: 0.1
+            description: |
+              Sets the Tempus date to a recognisable 
+              <var>date_string</var> such as 
+              "2011-01-01T12:00:00.000+0000". If 
+              <var>formatter_string</var> is available, it will use this 
+              as the <a href="/docs/reverse-formatting">reverse-formatter</a> 
+              to parse <var>date_string</var> with
+
+          - signature: '.set( date_string, array_of_formatter_strings )'
+            returns: this
+            version: 0.1
+            description: |
+              Sets the Tempus date to a recognisable date by running 
+              <var>date_string</var> through 
+              <var>array_of_formatter_strings</var>
+              (see <a href="/docs/reverse-formatting">reverse-formatting</a>)
+
+          - signature: '.set( array_of_arguments )'
+            returns: this
+            version: 0.1
+            description: |
+              Sets the Tempus object to a date, extrapolating 
+              <var>array_of_arguments</var> into a set of arguments, 
+              similar to the above signatures
+
+      - title: clone
+        description: Creates a new version of the Tempus object
+        tags:
+          - v0.1
+        category: core
+        signatures:
+          - signature: '.clone( )'
+            returns: this
+            version: 0.1
+            description: |
+              Return a new copy of the Tempus object, that can be modified 
+              without affecting the original
+
+      - title: copy
+        description: Copies the date information from the Tempus object provided
+        tags:
+          - v0.1
+        category: manipulation
+        signatures:
+          - signature: '.copy( tempus_object )'
+            returns: this
+            version: 0.1
+            description: |
+              Copies all of the date information from <var>tempus_object</var> 
+              into this current instance.
+
+      - title: timeStamp
+        description: Get or set the number of seconds since Epoch
+        tags:
+          - v0.1
+        category: manipulation
+        signatures:
+          - signature: '.timeStamp( )'
+            returns: number
+            version: 0.1
+            description: |
+              Returns the seconds since Epoch (Thu Jan 01 1970 00:00:00 GMT+0000)
+          - signature: '.timeStamp( number_of_seconds_since_epoch )'
+            returns: this
+            version: 0.1
+            description: |
+              Sets the date to <var>number_of_seconds_since_epoch</var>
+
+      - title: getTimeStamp
+        description: Get the number of seconds since Epoch
+        tags:
+          - v0.1
+        category: properties
+        signatures:
+          - signature: '.getTimeStamp( )'
+            returns: number
+            version: 0.1
+            description: |
+              Returns the seconds since Epoch (Thu Jan 01 1970 00:00:00 GMT+0000)
+
+      - title: setTimeStamp
+        description: Set the number of seconds since Epoch
+        tags:
+          - v0.1
+        category: manipulation
+        signatures:
+          - signature: '.setTimeStamp( number_of_seconds_since_epoch )'
+            returns: this
+            version: 0.1
+            description: |
+              Sets the date to <var>number_of_seconds_since_epoch</var>
+
+      - title: addTimeStamp
+        description: Add a number of seconds to the total seconds since Epoch
+        tags:
+          - v0.1
+          - math
+        category: manipulation
+        signatures:
+          - signature: '.addTimeStamp( number_of_seconds )'
+            returns: this
+            version: 0.1
+            description: |
+              Adds <var>number_of_seconds</var> to the number of seconds since 
+              epoch, changing the date. Similar to 
+              <a href="/api/addSeconds">addSeconds</a>
+
+      - title: subTimeStamp
+        description: Subtract a number of seconds to the total seconds since Epoch
+        tags:
+          - v0.1
+          - math
+        category: manipulation
+        signatures:
+          - signature: '.subTimeStamp( number_of_seconds )'
+            returns: this
+            version: 0.1
+            description: |
+              Subtracts <var>number_of_seconds</var> to the number of seconds 
+              since epoch, changing the date. Similar to 
+              <a href="/api/subSeconds">subSeconds</a>
+
+      - title: time
+        description: Get or set the number of milliseconds since Epoch
+        tags:
+          - v0.1
+        category: manipulation
+        signatures:
+          - signature: '.time( )'
+            returns: number
+            version: 0.1
+            description: |
+              Returns the milliseconds since Epoch (Thu Jan 01 1970 00:00:00 GMT+0000)
+          - signature: '.time( number_of_milliseconds_since_epoch )'
+            returns: this
+            version: 0.1
+            description: |
+              Sets the date to <var>number_of_milliseconds_since_epoch</var>
+
+      - title: getTime
+        description: Get the number of seconds since Epoch
+        tags:
+          - v0.1
+        category: properties
+        signatures:
+          - signature: '.getTime( )'
+            returns: number
+            version: 0.1
+            description: |
+              Returns the milliseconds since Epoch (Thu Jan 01 1970 00:00:00 GMT+0000)
+
+      - title: setTime
+        description: Set the number of seconds since Epoch
+        tags:
+          - v0.1
+        category: manipulation
+        signatures:
+          - signature: '.setTime( number_of_milliseconds_since_epoch )'
+            returns: this
+            version: 0.1
+            description: |
+              Sets the date to <var>number_of_milliseconds_since_epoch</var>
+
+      - title: addTime
+        description: Add a number of milliseconds to the total milliseconds since Epoch
+        tags:
+          - v0.1
+          - math
+        category: manipulation
+        signatures:
+          - signature: '.addTime( number_of_milliseconds )'
+            returns: this
+            version: 0.1
+            description: |
+              Adds <var>number_of_milliseconds</var> to the number of 
+              milliseconds since epoch, changing the date. Similar to 
+              <a href="/api/addSeconds">addMilliSeconds</a>
+
+      - title: subTime
+        description: Subtract a number of milliseconds to the total milliseconds since Epoch
+        tags:
+          - v0.1
+          - math
+        category: manipulation
+        signatures:
+          - signature: '.subTime( number_of_seconds )'
+            returns: this
+            version: 0.1
+            description: |
+              Subtracts <var>number_of_milliseconds</var> to the number of 
+              milliseconds since epoch, changing the date. Similar to 
+              <a href="/api/subSeconds">subMilliSeconds</a>
+
+  - title: Instance Timezone
+    functions: 
+      - title: timezone
+        description: "Gets or sets the timezone as a string, e.g '+0100'"
+        tags:
+          - v0.1
+        category: manipulation
+        signatures:
+          - signature: '.timezone( )'
+            returns: string
+            version: 0.1
+            description: |
+              Retrieves the timezone as a string, for example '+0100'
+
+          - signature: '.timezone( string_timezone )'
+            returns: this
+            version: 0.1
+            description: |
+              Sets the timezone to <var>string_timezone</var>. 
+              <var>string_timezone</var> should be represented as a symbol, 
+              followed 4 numbers, optionally split by a character, 
+              examples include: '+0800', '+04:00', '-01,00'
+
+          - signature: '.timezone( number_timezoneOffset )'
+            returns: this
+            version: 0.1
+            description: |
+              Sets the timezoneOffset to <var>number_timezoneOffset</var>. For 
+              more on timezoneOffsets read 
+              <a href="/api/timezoneOffset">timezoneOffset</a>
+
+      - title: getTimezone
+        description: "Gets timezone as a string, e.g '+0100'"
+        tags:
+          - v0.1
+        category: properties
+        signatures:
+          - signature: '.getTimezone( )'
+            returns: string
+            version: 0.1
+            description: |
+              Retrieves the timezone as a string, for example '+0100'
+
+      - title: setTimezone
+        description: "Sets the timezone as a string, e.g '+0100'"
+        tags:
+          - v0.1
+        category: manipulation
+        signatures:
+          - signature: '.setTimezone( string_timezone )'
+            returns: this
+            version: 0.1
+            description: |
+              Sets the timezone to <var>string_timezone</var>. 
+              <var>string_timezone</var> should be represented as a symbol, 
+              followed 4 numbers, optionally split by a character, 
+              examples include: '+0800', '+04:00', '-01,00'
+
+          - signature: '.setTimezone( number_timezoneOffset )'
+            returns: this
+            version: 0.1
+            description: |
+              Sets the timezoneOffset to <var>number_timezoneOffset</var>. For 
+              more on timezoneOffsets read 
+              <a href="/api/timezoneOffset">timezoneOffset</a>
+
+      - title: ISOTimezone
+        description: "Gets or sets the timezone as a string, e.g '+01:00'"
+        tags:
+          - v0.1
+        category: manipulation
+        signatures:
+          - signature: '.ISOTimezone( )'
+            returns: string
+            version: 0.1
+            description: |
+              Retrieves the timezone as a string, for example '+01:00'. Note the
+              colon to delimit hours and minutes. If you don't want this, use
+              <a href="/api/timezone">timezone</a>
+
+          - signature: '.ISOTimezone( string_timezone )'
+            returns: this
+            version: 0.1
+            description: |
+              Sets the timezone to <var>string_timezone</var>. 
+              <var>string_timezone</var> should be represented as a symbol, 
+              followed 4 numbers, optionally split by a character, 
+              examples include: '+0800', '+04:00', '-01,00'
+
+          - signature: '.ISOTimezone( number_timezoneOffset )'
+            returns: this
+            version: 0.1
+            description: |
+              Sets the timezoneOffset to <var>number_timezoneOffset</var>. For 
+              more on timezoneOffsets read 
+              <a href="/api/timezoneOffset">timezoneOffset</a>
+
+      - title: getISOTimezone
+        description: "Gets timezone as a string, e.g '+01:00'"
+        tags:
+          - v0.1
+        category: properties
+        signatures:
+          - signature: '.getISOTimezone( )'
+            returns: string
+            version: 0.1
+            description: |
+              Retrieves the timezone as a string, for example '+01:00'. Note the
+              colon to delimit hours and minutes. If you don't want this, use
+              <a href="/api/timezone">timezone</a>
+
+      - title: setISOTimezone
+        description: "Sets the timezone as a string, e.g '+01:00'"
+        tags:
+          - v0.1
+        category: manipulation
+        signatures:
+          - signature: '.setISOTimezone( string_timezone )'
+            returns: this
+            version: 0.1
+            description: |
+              Sets the timezone to <var>string_timezone</var>. 
+              <var>string_timezone</var> should be represented as a symbol, 
+              followed 4 numbers, optionally split by a character, 
+              examples include: '+0800', '+04:00', '-01,00'
+
+          - signature: '.setISOTimezone( number_timezoneOffset )'
+            returns: this
+            version: 0.1
+            description: |
+              Sets the timezoneOffset to <var>number_timezoneOffset</var>. For 
+              more on timezoneOffsets read 
+              <a href="/api/timezoneOffset">timezoneOffset</a>
+
+      - title: timezoneOffset
+        description: "Gets or sets the timezone as a timezone offset, e.g -60"
+        tags:
+          - v0.1
+        category: manipulation
+        signatures:
+          - signature: '.timezoneOffset( )'
+            returns: number
+            version: 0.1
+            description: |
+              Gets the timezone offset. Timezone offset is the number of minutes 
+              away from GMT, for example -60 is the equivalent of GMT+01:00
+
+          - signature: '.timezoneOffset( number_timezoneOffset )'
+            returns: this
+            version: 0.1
+            description: |
+              Sets the timezone to <var>number_timezoneOffset</var>. 
+              <var>number_timezoneOffset</var> is the number of minutes away 
+              from GMT, for example -60 is the equivalent of GMT+01:00
+
+      - title: getTimezoneOffset
+        description: "Gets timezone as a timezone offset, e.g -60"
+        tags:
+          - v0.1
+        category: properties
+        signatures:
+          - signature: '.getTimezoneOffset( )'
+            returns: number
+            version: 0.1
+            description: |
+              Gets the timezone offset. Timezone offset is the number of minutes 
+              away from GMT, for example -60 is the equivalent of GMT+01:00
+
+
+      - title: setTimezoneOffset
+        description: "Sets the timezone as a timezone offset, e.g -60"
+        tags:
+          - v0.1
+        category: manipulation
+        signatures:
+          - signature: '.setTimezoneOffset( number_timezoneOffset )'
+            returns: this
+            version: 0.1
+            description: |
+              Sets the timezone to <var>number_timezoneOffset</var>. 
+              <var>number_timezoneOffset</var> is the number of minutes away 
+              from GMT, for example -60 is the equivalent of GMT+01:00
+
+      - title: setTimezoneToLocale
+        description: "Sets the timezone to the local environments timezone"
+        tags:
+          - v0.1
+        category: manipulation
+        signatures:
+          - signature: '.setTimezoneToLocale( )'
+            returns: this
+            version: 0.1
+            description: |
+              Sets the timezone to the local environments timezone
+      - title: isDST
+        description: "Returns true if the date is within the local environments Daylight Savings period"
+        tags:
+          - v0.1
+        category: manipulation
+        signatures:
+          - signature: '.isDST( )'
+            returns: boolean
+            version: 0.1
+            description: |
+              Returns true if the date is within the local environments 
+              Daylight Savings period, and false if not
+
+  - title: Instance Year Methods
+    functions: 
+      - title: century
+        description: "Gets or sets the century"
+        tags:
+          - v0.1
+        category: manipulation
+        signatures:
+          - signature: '.century( )'
+            returns: number
+            version: 0.1
+            description: |
+              Get the current century
+
+          - signature: '.century( number_century )'
+            returns: this
+            version: 0.1
+            description: |
+              Set the current century to <var>number_century</var>
+
+      - title: getCentury
+        description: "Gets the century"
+        tags:
+          - v0.1
+        category: properties
+        signatures:
+          - signature: '.getCentury( )'
+            returns: number
+            version: 0.1
+            description: |
+              Get the current century
+
+      - title: setCentury
+        description: "Sets the century"
+        tags:
+          - v0.1
+        category: manipulation
+        signatures:
+          - signature: '.setCentury( number_century )'
+            returns: this
+            version: 0.1
+            description: |
+              Set the current century to <var>number_century</var>
+
+      - title: addCentury
+        description: "Increase the century"
+        tags:
+          - v0.1
+          - math
+        category: manipulation
+        signatures:
+          - signature: '.addCentury( [number_century] )'
+            returns: this
+            version: 0.1
+            description: |
+              Increases the century by <var>number_century</var>. If 
+              <var>number_century</var> is not present, it will default to 1
+
+      - title: subCentury
+        description: "Increase the century"
+        tags:
+          - v0.1
+          - math
+        category: manipulation
+        signatures:
+          - signature: '.subCentury( [number_century] )'
+            returns: this
+            version: 0.1
+            description: |
+              Decreases the century by <var>number_century</var>. If 
+              <var>number_century</var> is not present, it will default to 1
+
+      - title: fullYear
+        description: "Set or get the full, 4 digit year"
+        tags:
+          - v0.1
+        category: manipulation
+        signatures:
+          - signature: '.fullYear( )'
+            returns: number
+            version: 0.1
+            description: |
+              Get the full 4 digit year, i.e 2012
+
+          - signature: '.fullYear( number_year )'
+            returns: this
+            version: 0.1
+            description: |
+              Set the full 4 digit year to <var>number_year</var>
+
+      - title: setFullYear
+        description: "Set the full, 4 digit year"
+        tags:
+          - v0.1
+        category: manipulation
+        signatures:
+          - signature: '.setFullYear( number_year )'
+            returns: this
+            version: 0.1
+            description: |
+              Set the full 4 digit year to <var>number_year</var>
+
+      - title: getFullYear
+        description: "Get the full, 4 digit year"
+        tags:
+          - v0.1
+        category: properties
+        signatures:
+          - signature: '.getFullYear( )'
+            returns: number
+            version: 0.1
+            description: |
+              Get the full 4 digit year, i.e 2012
+
+      - title: addFullYear
+        description: "Increase the year"
+        tags:
+          - v0.1
+          - math
+        category: manipulation
+        signatures:
+          - signature: '.addFullYear( [number_year] )'
+            returns: this
+            version: 0.1
+            description: |
+              Increases the year by <var>number_year</var>. If 
+              <var>number_year</var> is not present, it will default to 1
+
+      - title: subFullYear
+        description: "Decrease the year"
+        tags:
+          - v0.1
+          - math
+        category: manipulation
+        signatures:
+          - signature: '.subFullYear( number_year )'
+            returns: this
+            version: 0.1
+            description: |
+              Decreases the year by <var>number_year</var>. If 
+              <var>number_year</var> is not present, it will default to 1
+
+      - title: year
+        description: "Set or get the full, 4 digit year"
+        tags:
+          - v0.1
+        category: manipulation
+        signatures:
+          - signature: '.year( )'
+            returns: number
+            version: 0.1
+            description: |
+              Get the 2 digit year, i.e 12
+
+          - signature: '.year( number_year )'
+            returns: this
+            version: 0.1
+            description: |
+              Set the 2 digit year to <var>number_year</var>
+
+      - title: setYear
+        description: "Set the full, 4 digit year"
+        tags:
+          - v0.1
+        category: manipulation
+        signatures:
+          - signature: '.setYear( number_year )'
+            returns: this
+            version: 0.1
+            description: |
+              Set the 2 digit year to <var>number_year</var>
+
+      - title: getYear
+        description: "Get the full, 4 digit year"
+        tags:
+          - v0.1
+        category: properties
+        signatures:
+          - signature: '.getYear( )'
+            returns: number
+            version: 0.1
+            description: |
+              Get the 2 digit year, i.e 12
+
+      - title: addYear
+        description: "Increase the year"
+        tags:
+          - v0.1
+          - math
+        category: manipulation
+        signatures:
+          - signature: '.addYear( [number_year] )'
+            returns: this
+            version: 0.1
+            description: |
+              Increases the year by <var>number_year</var>. If 
+              <var>number_year</var> is not present, it will default to 1
+
+      - title: subYear
+        description: "Decrease the year"
+        tags:
+          - v0.1
+          - math
+        category: manipulation
+        signatures:
+          - signature: '.subYear( [number_year] )'
+            returns: this
+            version: 0.1
+            description: |
+              Decreases the year by <var>number_year</var>. If 
+              <var>number_year</var> is not present, it will default to 1
+
+      - title: UTCFullYear
+        description: "Set or get the full, 4 digit UTC year"
+        tags:
+          - v0.1
+        category: manipulation
+        signatures:
+          - signature: '.UTCFullYear( )'
+            returns: number
+            version: 0.1
+            description: |
+              Get the full 4 digit UTC year, i.e 2012
+
+          - signature: '.UTCFullYear( number_year )'
+            returns: this
+            version: 0.1
+            description: |
+              Set the full 4 digit UTC year to <var>number_year</var>
+
+      - title: setUTCFullYear
+        description: "Set the full, 4 digit year"
+        tags:
+          - v0.1
+        category: manipulation
+        signatures:
+          - signature: '.setUTCFullYear( number_year )'
+            returns: this
+            version: 0.1
+            description: |
+              Set the full 4 digit UTC year to <var>number_year</var>
+
+      - title: getUTCFullYear
+        description: "Get the full, 4 digit UTC year"
+        tags:
+          - v0.1
+        category: properties
+        signatures:
+          - signature: '.getUTCFullYear( )'
+            returns: number
+            version: 0.1
+            description: |
+              Get the full 4 digit UTC year, i.e 2012
+
+      - title: addUTCFullYear
+        description: "Increase the year"
+        tags:
+          - v0.1
+          - math
+        category: manipulation
+        signatures:
+          - signature: '.addUTCFullYear( [number_year] )'
+            returns: this
+            version: 0.1
+            description: |
+              Increases the UTC year by <var>number_year</var>. If 
+              <var>number_year</var> is not present, it will default to 1
+
+      - title: subUTCFullYear
+        description: "Decrease the year"
+        tags:
+          - v0.1
+          - math
+        category: manipulation
+        signatures:
+          - signature: '.subUTCFullYear( [number_year] )'
+            returns: this
+            version: 0.1
+            description: |
+              Decreases the UTC year by <var>number_year</var>. If 
+              <var>number_year</var> is not present, it will default to 1
+
+      - title: UTCYear
+        description: "Set or get the full, 4 digit year"
+        tags:
+          - v0.1
+        category: manipulation
+        signatures:
+          - signature: '.UTCYear( )'
+            returns: number
+            version: 0.1
+            description: |
+              Get the 2 digit UTC year, i.e 12
+
+          - signature: '.UTCYear( number_year )'
+            returns: this
+            version: 0.1
+            description: |
+              Set the 2 digit UTC year to <var>number_year</var>
+
+      - title: setUTCYear
+        description: "Set the full, 4 digit year"
+        tags:
+          - v0.1
+        category: manipulation
+        signatures:
+          - signature: '.setUTCYear( number_year )'
+            returns: this
+            version: 0.1
+            description: |
+              Set the 2 digit UTC year to <var>number_year</var>
+
+      - title: getUTCYear
+        description: "Get the 2 digit UTC year"
+        tags:
+          - v0.1
+        category: properties
+        signatures:
+          - signature: '.getUTCYear( )'
+            returns: number
+            version: 0.1
+            description: |
+              Get the 2 digit year, i.e 12
+
+      - title: addUTCYear
+        description: "Increase the UTC year"
+        tags:
+          - v0.1
+          - math
+        category: manipulation
+        signatures:
+          - signature: '.addUTCYear( [number_year] )'
+            returns: this
+            version: 0.1
+            description: |
+              Increases the UTC year by <var>number_year</var>. If 
+              <var>number_year</var> is not present, it will default to 1
+
+      - title: subUTCYear
+        description: "Decrease the year"
+        tags:
+          - v0.1
+          - math
+        category: manipulation
+        signatures:
+          - signature: '.subYear( [number_year] )'
+            returns: this
+            version: 0.1
+            description: |
+              Decreases the UTC year by <var>number_year</var>. If 
+              <var>number_year</var> is not present, it will default to 1
+
+      - title: isLeapYear
+        description: "Determine if the current year is a leap year"
+        tags:
+          - v0.1
+        category: assertions
+        signatures:
+          - signature: '.isLeapYear( [number_leap_year] )'
+            returns: boolean
+            version: 0.1
+            description: |
+              If the <var>number_leap_year</var> is a leap year, then 
+              <var>true</var> will be returned, otherwise <var>false</var> will
+              be returned. If <var>number_leap_year</var> is not present, it 
+              will default to <code>this.fullYear()</code>.ds</a>
+
+  - title: Instance Month
+    functions: 
+      - title: month
+        description: "Gets or sets the month"
+        tags:
+          - v0.1
+        category: manipulation
+        signatures:
+          - signature: '.month( )'
+            returns: number
+            version: 0.1
+            description: |
+              Gets the zero-index month (0 = Jan ... 11 = Dec)
+
+          - signature: '.month( [number_month] )'
+            returns: this
+            version: 0.1
+            description: |
+              Sets the zero-index month to <var>number_month</var> (0 = Jan ... 11 = Dec)

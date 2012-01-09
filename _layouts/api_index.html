@@ -1,0 +1,19 @@
+---
+layout: main
+---
+            {% include header.html %}
+
+            <div id="apiHeader">
+                <div class="breadcrumbs">
+                    <a href="/api/">api</a>
+                    <i>/</i>
+                    {% if filter %}
+                    <p>'{{ filter }}' category</p>
+                    <i>/</i>
+                    {% endif %}
+                </div>
+                {% include api_search.html %}
+            </div>
+            <div class="content">
+                {{ content }}
+            </div>

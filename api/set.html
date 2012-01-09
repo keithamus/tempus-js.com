@@ -1,0 +1,69 @@
+---
+layout: api
+title: set
+permalink: set/index.html
+---
+
+<div class="span8">
+    <p>
+        This method is the bulk of the <a href="/api/Tempus">constructor</a> 
+        method, which internally calls set to parse the date. As such the code
+        and allowed arguments are identical to the 
+        <a href="/api/Tempus">constructor</a>
+    </p>
+
+
+    <h3>Cloning Tempus or Date objects</h3>
+
+    <p>
+        Cloning the Tempus or Date objects is easily done by passing the Date 
+        or Tempus object in as the first and only argument.
+    </p>
+
+    <div class="example">
+        <h4>Example</h4>
+            {% highlight javascript linenos %}
+var date_object = new Date();
+var tempus_object = new Tempus().set( date_object );{% endhighlight %}
+    </div>
+
+
+    <h3>Arguments as array</h3>
+    
+    <p>
+        Rather than passing individual arguments to <code>set</code>, you can
+        also pass an array as the first argument, which will automatically be 
+        expanded to be used as a conventual argument structure.
+    </p>
+
+    <div class="example">
+        <h4>Example</h4>
+            {% highlight javascript linenos %}
+var args = [];
+args.push(2008);
+args.push(2);
+args.push(15)
+var tempus_object = new Tempus().set( args );
+// this is the same as
+var tempus_object = new Tempus().set( 2008, 2, 15 );{% endhighlight %}
+    </div>
+
+    <h3>Parse Ordering</h3>
+    <p>
+        It is important to note the order in which Tempus will parse date 
+        arguments. You should always utilise the fastest route to creating a 
+        Tempus object, to make sure your code remains efficient.
+
+        <ol>
+            <li>No arguments, then use <code>new Date()</code></li>
+            <li>If only 1 argument, which is array, turn that into arguments</li>
+            <li>If 1st argument is Tempus object, then copy that to this object</li>
+            <li>If only 1 argument, which is Date object, then copy this</li>
+            <li>If only 1 argument, which is number, then use this as timestamp</li>
+            <li>If multiple arguments which are all numbers, then formulate date from them (like Date(year, month, date..))</li>
+            <li>Loop through all parsers that pertain to this set of arguments</li>
+            <li>throw Error</li>
+        </ol>
+    </p>
+
+</div>

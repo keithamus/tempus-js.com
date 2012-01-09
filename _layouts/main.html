@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+        <title>{% if page.title %}{{ page.title }} - Tempus{% else %}Tempus - Time for a new Date(){% endif %}</title>
+        
+        <meta name="description" content="{% if page.descr %}{{ page.descr }}{% else %}A replacement date library for JavaScript:{% endif %} TempusJS - Finally, usable dates.">
+        <meta name="author" content="Keith Cirkel">
+
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+
+        <script src="/tempus.js"></script>
+        <script src="/tempusinterval.js"></script>
+        
+        <link rel="stylesheet" href="/main.css">
+    </head>
+    <body{% if page.body_class %} class="{{ page.body_class }}" {% endif %}>
+
+        <div class="alert alert-danger" style="position: absolute; top: 0; left: 0; right: 0">
+            <strong>Woah there!</strong>
+            This site is under heavy development/construction. Stuff might move
+            from under your feet! If you're interested in using this, perhaps
+            come back for 0.2!
+        </div>
+
+        <div class="container">
+
+            {{ content }}
+
+            <hr class="soften">
+
+            <footer>
+                <p>Code and website Copyright &copy; Keith Cirkel (<a href="http://twitter.com/keithamus">@keithamus</a>)</p>
+                <p>Tempus code is licensed under the <a href="http://keithamus.mit-license.org/">MIT license</a></p>
+            </footer>
+
+        </div>
+    </body>
+</html>

@@ -1,0 +1,24 @@
+{% for functionGroup in site.api %}
+
+    <div class="row">
+
+        <header class="span12">
+            <h2>{{ functionGroup.title }}</h2>
+        </header>
+
+            {% for fn in functionGroup.functions %}
+            {% if filter == nill or filter == fn.category %}
+                <div class="row span6 api-method">
+                    <header>
+                        <h2><a href="/api/{{ fn.title }}">{{ fn.title }}</a></h2>
+                        {% include api_tags_category.html %}
+                    </header>
+                    <p class="api-description">
+                        {{ fn.description | truncatewords: 100 }} 
+                    </p>
+                </div>
+            {% endif %}
+            {% endfor %}
+    </div>
+
+{% endfor %}
