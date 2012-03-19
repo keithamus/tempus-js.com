@@ -3,22 +3,59 @@ layout: main
 ---
             {% include header.html %}
 
-            <!--{{ page | json }}{{ site }}-->
-
             <div class="content">
 
-                <nav class="row">
-                    <a class="span6 pagination-left" href="{{ post.previous }}">&laquo; Previous Post</a>
-                    <a class="span6 pagination-right" href="{{ post.next }}">Next Post &raquo;</a>
+                <nav class="row pager">
+                    {% if post.previous %}<a class="span6 pagination-left" href="{{ post.previous }}">&laquo; Previous Post</a>{% endif %}
+                    {% if post.next %}<a class="span6 pagination-right" href="{{ post.next }}">Next Post &raquo;</a>{% endif %}
                 </nav>
 
                 <header class="row">
                     <h1 class="span12">{{ page.title }}</h2>
+                    <h6 class="date span12">{{ page.date | date_to_long_string }}</h2>
                 </header>
 
-                <article class="blog-post row">
-                    <div class="span8">
+                <div class="blog-post row">
+                    <article class="span11">
+                        {% if page.banner_image %}
+                            <img class="banner_image" src="/img/posts/{{ page.banner_image }}">
+                        {% endif %}
                         {{ content }}
-                    </div>
-                </article>
+                    </article>
+                </div>
+
+                <footer class="row">
+                {% if page.author %}{% assign author = page.author %}
+                    {% if site.authors[author] %}{% assign author = site.authors[author] %}{% endif %}
+                    <aside class="author-info">
+                        <img class="avatar" href="{{ author.name }}" width="70" height="70"
+                            {% if author.gravatar %}
+                            src="http://www.gravatar.com/avatar/{{ author.gravatar }}?s=70"
+                            {% else %}
+                            src="/img/noavatar.png"
+                            {% endif %}>
+                        <div class="author-details">
+                            <span class="author row">Posted by <strong>{{ author.name }}</strong></span>
+                            <span class="description row">{{ author.description }}</span>
+                            <ul class="social-links row">
+                            {% if author.twitter %}
+                                <li class="twitter">
+                                    <a href="https://twitter.com/#!/{{ author.twitter }}" title="Follow {{ author.name | capitalize }} on Twitter">Twitter</a>
+                                </li>
+                            {% endif %}{% if author.github %}
+                                <li class="github">
+                                    <a href="https://github.com/{{ author.github }}" title="Follow {{ author.name | capitalize }}'s code on GitHub">GitHub</a>
+                                </li>
+                            {% endif %}
+                            </ul>
+                        </div>
+                {% endif %}
+                </footer>
+
+                {% unless page.disable_comments %}
+                <div class="blog-comments row">
+                    <hr class="soften">
+                    {% include disqus.html %}
+                </div>
+                {% endunless %}
             </div>

@@ -5,6 +5,15 @@ exclude:
   - config.rb
   - .sass-cache
 
+disqus_shortname: tempus
+
+authors:
+  keithamus: 
+      name: Keith Cirkel
+      description: A description can go here.
+      github: keithamus
+      twitter: keithamus
+
 api:
   - title: Top Level
     functions: 
