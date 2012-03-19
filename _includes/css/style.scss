@@ -135,7 +135,7 @@ article {
 
 #masthead {
 
-    @include background(radial-gradient(center 60px, circle cover, #fff, rgba(255, 255, 255, 0) 70%));
+    @include background(radial-gradient(center 60px, circle cover, #fff, rgba(255, 255, 255, 0) 210px));
     margin: 0 auto;
     padding-top: 60px;
     float: none;
@@ -538,7 +538,7 @@ var {
     }
 }
 
-@media (max-width: 764px) {
+@media (max-width: 768px) {
     #masthead {
 
         width: 400px;
