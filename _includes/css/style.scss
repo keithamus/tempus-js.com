@@ -439,6 +439,11 @@ article {
     border-top: 1px solid #e5e5e5;
     padding: 15px 0;
 
+    &:before, &:after {
+        display: table;
+        content: "";
+    }
+
     &:first-child {
         padding-top: 0;
         border-top: 0;
@@ -467,11 +472,13 @@ article {
 
     h3 {
         display: inline-block;
+        margin-bottom: 2px;
     }
 
     .api-tags {
         float: right;
-        margin-top: -32px;
+        display: inline-block;
+        margin-top: -3px;
     }
 
     .returns {
