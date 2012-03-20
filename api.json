@@ -1,0 +1,46 @@
+---
+layout: none
+---
+{% capture x %}
+{
+"version": "{{ site.api_version }}",
+"methods": [
+{% for functionGroup in site.api %}
+{% assign currentFnGroup=functionGroup.title %}
+{% assign last=false %}
+{% for fn in functionGroup.functions %}
+{
+"title": "{{ fn.title }}",
+{% capture plain_descr %}{{ fn.description | strip_html | replace: '"','\"' }}{% endcapture %}
+{% unless plain_descr == fn.description %}
+"plain_descr": "{{ plain_descr }}",
+{% endunless %}
+"description": "{{ fn.description | replace: '"','\"' }}",
+"group": "{{ currentFnGroup }}",
+"category": "{{ fn.category }}",
+"tags": [
+{% for tag in fn.tags %}
+"{{ tag }}",
+{% endfor %}
+],
+"signatures": [
+{% for sig in fn.signatures %}
+{
+"signature": "{{ sig.signature }}",
+"returns": "{{ sig.returns }}",
+"version": "{{ sig.version }}",
+{% capture plain_descr %}{{ sig.description | strip_html | replace: '"','\"' }}{% endcapture %}
+{% unless plain_descr == sig.description %}
+"plain_descr": "{{ plain_descr }}",
+{% endunless %}
+"description": "{{ sig.description | replace: '"','\"' }}"
+},
+{% endfor %}
+]
+},
+{% endfor %}
+,
+{% endfor %}
+]
+}
+{% endcapture %}{{ x | strip_newlines | replace: ',,',',' | replace:',]',']' }}
