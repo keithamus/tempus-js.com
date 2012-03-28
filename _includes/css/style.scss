@@ -30,6 +30,10 @@ article {
     h1, h2, h3, h4, h5, h6 {
         margin: 15px 0 10px;
     }
+
+    ul {
+        list-style-position: inside;
+    }
 }
 
 .api-method-description {
@@ -275,6 +279,7 @@ article {
     padding: 3px 19px;
     border-bottom: 0;
     text-align: right;
+    height: 30px;
 
     + .content {
         @include border-radius(0 0 6px 6px);
@@ -304,6 +309,7 @@ article {
     .search-query {
         @include transition(width .25s ease-in-out);
         border: 1px solid #bbb;
+        margin: 1px;
         padding: 4px 30px 4px 15px;
         width: 100px;
         background: #fff;
@@ -315,6 +321,7 @@ article {
 
         &:focus {
             border: 2px solid #08C;
+            margin: 0;
             width: 200px;
 
             + .search-results {
