@@ -10,7 +10,25 @@
     });
 
     function contains(needle, haystack) {
-        return haystack.toLowerCase().indexOf(needle.toLowerCase()) !== -1;
+        var search = (''+haystack).toLowerCase()
+        ,   match = false
+        ,   ix
+        ,   count = 0
+        ,   i;
+
+        needle = needle.toLowerCase().replace(/[^\w]/, '').split('');
+
+        for (i = 0; i < needle.length; ++i) {
+            if ((ix = search.indexOf(needle[i])) !== -1) {
+                search=search.substr(ix);
+                haystack = haystack.replace(
+                    new RegExp('([^/<]|^)('+needle[i]+')', 'i'), '$1<b>$2</b>');
+                ++count;
+            } else {
+                return false;
+            }
+        }
+        return { text: haystack, count: count };
     }
 
     function searchResultFactory(result) {
@@ -19,19 +37,27 @@
             $(document.createElement('a')).attr({
                 'class': 'title',
                 'href': '/api/' + result.title
-            }).html(result.title),
+            }).html(result.htmlTitle || result.title),
             $(document.createElement('a')).attr({
                 'class': 'description',
                 'href': '/api/' + result.title
-            }).html(result.description)
+            }).html(result.htmlDescription || result.description)
         );
         return rt;
     }
 
     $(function () {
-        oldVal = '';
+        var oldVal = ''
+        ,   $searchInput = $('form[name="api-search"] input');
 
-        $(document.body).on('keyup', 'form[name="api-search"] input', function () {
+        $(document.body).on('keydown', function (e) {
+            if ($searchInput.is(':focus')) return;
+            if (e.metaKey || e.altKey || e.ctrlKey) return;
+            var key = String.fromCharCode(e.keyCode);
+            if (/[\w\b\d\.\;\'\"\:\|\}\{\]\[]/.test(key)) {
+                $searchInput.focus();
+            }
+        }).on('keyup', 'form[name="api-search"] input', function () {
             var $el = $(this)
             ,   text = $el.val()
             ,   $methods = $()
@@ -48,15 +74,31 @@
                 return false;
             }
 
+            var results = [];
 
             $.each(apiJSON, function (i, method) {
+                var res;
 
-                if (contains(text, method.title)) {
-                    $methods = searchResultFactory(method).add($methods);
-                } else if (contains(text, method.description)) {
-                    $methods = $methods.add(searchResultFactory(method));
+                if ((res = contains(text, method.title))) {
+                    results.push($.extend({}, method, {
+                        htmlTitle: res.text,
+                        count: method.title.length - res.count
+                    }));
+                } else if ((res = contains(text, method.description))) {
+                    results.push($.extend({}, method, {
+                        htmlDescription: res.text,
+                        count: method.description.length - res.count
+                    }));
                 }
 
+            });
+
+            results = results.sort(function (a, b) {
+                return a.count < b.count ? -1 : a.count > b.count ? 1 : 0;
+            });
+
+            $.each(results, function (i, result) {
+                $methods = $methods.add(searchResultFactory(result));
             });
 
             $resultsCount.text($methods.length);
