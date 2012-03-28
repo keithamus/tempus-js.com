@@ -133,6 +133,22 @@ article {
     }
 }
 
+.video {
+    margin: 10px auto;
+
+    &, iframe {
+        background: black;
+        width: 800px;
+        height: 450px;
+    }
+
+    iframe {
+        display: none;
+    }
+}
+
+
+
 #masthead {
 
     @include background(radial-gradient(center 60px, circle cover, #fff, rgba(255, 255, 255, 0) 210px));
@@ -668,6 +684,11 @@ var {
 }
 
 @media (max-width: 980px) {
+    .video, .video iframe {
+        width: 730px;
+        height: 405px;
+    }
+
     #masthead {
 
         .btn-group-two {
@@ -697,6 +718,11 @@ var {
 }
 
 @media (max-width: 768px) {
+    .video, .video iframe {
+        width: 430px;
+        height: 242px;
+    }
+
     #masthead {
 
         width: 400px;
