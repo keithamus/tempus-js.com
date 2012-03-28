@@ -1,0 +1,19 @@
+<div class="span12 improve-links">
+{% if page.filename %}
+    <a href="{{ site.github_url }}/edit/gh-pages/{{ page.filename }}" target="_blank">
+        Edit this page
+    </a>
+    <i class="sep">|</i>
+{% endif %}
+    {% capture issue %}
+title=Problem with %22{{ page.url }}%22
+&amp;body=
+What did you expect to see?%0A%0A
+What did you actually see?%0A%0A
+What browser are you running?%0A%0A
+What operating system are you running?%0A%0A
+{% endcapture %}
+    <a href="{{ site.github_url }}/issues/new?{{ issue | strip_newlines }}" target="_blank">
+        Report a problem with this page
+    </a>
+</div>

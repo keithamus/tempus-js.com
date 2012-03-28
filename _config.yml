@@ -5,6 +5,8 @@ exclude:
   - config.rb
   - .sass-cache
 
+github_url: http://github.com/keithamus/Tempus
+
 disqus_shortname: tempus
 
 authors:
