@@ -1190,7 +1190,7 @@ api:
         description: Get the long month name (January - December)
         tags:
           - v0.1
-          - math
+          - culture
         category: properties
         signatures:
           - signature: '.getFullMonthName( )'
@@ -1205,7 +1205,7 @@ api:
         description: Get the abbreviated month name (Jan - Dec)
         tags:
           - v0.1
-          - math
+          - culture
         category: properties
         signatures:
           - signature: '.getMonthName( )'
@@ -1215,3 +1215,131 @@ api:
               Retrieves the current month name, as the "abbreviated" version of 
               the current month. For example, if the month is January (0), 
               getMonthName will return 'Jan' in the default culture.
+
+  - title: Instance Week
+    functions: 
+      - title: week
+        description: "Gets or sets the week"
+        tags:
+          - v0.2
+        category: manipulation
+        signatures:
+          - signature: '.week( )'
+            returns: number
+            version: 0.1
+            description: |
+              Gets the current week of the year (0 - 53)
+
+          - signature: '.week( [number_week] )'
+            returns: this
+            version: 0.1
+            description: |
+              Sets the current date to the monday beginning the week of 
+              <var>number_week</var>.
+
+      - title: getWeek
+        description: "Gets the week"
+        tags:
+          - v0.2
+        category: properties
+        signatures:
+          - signature: '.getWeek( )'
+            returns: number
+            version: 0.1
+            description: |
+              Gets the current week of the year (0 - 53)
+
+      - title: setWeek
+        description: "Sets the week"
+        tags:
+          - v0.2
+        category: manipulation
+        signatures:
+          - signature: '.setWeek( [number_week] )'
+            returns: this
+            version: 0.1
+            description: |
+              Sets the current date to the monday beginning the week of 
+              <var>number_week</var>.
+
+      - title: addWeek
+        description: Add a number of weeks from the current week
+        tags:
+          - v0.2
+          - math
+        category: manipulation
+        signatures:
+          - signature: '.addWeek( [number_week] )'
+            returns: this
+            version: 0.1
+            description: |
+              Adds <var>number_week</var> from the current week. If 
+              <var>number_week</var> is not present, it will default to 1. It 
+              will also reset the day to the Monday of the new week.
+
+      - title: subWeek
+        description: Subtract a number of weeks from the current week
+        tags:
+          - v0.1
+          - math
+        category: manipulation
+        signatures:
+          - signature: '.subWeek( [number_week] )'
+            returns: this
+            version: 0.1
+            description: |
+              Subtracts <var>number_week</var> from the current week. If 
+              <var>number_week</var> is not present, it will default to 1. It 
+              will also reset the day to the Monday of the new week.
+
+      - title: getWeekOrdinal
+        description: Get's the ordinal suffix of the current week
+        tags:
+          - v0.1
+          - culture
+        category: properties
+        signatures:
+          - signature: '.getWeekOrdinal( )'
+            returns: string
+            version: 0.1
+            description: |
+                Gets the current weeks ordinal suffix. In the default culture 
+                (English), this means either "th", "st", or "rd" is returned. 
+                For example, if <a href="/api/getWeek">getWeek()</a> returns 3,
+                then getWeekOrdinal() will return "rd".
+
+      - title: eachWeekOfMonth
+        description: Iterate through every week in a month
+        tags:
+          - v0.2
+        category: iterators
+        signatures:
+          - signature: '.eachWeekOfMonth( function_iterator )'
+            returns: this
+            version: 0.1
+            description: |
+                This will start with the first week of the month, and loop 
+                through, incrimenting by 1 until the last week of the month, 
+                running <var>function_iterator</var> for every iteration.
+                <var>function_iterator</var> should expect the arguments to be
+                <var>[number_week, tempus_object_set_to_week]</var>. For more on
+                iterators, see the <a href="/docs/method-type-rundown#iterators">
+                iterators</a> documentation
+
+      - title: eachWeekOfYear
+        description: Iterate through every week in a year
+        tags:
+          - v0.2
+        category: iterators
+        signatures:
+          - signature: '.eachWeekOfYear( function_iterator )'
+            returns: this
+            version: 0.1
+            description: |
+                This will start with the first week of the year, and loop 
+                through, incrimenting by 1 until the last week of the year, 
+                running <var>function_iterator</var> for every iteration.
+                <var>function_iterator</var> should expect the arguments to be
+                <var>[number_week, tempus_object_set_to_week]</var>. For more on
+                iterators, see the <a href="/docs/method-type-rundown#iterators">
+                iterators</a> documentation
