@@ -989,3 +989,229 @@ api:
             version: 0.1
             description: |
               Sets the zero-index month to <var>number_month</var> (0 = Jan ... 11 = Dec)
+
+      - title: getMonth
+        description: "Gets the month"
+        tags:
+          - v0.1
+        category: properties
+        signatures:
+          - signature: '.getMonth( )'
+            returns: number
+            version: 0.1
+            description: |
+              Gets the zero-index month (0 = Jan ... 11 = Dec)
+
+      - title: setMonth
+        description: "Sets the month"
+        tags:
+          - v0.1
+        category: manipulation
+        signatures:
+          - signature: '.setMonth( [number_month] )'
+            returns: this
+            version: 0.1
+            description: |
+              Sets the zero-index month to <var>number_month</var> (0 = Jan ... 11 = Dec)
+
+      - title: addMonth
+        description: Add a number of months from the current month
+        tags:
+          - v0.1
+          - math
+        category: manipulation
+        signatures:
+          - signature: '.addMonth( [number_month] )'
+            returns: this
+            version: 0.1
+            description: |
+              Adds <var>number_month</var> from the current month. If 
+              <var>number_month</var> is not present, it will default to 1
+
+      - title: subMonth
+        description: Subtract a number of months from the current month
+        tags:
+          - v0.1
+          - math
+        category: manipulation
+        signatures:
+          - signature: '.subMonth( [number_month] )'
+            returns: this
+            version: 0.1
+            description: |
+              Subtracts <var>number_month</var> from the current month. If 
+              <var>number_month</var> is not present, it will default to 1
+
+      - title: oneIndexedMonth
+        description: "Gets or sets the month as a 1-indexed int (1-12)"
+        tags:
+          - v0.1
+        category: manipulation
+        signatures:
+          - signature: '.oneIndexedMonth( )'
+            returns: number
+            version: 0.1
+            description: |
+              Gets the 1-index month (1 = Jan ... 12 = Dec)
+
+          - signature: '.oneIndexedMonth( [number_month] )'
+            returns: this
+            version: 0.1
+            description: |
+              Sets the 1-index month to <var>number_month</var> (1 = Jan ... 12 = Dec)
+
+      - title: getOneIndexedMonth
+        description: "Gets the month as a 1-indexed int (1-12)"
+        tags:
+          - v0.1
+        category: properties
+        signatures:
+          - signature: '.getOneIndexedMonth( )'
+            returns: number
+            version: 0.1
+            description: |
+              Gets the 1-index month (1 = Jan ... 12 = Dec)
+
+      - title: setOneIndexedMonth
+        description: "Sets the month, as a 1-indexed int (1-12)"
+        tags:
+          - v0.1
+        category: manipulation
+        signatures:
+          - signature: '.setOneIndexedMonth( [number_month] )'
+            returns: this
+            version: 0.1
+            description: |
+              Sets the 1-index month to <var>number_month</var> (1 = Jan ... 12 = Dec)
+
+      - title: addOneIndexedMonth
+        description: Add a number of months from the current month
+        tags:
+          - v0.1
+          - math
+        category: manipulation
+        signatures:
+          - signature: '.addOneIndexedMonth( [number_month] )'
+            returns: this
+            version: 0.1
+            description: |
+              Adds <var>number_month</var> from the current month. If 
+              <var>number_month</var> is not present, it will default to 1.
+              Similar to <a href="/api/addMonth">addMonth</a>.
+
+      - title: subOneIndexedMonth
+        description: Subtract a number of months from the current month
+        tags:
+          - v0.1
+          - math
+        category: manipulation
+        signatures:
+          - signature: '.subOneIndexedMonth( [number_month] )'
+            returns: this
+            version: 0.1
+            description: |
+              Subtracts <var>number_month</var> from the current month. If
+              <var>number_month</var> is not present, it will default to 1.
+              Similar to <a href="/api/subMonth">subMonth</a>.
+
+      - title: UTCMonth
+        description: "Gets or sets the month as UTC"
+        tags:
+          - v0.1
+        category: manipulation
+        signatures:
+          - signature: '.UTCMonth( )'
+            returns: number
+            version: 0.1
+            description: |
+              Gets the zero-index UTC month (0 = Jan ... 11 = Dec)
+
+          - signature: '.UTCMonth( [number_month] )'
+            returns: this
+            version: 0.1
+            description: |
+              Sets the zero-index UTC month to <var>number_month</var> (0 = Jan ... 11 = Dec)
+
+      - title: getUTCMonth
+        description: "Gets the month as UTC"
+        tags:
+          - v0.1
+        category: properties
+        signatures:
+          - signature: '.getUTCMonth( )'
+            returns: number
+            version: 0.1
+            description: |
+              Gets the zero-index UTC month (0 = Jan ... 11 = Dec)
+
+      - title: setUTCMonth
+        description: "Sets the month as UTC"
+        tags:
+          - v0.1
+        category: manipulation
+        signatures:
+          - signature: '.setUTCMonth( [number_month] )'
+            returns: this
+            version: 0.1
+            description: |
+              Sets the zero-index UTC month to <var>number_month</var> (0 = Jan ... 11 = Dec)
+
+      - title: addUTCMonth
+        description: Add a number of months from the current month
+        tags:
+          - v0.1
+          - math
+        category: manipulation
+        signatures:
+          - signature: '.addUTCMonth( [number_month] )'
+            returns: this
+            version: 0.1
+            description: |
+              Adds <var>number_month</var> from the current UTC month. If 
+              <var>number_month</var> is not present, it will default to 1
+              Similar to <a href="/api/addMonth">addMonth</a>.
+
+      - title: subUTCMonth
+        description: Subtract a number of UTC months from the current month
+        tags:
+          - v0.1
+          - math
+        category: manipulation
+        signatures:
+          - signature: '.subUTCMonth( [number_month] )'
+            returns: this
+            version: 0.1
+            description: |
+              Subtracts <var>number_month</var> from the current UTC month. If 
+              <var>number_month</var> is not present, it will default to 1
+              Similar to <a href="/api/subMonth">subMonth</a>.
+
+      - title: getFullMonthName
+        description: Get the long month name (January - December)
+        tags:
+          - v0.1
+          - math
+        category: properties
+        signatures:
+          - signature: '.getFullMonthName( )'
+            returns: string
+            version: 0.1
+            description: |
+              Retrieves the current full month name.
+              For example, if the month is January (0), getMonthName will return
+              'January' in the default culture.
+
+      - title: getMonthName
+        description: Get the abbreviated month name (Jan - Dec)
+        tags:
+          - v0.1
+          - math
+        category: properties
+        signatures:
+          - signature: '.getMonthName( )'
+            returns: string
+            version: 0.1
+            description: |
+              Retrieves the current month name, as the "abbreviated" version of 
+              the current month. For example, if the month is January (0), 
+              getMonthName will return 'Jan' in the default culture.
