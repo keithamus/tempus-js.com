@@ -594,7 +594,7 @@ api:
         description: "Returns true if the date is within the local environments Daylight Savings period"
         tags:
           - v0.1
-        category: manipulation
+        category: assertions
         signatures:
           - signature: '.isDST( )'
             returns: boolean
@@ -1343,3 +1343,161 @@ api:
                 <var>[number_week, tempus_object_set_to_week]</var>. For more on
                 iterators, see the <a href="/docs/method-type-rundown#iterators">
                 iterators</a> documentation
+
+  - title: Instance Date Methods
+    functions: 
+      - title: date
+        description: Gets or sets the current date
+        tags:
+          - v0.1
+        category: manipulation
+        signatures:
+          - signature: '.date( )'
+            returns: number
+            version: 0.1
+            description: |
+              Gets the current date.
+
+          - signature: '.date( number_date )'
+            returns: this
+            version: 0.1
+            description: |
+              Sets the current date to <var>number_date</var>
+
+      - title: getDate
+        description: Gets the current date
+        tags:
+          - v0.1
+        category: properties
+        signatures:
+          - signature: '.getDate( )'
+            returns: number
+            version: 0.1
+            description: |
+              Gets the current date.
+
+      - title: setDate
+        description: Sets the current date
+        tags:
+          - v0.1
+        category: manipulation
+        signatures:
+          - signature: 'setDate( number_date )'
+            returns: this
+            version: 0.1
+            description: |
+              Sets the current date to <var>number_date</var>
+
+      - title: addDate
+        description: Adds a number of days to the current date
+        tags:
+          - v0.1
+          - math
+        category: manipulation
+        signatures:
+          - signature: '.addDate( [number_date] )'
+            returns: this
+            version: 0.1
+            description: |
+              Adds <var>number_date</var> from the current date. If 
+              <var>number_date</var> is not present, it will default to 1.
+
+      - title: addDate
+        description: Subtracts a number of dasy to the current date
+        tags:
+          - v0.1
+          - math
+        category: manipulation
+        signatures:
+          - signature: '.subDate( [number_date] )'
+            returns: this
+            version: 0.1
+            description: |
+              Subtracts <var>number_date</var> from the current date. If 
+              <var>number_date</var> is not present, it will default to 1.
+
+      - title: UTCDate
+        description: Gets or sets the current UTC date
+        tags:
+          - v0.1
+        category: manipulation
+        signatures:
+          - signature: '.UTCDate( )'
+            returns: number
+            version: 0.1
+            description: |
+              Gets the current UTC date.
+
+          - signature: '.UTCDate( number_date )'
+            returns: this
+            version: 0.1
+            description: |
+              Sets the current UTC date to <var>number_date</var>.
+
+      - title: getUTCDate
+        description: Gets the current UTC date
+        tags:
+          - v0.1
+        category: properties
+        signatures:
+          - signature: '.getUTCDate( )'
+            returns: number
+            version: 0.1
+            description: |
+              Gets the current UTC date.
+
+      - title: setUTCDate
+        description: 
+        tags:
+          - v0.1
+        category: manipulation
+        signatures:
+          - signature: '.UTCDate( number_date )'
+            returns: this
+            version: 0.1
+            description: |
+              Sets the current UTC date to <var>number_date</var>.
+
+      - title: addUTCDate
+        description: Adds a number of days to the current UTC date
+        tags:
+          - v0.1
+          - math
+        category: manipulation
+        signatures:
+          - signature: '.addUTCDate( [number_date] )'
+            returns: this
+            version: 0.1
+            description: |
+              Adds <var>number_date</var> from the current UTC date. If 
+              <var>number_date</var> is not present, it will default to 1.
+
+      - title: subUTCDate
+        description: Subtracts a number of days to the current UTC date
+        tags:
+          - v0.1
+          - math
+        category: manipulation
+        signatures:
+          - signature: '.subUTCDate( [number_date] )'
+            returns: this
+            version: 0.1
+            description: |
+              Subtracts <var>number_date</var> from the current date. If 
+              <var>number_date</var> is not present, it will default to 1.
+
+      - title: getDateOrdinal
+        description: Get's the ordinal suffix of the current date
+        tags:
+          - v0.1
+          - culture
+        category: properties
+        signatures:
+          - signature: '.getDateOrdinal( )'
+            returns: string
+            version: 0.1
+            description: |
+                Gets the current dates ordinal suffix. In the default culture 
+                (English), this means either "th", "st", or "rd" is returned. 
+                For example, if <a href="/api/getDate">getDate()</a> returns 3,
+                then getDateOrdinal() will return "rd".
