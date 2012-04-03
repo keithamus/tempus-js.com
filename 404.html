@@ -1,0 +1,91 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+        <title>Tempus - 404 - Time for a new Date()</title>
+        
+        <meta name="description" content="A replacement date library for JavaScript: TempusJS - Finally, usable dates.">
+        <meta name="author" content="Keith Cirkel">
+
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+
+        <script src="/jquery.js"></script>
+        <script src="/fn.js" defer async></script>
+
+        <script src="/tempus.js" defer async></script>
+        <script src="/tempus.timer.js" defer async></script>
+        <script src="/tempus.interval.js" defer async></script>
+        
+        <link rel="stylesheet" href="/main.css">
+    </head>
+    <body>
+
+        <div class="container">
+            
+            <header id="masthead" class="span7">
+                <div class="brand">
+                    <a href="/"><i class="logo"></i>Tempus</a>
+                </div>
+                <h2>Time for a new Date()</h2>
+                
+                <div class="btn-group btn-group-two">
+                    <a class="btn btn-success btn-large" href="/tempus.js">Download <strong>Core</strong> (4.4kb min/gz)</a>
+                    <a class="btn btn-info btn-large" href="/build.html">Build your own (up to 7kb)</a>
+                    <p class="info">or run <code>npm install Tempus</code> from your command line</p>
+                </div>
+                <div class="btn-group btn-group-three">
+                    <a class="btn btn-large txthilite-success" href="/docs/">View the docs</a>
+                    <a class="btn btn-large txthilite-danger" href="/api/">Browse the api</a>
+                    <a class="btn btn-large txthilite-info" href="/blog/">Read the blog</a>
+                </div>
+
+                
+                <hr class="soften">
+            </header>
+
+            <div class="content">
+                <div class="row">
+                    <h1 class="span12">Oops! The requested page was not found</h1>
+                    <p class="span8"></p>
+                    <p class="span8">
+                        The page you have requested could not be found. Error: 404
+                    </p>
+                    
+                    <p class="span8">
+                        If you clicked a link to get here, we'd really like you to 
+                        file an issue with us, telling us the link is broken.
+                    </p>
+
+                    <p class="span8" style="display:none">
+                        <a id="broken_page_issue_link" target="_blank">
+                            Click here to file an issue for this 404 error
+                        </a>
+                    </p>
+                </div>
+            </div>
+
+            <hr class="soften">
+
+            <footer>
+                <p>Code and website Copyright &copy; Keith Cirkel (<a href="http://twitter.com/keithamus">@keithamus</a>)</p>
+                <p>Tempus code is licensed under the <a href="http://keithamus.mit-license.org/">MIT license</a></p>
+            </footer>
+
+        </div>
+        <script type="text/javascript">
+            $(function () {
+                var link = 'https://github.com/keithamus/Tempus/issues/new?' +
+                    'title=Broken Link: %22' + escape(window.location.href) + 
+                    '%22&amp;body=' + escape(
+                        '\n\n------- (Add comments above this line) -------\n"' +
+                        window.location.href + '" is a 404 link, coming from "' + 
+                        (document.referrer || '<No referrer>') + '".\n' +
+                        'Visited on: "' + navigator.userAgent + '"\n\n'
+                    );
+                $('#broken_page_issue_link').attr('href', link).parent().show();
+            });
+        </script>
+    </body>
+</html>
