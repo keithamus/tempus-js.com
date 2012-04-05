@@ -12,29 +12,31 @@ filename: api/addParser.md
     is recommended to read through the code to understand this better!
 </p>
 
-The `addParser` method extends the functionality of the  [set](/api/set) method (which in turn
-extends the  functionality of the [constructor](/api/Tempus) method).  If you require the ability to
-parse a custom date format through Tempus,  this is the best way to do that.
+The `addParser` method extends the functionality of the  [set](/api/set) method
+(which in turn extends the  functionality of the [constructor](/api/Tempus)
+method).  If you require the ability to parse a custom date format through
+Tempus,  this is the best way to do that.
 
-When parsing a date, you have access to the current Tempus instance.   The date will be set to the
-current time, so it is the parser's job to  run any date manipulation functions to set the date
-based on the set of arguments.
+When parsing a date, you have access to the current Tempus instance.   The date
+will be set to the current time, so it is the parser's job to  run any date
+manipulation functions to set the date based on the set of arguments.
 
 ### Parser Testability ###
 
 
-Rather than having parsers blindly try to parse Tempus invocations, the  `addParser` method provides
-certain "testability" criteria.  The three criteria are (in order): The amount of arguments Tempus
-has  been invocated with (optional), the types of those arguments, and a  tester function to do more
-complex custom tests such as  `RegExp`. See the following two points for more details:
+Rather than having parsers blindly try to parse Tempus invocations, the
+`addParser` method provides certain "testability" criteria.  The three criteria
+are (in order): The amount of arguments Tempus has  been invocated with
+(optional), the types of those arguments, and a  tester function to do more
+complex custom tests such as  `RegExp`. See the following two points for more
+details:
 
 ### Argument Type Matching ###
 
-`addParser` requires new parsers to declare what type of 
-arguments they expect, this is a great way to make quick assertions on 
-if the parser can sucessfully parse the potential date. The first 
-argument type is required, so you __must__ declare what 
-type you expect the first argument to be. The list of types are:
+`addParser` requires new parsers to declare what type of  arguments they expect,
+this is a great way to make quick assertions on  if the parser can sucessfully
+parse the potential date. The first  argument type is required, so you __must__
+declare what  type you expect the first argument to be. The list of types are:
 
 <div class="row">
     <ul class="span2">
@@ -95,16 +97,16 @@ argument length. For example
 // This parser expects 3 arguments, 1st is 'object', 2nd and 3rd are mixed
 Tempus.addParser( testerFn, parserFn, 3, 'object' );
 
-// My parser will never get run for this date, because it has only 1 argument
+// My parser will never get run for this date: it has only 1 argument
 var tempus_object = new Tempus( {} );
 
-// My parser will never get run for this date, because it has only 2 argument
+// My parser will never get run for this date: it has only 2 argument
 var tempus_object = new Tempus( {}, function () {} );
 
-// My parser will never get run for this date, because the 1st argument is not an 'object'
+// My parser will never get run for this date: 1st argument is not an 'object'
 var tempus_object = new Tempus( 'String', {}, function () {} );
 
-// My parser WILL run for this date - all three arguments, and the 1st is 'object'
+// My parser WILL run for this date: all three arguments, and the 1st is 'object'
 var tempus_object = new Tempus( {}, function () {}, 2 );
 
 // My parser will ALSO run for this date, as there is no strictness on max length
@@ -113,14 +115,12 @@ var tempus_object = new Tempus( {}, 'String', 1, /^regexp$/, function () {} );
 
 ### Parse Ordering ###
 
-Date parsers added through the addParser method are always put at the 
-bottom of the [set](/api/set) stack. The order in which 
-parsers are added using the `addParser` method, is the order 
-in which they are looped through.
+Date parsers added through the addParser method are always put at the  bottom of
+the [set](/api/set) stack. The order in which  parsers are added using the
+`addParser` method, is the order  in which they are looped through.
 
-If you plan on adding many parsers to your project, you should add them 
-strict-most to loose-most, so that your strict functions have a chance 
-of executing.
+If you plan on adding many parsers to your project, you should add them  strict-
+most to loose-most, so that your strict functions have a chance  of executing.
 
 ### Test Function ###
 
@@ -136,7 +136,8 @@ Tempus.addParser(
     // The testFN checks to see if every property in "obj" is a function of Tempus
     function (obj) { 
         for (i in obj) {
-        // So if Tempus doesn't have a method we'll return false, meaning we cannot parse this
+            // So if Tempus doesn't have a method we'll return false
+            // meaning we cannot parse this
             if (typeof Tempus.prototype[i] !== 'function') return false;
         }
         // We got to here, so we can return true
