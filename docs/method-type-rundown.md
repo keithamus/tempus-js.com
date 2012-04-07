@@ -6,7 +6,7 @@ filename: docs/method-type-rundown.html
 ---
 Tempus sticks to hard naming conventions and patterns inside it's api. It has 
 about half a dozen different method "types". Each method type will either 
-strictly return a value, or have a script argument set.
+strictly return a value, or have a strict argument set.
 
 
 ### Classes ### {#classes}
