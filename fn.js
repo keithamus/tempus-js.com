@@ -137,5 +137,20 @@
             $(this).addClass('search-focus').siblings().removeClass('search-focus');
         });
 
+
+
+        $('#masthead .btn-group .info').on('click', function () {
+            if (window.getSelection && document.createRange) {
+                var sel = window.getSelection();
+                var range = document.createRange();
+                range.selectNodeContents($('code', this)[0]);
+                sel.removeAllRanges();
+                sel.addRange(range);
+            } else if (document.selection && document.body.createTextRange) {
+                var textRange = document.body.createTextRange();
+                textRange.moveToElementText($('code', this)[0]);
+                textRange.select();
+            }
+        });
     });
 })();
