@@ -1,10 +1,7 @@
 ---
-layout: main
+layout: default
+breadcrumbs: [blog]
 ---
-            {% include header.html %}
-
-            <div class="content">
-
                 <nav class="row pager">
                     {% if post.previous %}<a class="span6 pagination-left" href="{{ post.previous }}">&laquo; Previous Post</a>{% endif %}
                     {% if post.next %}<a class="span6 pagination-right" href="{{ post.next }}">Next Post &raquo;</a>{% endif %}
@@ -58,4 +55,3 @@ layout: main
                     {% include disqus.html %}
                 </div>
                 {% endunless %}
-            </div>

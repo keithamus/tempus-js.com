@@ -10,13 +10,13 @@ layout: main
 {% endfor %}
             {% include header.html %}
 
-            <div id="apiHeader">
+            <div class="breadcrumb-header">
                 <div class="breadcrumbs">
+                    <a href="/">home</a>
+                    <i>/</i>
                     <a href="/api/">api</a>
                     <i>/</i>
-                    <p>{{ parentLevel }}</p>
-                    <i>/</i>
-                    <a href="/api/{{ page.title }}">{{ page.title }}</a>
+                    {{ page.title }}
                 </div>
                 {% include api_tags_category.html %}
                 {% include api_search.html %}

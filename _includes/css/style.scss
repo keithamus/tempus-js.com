@@ -257,13 +257,13 @@ article {
     margin-bottom: 10px;
 }
 
-.content, #apiHeader {
+.content, .breadcrumb-header {
     @include box-shadow(0 1px 2px rgba(0,0,0,.2));
     border: 1px solid #ddd;
     margin: 0 -20px; /* negative indent the amount of the padding to maintain the grid system */
 }
 
-#apiHeader::after, #apiHeader::before {
+.breadcrumb-header::after, .breadcrumb-header::before {
     display: table;
     content: "";
     clear: both;
@@ -285,7 +285,7 @@ article {
     }
 }
 
-#apiHeader {
+.breadcrumb-header {
     @include border-radius(6px 6px 0 0);    
     @include background(linear-gradient(white, white 25%, #E6E6E6));
     @include text-shadow(0 1px 1px rgba(255, 255, 255, 0.75));

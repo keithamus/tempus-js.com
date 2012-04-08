@@ -3,6 +3,7 @@ layout: main
 ---
             {% include header.html %}
 
+            {% if page.breadcrumbs %}{% include breadcrumbs.html %}{% endif %}
             <div class="content">
                 {{ content }}
             </div>
