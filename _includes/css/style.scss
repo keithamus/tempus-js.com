@@ -249,8 +249,15 @@ article {
 
 .soften {
     @include background(linear-gradient(left, rgba(0, 0, 0, 0), rgba(0, 0, 0, .2), rgba(0, 0, 0, 0)));
+
     height: 1px;
     margin: 40px 0;
+    border: 0;
+}
+
+article hr {
+    @include background(linear-gradient(left, rgba(229, 229, 229, 0), rgba(229, 229, 229, 1), rgba(229, 229, 229, 0)));
+    height: 1px;
     border: 0;
 }
 
