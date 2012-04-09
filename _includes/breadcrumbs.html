@@ -1,0 +1,24 @@
+{% if page.breadcrumbs %}
+<div class="breadcrumb-header">
+    <div class="breadcrumbs">
+        <a href="/"><i class="icon-home"></i>&nbsp;home</a>
+        <i>/</i>
+        {% unless page.breadcrumbs == true %}
+        {% assign previous = '' %}
+            {% for crumb in page.breadcrumbs %}
+                {% unless previous == crumb %}
+                    {% if crumb.title and crumb.url %}
+                        <a href="{{ crumb.url }}">{{ crumb.title }}</a>
+                    {% else %}
+                        <a href="/{{ crumb }}">{{ crumb }}</a>
+                    {% endif %}
+                    <i>/</i>
+                {% endunless %}
+                {% assign previous = crumb %}
+            {% endfor %}
+        {% endunless %}
+        {{ page.title }}
+    </div>
+    {% if api_search %}{% include api_search.html %}{% endif %}
+</div>
+{% endif %}
