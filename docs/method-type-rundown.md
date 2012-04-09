@@ -173,16 +173,7 @@ tempus_object.eachDayOfWeek(
         console.log(dayNumber, day_tempus_object);
     }
 );
-
-// This will log the following:
-//  9,   (new Tempus( 2008, 2, 9));
-//  10,  (new Tempus( 2008, 2, 10));
-//  11,  (new Tempus( 2008, 2, 11));
-//  12,  (new Tempus( 2008, 2, 12));
-//  13,  (new Tempus( 2008, 2, 13));
-//  14,  (new Tempus( 2008, 2, 14));
-//  15,  (new Tempus( 2008, 2, 15));
-{% endcapture %}{% include code.html %}
+{% endcapture %}{% assign runnable = true %}{% include code.html %}
 
 You can see a full list of iterator methods in 
 [the API assertion category](/api/iterators).
