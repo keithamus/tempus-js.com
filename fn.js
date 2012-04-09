@@ -54,7 +54,7 @@
             if ($searchInput.is(':focus')) return;
             if (e.metaKey || e.altKey || e.ctrlKey) return;
             var key = String.fromCharCode(e.keyCode);
-            if (/[\w\b\d\.\;\'\"\:\|\}\{\]\[]/.test(key)) {
+            if (/^(\w|\b|\d|\.|\;|\'|\"|\:|\||\}|\{|\]|\[)$/.test(key)) {
                 $searchInput.focus();
             }
         }).on('keyup', 'form[name="api-search"] input', function () {
