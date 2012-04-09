@@ -14,5 +14,6 @@ It is worth noting that `arrIndexOf` is not a to-spec  replacement of
 argument, and it does not coerce the  `length` attribute into a number. If you
 require a to spec implimentation of `Array.prototype.indexOf`, do not use this.
 
-[For more information about `Array.prototype.indexOf`, see the  MDN Article]
-(https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array/indexOf)
+[For more information about `Array.prototype.indexOf`, see the  MDN Article][ar]
+
+[ar]: https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array/indexOf
