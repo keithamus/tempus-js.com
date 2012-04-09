@@ -9,6 +9,21 @@
         window.apiJSON = apiJSON;
     });
 
+    function selectionOnElements(el) {
+        el = $(el);
+        if (window.getSelection && document.createRange) {
+            var sel = window.getSelection();
+            var range = document.createRange();
+            range.selectNodeContents(el[0]);
+            sel.removeAllRanges();
+            sel.addRange(range);
+        } else if (document.selection && document.body.createTextRange) {
+            var textRange = document.body.createTextRange();
+            textRange.moveToElementText(el[0]);
+            textRange.select();
+        }
+    }
+
     function contains(needle, haystack) {
         var search = (''+haystack).toLowerCase()
         ,   match = false
@@ -140,17 +155,42 @@
 
 
         $('#masthead .btn-group .info').on('click', function () {
-            if (window.getSelection && document.createRange) {
-                var sel = window.getSelection();
-                var range = document.createRange();
-                range.selectNodeContents($('code', this)[0]);
-                sel.removeAllRanges();
-                sel.addRange(range);
-            } else if (document.selection && document.body.createTextRange) {
-                var textRange = document.body.createTextRange();
-                textRange.moveToElementText($('code', this)[0]);
-                textRange.select();
-            }
+            selectionOnElements($('code', this));
+        });
+
+        $(document.body).on('click', '.example-select', function () {
+            selectionOnElements($('.example-precode', $(this).parents('.example')));
+        }).on('click', '.example-run', function () {
+            var $example = $(this).parents('.example'),
+                $sandbox;
+
+            $example.find('.example-sandbox').remove();
+
+            $sandbox = $('<div class="example-sandbox">')
+                    .append($('<div class="output">'));
+
+            $example.append($sandbox);
+            var code = $('.example-precode', $example).text();
+            (function () {
+                var $ = function (s) { jQuery(s, $sandbox); },
+                    oldConsoleLog = console.log,
+                    oldAlert = alert;
+                    console.log = function () {
+                        var text = Array.prototype.join.call(arguments, ', ');
+                        $sandbox.append(jQuery('<div class="console-log"><i class="icon-chevron-right"></i></div>').append(text));
+                    };
+                    alert = function (text) {
+                        $sandbox.append(jQuery('<div class="alert"><i class="icon-chevron-right"></i></div>').text(String(text)));
+                    };
+                    try {
+                        (new Function(code))();
+                    } catch(e) {
+                        console.log('ERROR: ' + e);
+                    }
+                    alert = oldAlert;
+                    console.log = oldConsoleLog;
+            })();
         });
     });
 })();
+

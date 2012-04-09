@@ -1,4 +1,11 @@
 <div class="example">
-    <h4>Example</h4>
+    <header>
+        <h4>Example</h4>
+        <i class="example-select icon-edit" title="Select All">Select All</i>
+        {% if runnable %}
+        <i class="example-run icon-play-circle" title="Execute">Execute</i>
+        {% endif %}
+    </header>
+    <pre class="example-precode">{{ code }}</pre>
     {% highlight javascript linenos %}{{ code }}{% endhighlight %}
 </div>
