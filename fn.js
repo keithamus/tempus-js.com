@@ -176,7 +176,10 @@
                     oldConsoleLog = console.log,
                     oldAlert = alert;
                     console.log = function () {
-                        var text = Array.prototype.join.call(arguments, ', ');
+                        var text = jQuery();
+                        jQuery.each(([]).slice.call(arguments), function (i, a) {
+                            text = text.add(jQuery('<code>').text(String(a)));
+                        });
                         $sandbox.append(jQuery('<div class="console-log"><i class="icon-chevron-right"></i></div>').append(text));
                     };
                     alert = function (text) {
