@@ -1,0 +1,38 @@
+---
+layout: main
+---
+            {% include header.html %}
+
+            <div class="breadcrumb-header">
+                <div class="breadcrumbs">
+                    <a href="/api/">api</a>
+                    <i>/</i>
+                    <p>{{ parentLevel }}</p>
+                    <i>/</i>
+                    <a href="/api/{{ page.title }}">{{ page.title }}</a>
+                </div>
+                {% include api_tags_category.html %}
+                {% include api_search.html %}
+            </div>
+            <div class="content">
+
+                {% for post in site.posts %}
+                    <div class="row">
+                        <div class="span11">
+                            <h2><a href="{{ post.url }}">{{{post.title}}</a></h2>
+                            <article class="post-content">
+                                {{ post.content | strip_html | truncatewords: 100 }} 
+                            </article>    
+                            <div class="post-bar">
+                                <p class="date">Posted on <strong>{{ post.date | date_to_string }}</strong></p>
+                                <i>|</i>
+                                <a href="{{ post.url }}">Read More &raquo;</a>
+                                <!--
+                                <i>|</i>
+                                <a href="{{ post.url }}#comments">0 comments</a>
+                                -->
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
