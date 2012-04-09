@@ -12,9 +12,13 @@ disqus_shortname: tempus
 authors:
   keithamus: 
       name: Keith Cirkel
-      description: A description can go here.
+      description: |
+        JavaScript developer, creator of Tempus, as well as other libraries,
+        such as <a href="http://keithcirkel.co.uk/jwerty/">jwerty</a>, and 
+        <a href="http://keithcirkel.co.uk/R.js/">R.js</a>.
       github: keithamus
       twitter: keithamus
+      linkedin: http://www.linkedin.com/in/keithcirkel
 
 api_version: 0.2
 api:
