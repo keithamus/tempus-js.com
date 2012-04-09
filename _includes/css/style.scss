@@ -648,14 +648,24 @@ var {
         height: 24px;
         width: 24px;
         float: left;
-        overflow: hidden;
-        border: 1px solid #DDD;
         margin: 0 8px 0 0;
+        list-style: none;
 
         a {
             color: transparent;
             font-size: 0px;
             display: block;
+        }
+
+        i::before {
+            color: #08C;
+            font-size: 30px;
+            margin-top: 4px;
+            text-shadow: 0px 1px 1px #fff;
+        }
+
+        &:hover i::before {
+            color: #005580;
         }
     }
 }
