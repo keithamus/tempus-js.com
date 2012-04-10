@@ -88,7 +88,7 @@ api:
               similar to the above signatures
 
       - title: now
-        description: 'Returns the current seconds since Epoch (Thu Jan 01 1970 00:00:00 GMT+0000)'
+        description: 'Returns the seconds since Epoch (Thu Jan 01 1970 00:00:00 GMT+0000)'
         category: core
         tags:
           - v0.1
@@ -97,7 +97,7 @@ api:
             returns: Number
             version: 0.1
             description: |
-              Returns the current seconds since Epoch (Thu Jan 01 1970 00:00:00 GMT+0000)
+              Returns the seconds since Epoch (Thu Jan 01 1970 00:00:00 GMT+0000)
 
 
       - title: addParser
@@ -629,13 +629,13 @@ api:
             returns: number
             version: 0.1
             description: |
-              Get the current century
+              Get the century
 
           - signature: '.century( number_century )'
             returns: this
             version: 0.1
             description: |
-              Set the current century to <var>number_century</var>
+              Set the century to <var>number_century</var>
 
       - title: getCentury
         description: "Gets the century"
@@ -647,7 +647,7 @@ api:
             returns: number
             version: 0.1
             description: |
-              Get the current century
+              Get the century
 
       - title: setCentury
         description: "Sets the century"
@@ -659,7 +659,7 @@ api:
             returns: this
             version: 0.1
             description: |
-              Set the current century to <var>number_century</var>
+              Set the century to <var>number_century</var>
 
       - title: addCentury
         description: "Increase the century"
@@ -970,7 +970,7 @@ api:
               <var>number_year</var> is not present, it will default to 1
 
       - title: isLeapYear
-        description: "Determine if the current year is a leap year"
+        description: "Determine if the set year is a leap year"
         tags:
           - v0.1
         category: assertions
@@ -1030,7 +1030,7 @@ api:
               Sets the zero-index month to <var>number_month</var> (0 = Jan ... 11 = Dec)
 
       - title: addMonth
-        description: Add a number of months from the current month
+        description: Add a number of months from the set month
         tags:
           - v0.1
           - math
@@ -1040,11 +1040,11 @@ api:
             returns: this
             version: 0.1
             description: |
-              Adds <var>number_month</var> from the current month. If 
+              Adds <var>number_month</var> from the set month. If 
               <var>number_month</var> is not present, it will default to 1
 
       - title: subMonth
-        description: Subtract a number of months from the current month
+        description: Subtract a number of months from the set month
         tags:
           - v0.1
           - math
@@ -1054,7 +1054,7 @@ api:
             returns: this
             version: 0.1
             description: |
-              Subtracts <var>number_month</var> from the current month. If 
+              Subtracts <var>number_month</var> from the set month. If 
               <var>number_month</var> is not present, it will default to 1
 
       - title: oneIndexedMonth
@@ -1100,7 +1100,7 @@ api:
               Sets the 1-index month to <var>number_month</var> (1 = Jan ... 12 = Dec)
 
       - title: addOneIndexedMonth
-        description: Add a number of months from the current month
+        description: Add a number of months from the set month
         tags:
           - v0.1
           - math
@@ -1110,12 +1110,12 @@ api:
             returns: this
             version: 0.1
             description: |
-              Adds <var>number_month</var> from the current month. If 
+              Adds <var>number_month</var> from the set month. If 
               <var>number_month</var> is not present, it will default to 1.
               Similar to <a href="/api/addMonth">addMonth</a>.
 
       - title: subOneIndexedMonth
-        description: Subtract a number of months from the current month
+        description: Subtract a number of months from the set month
         tags:
           - v0.1
           - math
@@ -1125,7 +1125,7 @@ api:
             returns: this
             version: 0.1
             description: |
-              Subtracts <var>number_month</var> from the current month. If
+              Subtracts <var>number_month</var> from the set month. If
               <var>number_month</var> is not present, it will default to 1.
               Similar to <a href="/api/subMonth">subMonth</a>.
 
@@ -1172,7 +1172,7 @@ api:
               Sets the zero-index UTC month to <var>number_month</var> (0 = Jan ... 11 = Dec)
 
       - title: addUTCMonth
-        description: Add a number of months from the current month
+        description: Add a number of months from the set month
         tags:
           - v0.1
           - math
@@ -1182,12 +1182,12 @@ api:
             returns: this
             version: 0.1
             description: |
-              Adds <var>number_month</var> from the current UTC month. If 
+              Adds <var>number_month</var> from the set UTC month. If 
               <var>number_month</var> is not present, it will default to 1
               Similar to <a href="/api/addMonth">addMonth</a>.
 
       - title: subUTCMonth
-        description: Subtract a number of UTC months from the current month
+        description: Subtract a number of UTC months from the set month
         tags:
           - v0.1
           - math
@@ -1197,7 +1197,7 @@ api:
             returns: this
             version: 0.1
             description: |
-              Subtracts <var>number_month</var> from the current UTC month. If 
+              Subtracts <var>number_month</var> from the set UTC month. If 
               <var>number_month</var> is not present, it will default to 1
               Similar to <a href="/api/subMonth">subMonth</a>.
 
@@ -1212,9 +1212,9 @@ api:
             returns: string
             version: 0.1
             description: |
-              Retrieves the current full month name.
-              For example, if the month is January (0), getMonthName will return
-              'January' in the default culture.
+              Retrieves the full month name. For example, if the month is 
+              January (0), getMonthName will return 'January' in the default 
+              culture (English).
 
       - title: getMonthName
         description: Get the abbreviated month name (Jan - Dec)
@@ -1227,9 +1227,9 @@ api:
             returns: string
             version: 0.1
             description: |
-              Retrieves the current month name, as the "abbreviated" version of 
-              the current month. For example, if the month is January (0), 
-              getMonthName will return 'Jan' in the default culture.
+              Retrieves the month name, as the "abbreviated" version of 
+              the month. For example, if the month is January (0), 
+              getMonthName will return 'Jan' in the default culture (English).
 
   - title: Instance Week
     functions: 
@@ -1244,13 +1244,13 @@ api:
             returns: number
             version: 0.1
             description: |
-              Gets the current week of the year (0 - 53)
+              Gets the week of the year (0 - 53)
 
           - signature: '.week( [number_week] )'
             returns: this
             version: 0.1
             description: |
-              Sets the current date to the monday beginning the week of 
+              Sets the date to the monday beginning the week of 
               <var>number_week</var>.
 
       - title: getWeek
@@ -1263,7 +1263,7 @@ api:
             returns: number
             version: 0.1
             description: |
-              Gets the current week of the year (0 - 53)
+              Gets the week of the year (0 - 53)
 
       - title: setWeek
         description: "Sets the week"
@@ -1275,11 +1275,11 @@ api:
             returns: this
             version: 0.1
             description: |
-              Sets the current date to the monday beginning the week of 
+              Sets the date to the monday beginning the week of 
               <var>number_week</var>.
 
       - title: addWeek
-        description: Add a number of weeks from the current week
+        description: Add a number of weeks from the week
         tags:
           - v0.2
           - math
@@ -1289,12 +1289,12 @@ api:
             returns: this
             version: 0.1
             description: |
-              Adds <var>number_week</var> from the current week. If 
+              Adds <var>number_week</var> from the set week. If 
               <var>number_week</var> is not present, it will default to 1. It 
               will also reset the day to the Monday of the new week.
 
       - title: subWeek
-        description: Subtract a number of weeks from the current week
+        description: Subtract a number of weeks from the set week
         tags:
           - v0.1
           - math
@@ -1304,12 +1304,12 @@ api:
             returns: this
             version: 0.1
             description: |
-              Subtracts <var>number_week</var> from the current week. If 
+              Subtracts <var>number_week</var> from the set week. If 
               <var>number_week</var> is not present, it will default to 1. It 
               will also reset the day to the Monday of the new week.
 
       - title: getWeekOrdinal
-        description: Get's the ordinal suffix of the current week
+        description: Get's the ordinal suffix of the set week
         tags:
           - v0.1
           - culture
@@ -1319,7 +1319,7 @@ api:
             returns: string
             version: 0.1
             description: |
-                Gets the current weeks ordinal suffix. In the default culture 
+                Gets the weeks ordinal suffix. In the default culture 
                 (English), this means either "th", "st", or "rd" is returned. 
                 For example, if <a href="/api/getWeek">getWeek()</a> returns 3,
                 then getWeekOrdinal() will return "rd".
@@ -1364,7 +1364,7 @@ api:
     functions: 
 
       - title: date
-        description: Gets or sets the current date
+        description: Gets or sets the date
         tags:
           - v0.1
         category: manipulation
@@ -1373,16 +1373,16 @@ api:
             returns: number
             version: 0.1
             description: |
-              Gets the current date.
+              Gets the date.
 
           - signature: '.date( number_date )'
             returns: this
             version: 0.1
             description: |
-              Sets the current date to <var>number_date</var>
+              Sets the date to <var>number_date</var>
 
       - title: getDate
-        description: Gets the current date
+        description: Gets the date
         tags:
           - v0.1
         category: properties
@@ -1391,10 +1391,10 @@ api:
             returns: number
             version: 0.1
             description: |
-              Gets the current date.
+              Gets the date.
 
       - title: setDate
-        description: Sets the current date
+        description: Sets the date
         tags:
           - v0.1
         category: manipulation
@@ -1403,10 +1403,10 @@ api:
             returns: this
             version: 0.1
             description: |
-              Sets the current date to <var>number_date</var>
+              Sets the date to <var>number_date</var>
 
       - title: addDate
-        description: Adds a number of days to the current date
+        description: Adds a number of days to the set date
         tags:
           - v0.1
           - math
@@ -1416,11 +1416,11 @@ api:
             returns: this
             version: 0.1
             description: |
-              Adds <var>number_date</var> from the current date. If 
+              Adds <var>number_date</var> from the set date. If 
               <var>number_date</var> is not present, it will default to 1.
 
       - title: addDate
-        description: Subtracts a number of dasy to the current date
+        description: Subtracts a number of dasy to the set date
         tags:
           - v0.1
           - math
@@ -1430,11 +1430,11 @@ api:
             returns: this
             version: 0.1
             description: |
-              Subtracts <var>number_date</var> from the current date. If 
+              Subtracts <var>number_date</var> from the set date. If 
               <var>number_date</var> is not present, it will default to 1.
 
       - title: UTCDate
-        description: Gets or sets the current UTC date
+        description: Gets or sets the UTC date
         tags:
           - v0.1
         category: manipulation
@@ -1443,16 +1443,16 @@ api:
             returns: number
             version: 0.1
             description: |
-              Gets the current UTC date.
+              Gets the UTC date.
 
           - signature: '.UTCDate( number_date )'
             returns: this
             version: 0.1
             description: |
-              Sets the current UTC date to <var>number_date</var>.
+              Sets the UTC date to <var>number_date</var>.
 
       - title: getUTCDate
-        description: Gets the current UTC date
+        description: Gets the UTC date
         tags:
           - v0.1
         category: properties
@@ -1461,7 +1461,7 @@ api:
             returns: number
             version: 0.1
             description: |
-              Gets the current UTC date.
+              Gets the UTC date.
 
       - title: setUTCDate
         description: 
@@ -1473,10 +1473,10 @@ api:
             returns: this
             version: 0.1
             description: |
-              Sets the current UTC date to <var>number_date</var>.
+              Sets the UTC date to <var>number_date</var>.
 
       - title: addUTCDate
-        description: Adds a number of days to the current UTC date
+        description: Adds a number of days to the set UTC date
         tags:
           - v0.1
           - math
@@ -1486,11 +1486,11 @@ api:
             returns: this
             version: 0.1
             description: |
-              Adds <var>number_date</var> from the current UTC date. If 
+              Adds <var>number_date</var> from the set UTC date. If 
               <var>number_date</var> is not present, it will default to 1.
 
       - title: subUTCDate
-        description: Subtracts a number of days to the current UTC date
+        description: Subtracts a number of days to the set UTC date
         tags:
           - v0.1
           - math
@@ -1500,11 +1500,11 @@ api:
             returns: this
             version: 0.1
             description: |
-              Subtracts <var>number_date</var> from the current date. If 
+              Subtracts <var>number_date</var> from the set date. If 
               <var>number_date</var> is not present, it will default to 1.
 
       - title: getDateOrdinal
-        description: Get's the ordinal suffix of the current date
+        description: Get's the ordinal suffix of the set date
         tags:
           - v0.1
           - culture
@@ -1514,7 +1514,7 @@ api:
             returns: string
             version: 0.1
             description: |
-                Gets the current dates ordinal suffix. In the default culture 
+                Gets the set dates ordinal suffix. In the default culture 
                 (English), this means either "th", "st", or "rd" is returned. 
                 For example, if <a href="/api/getDate">getDate()</a> returns 3,
                 then getDateOrdinal() will return "rd".
@@ -1523,7 +1523,7 @@ api:
     functions:
 
       - title: day
-        description: Sets or gets the current day of week (0 = Sun - 6 = Sat)
+        description: Sets or gets the day of week (0 = Sun - 6 = Sat)
         tags:
           - v0.1
         category: manipulation
@@ -1532,18 +1532,18 @@ api:
             returns: number
             version: 0.1
             description: |
-              Gets the current day of the week, from 0 to 6, 0 being Sunday, and
+              Gets the day of the week, from 0 to 6, 0 being Sunday, and
               6 being Saturday.
 
           - signature: '.day( number_day )'
             returns: this
             version: 0.1
             description: |
-              Sets the current day of the week, from 0 to 6, 0 being Sunday, and
+              Sets the day of the week, from 0 to 6, 0 being Sunday, and
               6 being Saturday.
 
       - title: getDay
-        description: Gets the current day of week (0 = Sun - 6 = Sat)
+        description: Gets the day of week (0 = Sun - 6 = Sat)
         tags:
           - v0.1
         category: properties
@@ -1552,11 +1552,11 @@ api:
             returns: number
             version: 0.1
             description: |
-              Gets the current day of the week, from 0 to 6, 0 being Sunday, and
+              Gets the day of the week, from 0 to 6, 0 being Sunday, and
               6 being Saturday.
 
       - title: setDay
-        description: Sets the current day of week (0 = Sun - 6 = Sat)
+        description: Sets the day of week (0 = Sun - 6 = Sat)
         tags:
           - v0.2
         category: manipulation
@@ -1565,11 +1565,11 @@ api:
             returns: this
             version: 0.2
             description: |
-              Sets the current day of the week, from 0 to 6, 0 being Sunday, and
+              Sets the day of the week, from 0 to 6, 0 being Sunday, and
               6 being Saturday.
 
       - title: addDay
-        description: Adds a number of days to the current day
+        description: Adds a number of days to the set day
         tags:
           - v0.1
           - math
@@ -1579,11 +1579,11 @@ api:
             returns: this
             version: 0.1
             description: |
-              Adds <var>number_day</var> from the current day. If 
+              Adds <var>number_day</var> from the set day. If 
               <var>number_day</var> is not present, it will default to 1.
 
       - title: subDay
-        description: Subtracts a number of days to the current day
+        description: Subtracts a number of days to the set day
         tags:
           - v0.1
           - math
@@ -1593,11 +1593,11 @@ api:
             returns: this
             version: 0.1
             description: |
-              Subtracts <var>number_day</var> from the current day. If 
+              Subtracts <var>number_day</var> from the set day. If 
               <var>number_day</var> is not present, it will default to 1.
 
       - title: ISODay
-        description: Sets or gets the current day of week (1 = Mon - 7 = Sun)
+        description: Sets or gets the day of week (1 = Mon - 7 = Sun)
         tags:
           - v0.1
         category: manipulation
@@ -1606,18 +1606,18 @@ api:
             returns: number
             version: 0.1
             description: |
-              Gets the current day of the week, from 1 to 7, 1 being Monday, and
+              Gets the day of the week, from 1 to 7, 1 being Monday, and
               7 being Sunday.
 
           - signature: '.ISODay( number_day )'
             returns: this
             version: 0.1
             description: |
-              Sets the current day of the week, from 1 to 7, 1 being Monday, and
+              Sets the day of the week, from 1 to 7, 1 being Monday, and
               7 being Sunday.
 
       - title: getISODay
-        description: Gets the current day of week (1 = Mon - 7 = Sun)
+        description: Gets the day of week (1 = Mon - 7 = Sun)
         tags:
           - v0.1
         category: properties
@@ -1626,11 +1626,11 @@ api:
             returns: number
             version: 0.1
             description: |
-              Gets the current day of the week, from 1 to 7, 1 being Monday, and
+              Gets the day of the week, from 1 to 7, 1 being Monday, and
               7 being Sunday.
 
       - title: setISODay
-        description: Sets the current day of week (1 = Mon - 7 = Sun)
+        description: Sets the day of week (1 = Mon - 7 = Sun)
         tags:
           - v0.1
         category: manipulation
@@ -1639,11 +1639,11 @@ api:
             returns: this
             version: 0.1
             description: |
-              Sets the current day of the week, from 1 to 7, 1 being Monday, and
+              Sets the day of the week, from 1 to 7, 1 being Monday, and
               7 being Sunday.
 
       - title: addISODay
-        description: Adds a number of days to the current day
+        description: Adds a number of days to the set day
         tags:
           - v0.1
           - math
@@ -1653,12 +1653,12 @@ api:
             returns: this
             version: 0.1
             description: |
-              Adds <var>number_day</var> from the current day. If 
+              Adds <var>number_day</var> from the set day. If 
               <var>number_day</var> is not present, it will default to 1.
               Similar to <a href="/api/addDay">addDay</a>
 
       - title: subISODay
-        description: Subtracts a number of days to the current day
+        description: Subtracts a number of days to the set day
         tags:
           - v0.1
           - math
@@ -1668,12 +1668,12 @@ api:
             returns: this
             version: 0.1
             description: |
-              Subtracts <var>number_day</var> from the current day. If 
+              Subtracts <var>number_day</var> from the set day. If 
               <var>number_day</var> is not present, it will default to 1.
               Similar to <a href="/api/addDay">addDay</a>
 
       - title: UTCDay
-        description: Sets or gets the current UTC day of week (0 = Sun - 6 = Sat)
+        description: Sets or gets the UTC day of week (0 = Sun - 6 = Sat)
         tags:
           - v0.1
         category: manipulation
@@ -1682,18 +1682,18 @@ api:
             returns: number
             version: 0.1
             description: |
-              Gets the current UTC day of the week, from 0 to 6, 0 being Sunday,
+              Gets the UTC day of the week, from 0 to 6, 0 being Sunday,
               and 6 being Saturday.
 
           - signature: '.UTCDay( number_day )'
             returns: this
             version: 0.1
             description: |
-              Sets the current UTC day of the week, from 0 to 6, 0 being Sunday,
+              Sets the UTC day of the week, from 0 to 6, 0 being Sunday,
               and 6 being Saturday.
 
       - title: getUTCDay
-        description: Gets the current day of week (0 = Sun - 6 = Sat)
+        description: Gets the day of week (0 = Sun - 6 = Sat)
         tags:
           - v0.1
         category: properties
@@ -1702,11 +1702,11 @@ api:
             returns: number
             version: 0.1
             description: |
-              Gets the current UTC day of the week, from 0 to 6, 0 being Sunday,
+              Gets the UTC day of the week, from 0 to 6, 0 being Sunday,
               and 6 being Saturday.
 
       - title: setUTCDay
-        description: Sets the current day of week (0 = Sun - 6 = Sat)
+        description: Sets the day of week (0 = Sun - 6 = Sat)
         tags:
           - v0.1
         category: manipulation
@@ -1715,11 +1715,11 @@ api:
             returns: this
             version: 0.1
             description: |
-              Sets the current UTC day of the week, from 0 to 6, 0 being Sunday,
+              Sets the UTC day of the week, from 0 to 6, 0 being Sunday,
               and 6 being Saturday.
 
       - title: addUTCDay
-        description: Adds a number of UTC days to the current UTC day
+        description: Adds a number of UTC days to the set UTC day
         tags:
           - v0.1
           - math
@@ -1729,11 +1729,11 @@ api:
             returns: this
             version: 0.1
             description: |
-              Adds <var>number_day</var> from the current UTC day. If 
+              Adds <var>number_day</var> from the set UTC day. If 
               <var>number_day</var> is not present, it will default to 1.
 
       - title: subUTCDay
-        description: Subtracts a number of UTC days to the current day
+        description: Subtracts a number of UTC days to the set day
         tags:
           - v0.1
           - math
@@ -1743,11 +1743,11 @@ api:
             returns: this
             version: 0.1
             description: |
-              Subtracts <var>number_day</var> from the current UTC day. If 
+              Subtracts <var>number_day</var> from the set UTC day. If 
               <var>number_day</var> is not present, it will default to 1.
 
       - title: UTCISODay
-        description: Sets or gets the current UTC day of week (1 = Mon - 7 = Sun)
+        description: Sets or gets the UTC day of week (1 = Mon - 7 = Sun)
         tags:
           - v0.1
         category: manipulation
@@ -1756,18 +1756,18 @@ api:
             returns: number
             version: 0.1
             description: |
-              Gets the current UTC day of the week, from 1 to 7, 1 being Monday,
+              Gets the UTC day of the week, from 1 to 7, 1 being Monday,
               and 7 being Sunday.
 
           - signature: '.UTCISODay( number_day )'
             returns: this
             version: 0.1
             description: |
-              Sets the current UTC day of the week, from 1 to 7, 1 being Monday,
+              Sets the UTC day of the week, from 1 to 7, 1 being Monday,
               and 7 being Sunday.
 
       - title: getUTCISODay
-        description: Gets the current UTC day of week (1 = Mon - 7 = Sun)
+        description: Gets the UTC day of week (1 = Mon - 7 = Sun)
         tags:
           - v0.1
         category: properties
@@ -1776,11 +1776,11 @@ api:
             returns: number
             version: 0.1
             description: |
-              Gets the current UTC day of the week, from 1 to 7, 1 being Monday,
+              Gets the UTC day of the week, from 1 to 7, 1 being Monday,
               and 7 being Sunday.
 
       - title: setUTCISODay
-        description: Sets the current UTC day of week (1 = Mon - 7 = Sun)
+        description: Sets the UTC day of week (1 = Mon - 7 = Sun)
         tags:
           - v0.1
         category: manipulation
@@ -1789,11 +1789,11 @@ api:
             returns: this
             version: 0.1
             description: |
-              Sets the current UTC day of the week, from 1 to 7, 1 being Monday,
+              Sets the UTC day of the week, from 1 to 7, 1 being Monday,
               and 7 being Sunday.
 
       - title: addUTCISODay
-        description: Adds a number of UTC days to the current UTC day
+        description: Adds a number of UTC days to the set UTC day
         tags:
           - v0.1
           - math
@@ -1803,12 +1803,12 @@ api:
             returns: this
             version: 0.1
             description: |
-              Adds <var>number_day</var> from the current UTC day. If 
+              Adds <var>number_day</var> from the set UTC day. If 
               <var>number_day</var> is not present, it will default to 1.
               Similar to <a href="/api/addUTCDay">addUTCDay</a>
 
       - title: subUTCISODay
-        description: Subtracts a number of UTC days to the current UTC day
+        description: Subtracts a number of UTC days to the set UTC day
         tags:
           - v0.1
           - math
@@ -1818,7 +1818,7 @@ api:
             returns: this
             version: 0.1
             description: |
-              Subtracts <var>number_day</var> from the current UTC day. If 
+              Subtracts <var>number_day</var> from the set UTC day. If 
               <var>number_day</var> is not present, it will default to 1.
               Similar to <a href="/api/addUTCDay">addUTCDay</a>
 
@@ -1832,13 +1832,13 @@ api:
             returns: number
             version: 0.1
             description: |
-              Gets the current day of the year, as a number from 1 to 366.
+              Gets the day of the year, as a number from 1 to 366.
 
           - signature: '.dayOfYear( [number_day] )'
             returns: this
             version: 0.1
             description: |
-              Sets the current day of the year to <var>number_day</var>, which 
+              Sets the day of the year to <var>number_day</var>, which 
               should be a number from 1 to 366.
 
       - title: getDayOfYear
@@ -1851,7 +1851,7 @@ api:
             returns: number
             version: 0.1
             description: |
-              Gets the current day of the year, as a number from 1 to 366.
+              Gets the day of the year, as a number from 1 to 366.
 
       - title: setDayOfYear
         description: Sets the day of the year (1 to 366)
@@ -1863,11 +1863,11 @@ api:
             returns: this
             version: 0.1
             description: |
-              Sets the current day of the year to <var>number_day</var>, which 
+              Sets the day of the year to <var>number_day</var>, which 
               should be a number from 1 to 366.
 
       - title: addDayOfYear
-        description: Adds a number of days to the current day of the year
+        description: Adds a number of days to the set day of the year
         tags:
           - v0.1
           - math
@@ -1877,11 +1877,11 @@ api:
             returns: this
             version: 0.1
             description: |
-              Adds <var>number_day</var> to the current day of the year. If 
+              Adds <var>number_day</var> to the set day of the year. If 
               <var>number_day</var> is not present, it will default to 1.
 
       - title: subDayOfYear
-        description: Subtracts a number of days to the current day of the year
+        description: Subtracts a number of days to the set day of the year
         tags:
           - v0.1
           - math
@@ -1891,7 +1891,7 @@ api:
             returns: this
             version: 0.1
             description: |
-              Subtracts <var>number_day</var> to the current day of the year. If 
+              Subtracts <var>number_day</var> to the set day of the year. If 
               <var>number_day</var> is not present, it will default to 1.
 
       - title: getLastDayOfMonth
@@ -1919,7 +1919,7 @@ api:
             returns: string
             version: 0.1
             description: |
-              Gets the name of the current day, as a shortened version of the 
+              Gets the name of the day, as a shortened version of the 
               day. For the English locale, this is a 3 letter representation of 
               the full day name, from 'Mon' to 'Sun'
 
@@ -1934,7 +1934,7 @@ api:
             returns: this
             version: 0.1
             description: |
-              Gets the name of the current day, as the full version of the 
+              Gets the name of the day, as the full version of the 
               day. For the English locale, this is from 'Monday' to 'Sunday'
 
       - title: eachDayOfWeek
