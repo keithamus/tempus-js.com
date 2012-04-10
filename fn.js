@@ -3,11 +3,18 @@
     ,   log = window.console && window.console.log ?
         function () { window.console.log.apply(console, arguments); } : function () {};    
 
-    $.getJSON('/api.json', {}, function (data) {
-        log('Loaded api version ' + data.version);
-        apiJSON = data.methods;
-        window.apiJSON = apiJSON;
-    });
+    try {
+        window.apiJSON = JSON.parse(sessionStorage['api']);
+    } catch(e) {}
+
+    if (({}).toString.call(window.apiJSON) !== '[object Array]' || window.apiJSON.length < 1) {
+        $.getJSON('/api.json', {}, function (data) {
+            log('Loaded api version ' + data.version);
+            apiJSON = data.methods;
+            window.apiJSON = apiJSON;
+            sessionStorage['api'] = JSON.stringify(apiJSON);
+        });
+    }
 
     function selectionOnElements(el) {
         el = $(el);
