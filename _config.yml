@@ -24,6 +24,7 @@ api_version: 0.2
 api:
   - title: Top Level
     functions: 
+
       - title: Tempus
         description: 'Accepts a date, and returns that date as a Tempus object'
         category: core
@@ -116,6 +117,7 @@ api:
 
   - title: Utility
     functions: 
+
       - title: realTypeOf
         description: "Returns the type of an object, more precise than 'typeof'"
         tags:
@@ -128,6 +130,7 @@ api:
             description: |
                 Returns the real type of <var>mixed_variable</var>, as 
                 a lower case string, for example 'object', 'array', 'regexp'
+
       - title: arrIndexOf
         description: "Returns the index of which a variable appears in an array"
         tags:
@@ -142,6 +145,7 @@ api:
                 appears in <var>array_haystack</var>. If 
                 <var>mixed_needle</var> is not found, <strong>-1</strong>
                 is returned
+
       - title: getOrdinal
         description: "Returns the ordinal suffix of a given number"
         tags:
@@ -155,6 +159,7 @@ api:
             description: |
                 Returns the ordinal suffix of <var>number</var>, for example, if 
                 <var>number</var> is 1, the string returned is 'st'.
+
       - title: stringPad
         description: "Returns a string padded with extra leading characters"
         tags:
@@ -172,6 +177,7 @@ api:
 
   - title: Instance Core
     functions: 
+
       - title: set
         description: Sets the Tempus instances' date to the arguments passed
         tags:
@@ -269,6 +275,7 @@ api:
             version: 0.1
             description: |
               Returns the seconds since Epoch (Thu Jan 01 1970 00:00:00 GMT+0000)
+
           - signature: '.timeStamp( number_of_seconds_since_epoch )'
             returns: this
             version: 0.1
@@ -340,6 +347,7 @@ api:
             version: 0.1
             description: |
               Returns the milliseconds since Epoch (Thu Jan 01 1970 00:00:00 GMT+0000)
+
           - signature: '.time( number_of_milliseconds_since_epoch )'
             returns: this
             version: 0.1
@@ -402,6 +410,7 @@ api:
 
   - title: Instance Timezone
     functions: 
+
       - title: timezone
         description: "Gets or sets the timezone as a string, e.g '+0100'"
         tags:
@@ -609,6 +618,7 @@ api:
 
   - title: Instance Year Methods
     functions: 
+
       - title: century
         description: "Gets or sets the century"
         tags:
@@ -976,6 +986,7 @@ api:
 
   - title: Instance Month
     functions: 
+
       - title: month
         description: "Gets or sets the month"
         tags:
@@ -1047,7 +1058,7 @@ api:
               <var>number_month</var> is not present, it will default to 1
 
       - title: oneIndexedMonth
-        description: "Gets or sets the month as a 1-indexed int (1-12)"
+        description: "Gets or sets the month as a 1-indexed integer (1-12)"
         tags:
           - v0.1
         category: manipulation
@@ -1065,7 +1076,7 @@ api:
               Sets the 1-index month to <var>number_month</var> (1 = Jan ... 12 = Dec)
 
       - title: getOneIndexedMonth
-        description: "Gets the month as a 1-indexed int (1-12)"
+        description: "Gets the month as a 1-indexed integer (1-12)"
         tags:
           - v0.1
         category: properties
@@ -1077,7 +1088,7 @@ api:
               Gets the 1-index month (1 = Jan ... 12 = Dec)
 
       - title: setOneIndexedMonth
-        description: "Sets the month, as a 1-indexed int (1-12)"
+        description: "Sets the month, as a 1-indexed integer (1-12)"
         tags:
           - v0.1
         category: manipulation
@@ -1222,6 +1233,7 @@ api:
 
   - title: Instance Week
     functions: 
+
       - title: week
         description: "Gets or sets the week"
         tags:
@@ -1350,6 +1362,7 @@ api:
 
   - title: Instance Date Methods
     functions: 
+
       - title: date
         description: Gets or sets the current date
         tags:
@@ -1386,7 +1399,7 @@ api:
           - v0.1
         category: manipulation
         signatures:
-          - signature: 'setDate( number_date )'
+          - signature: '.setDate( number_date )'
             returns: this
             version: 0.1
             description: |
