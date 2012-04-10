@@ -1023,7 +1023,7 @@ api:
           - v0.1
         category: manipulation
         signatures:
-          - signature: '.setMonth( [number_month] )'
+          - signature: '.setMonth( number_month )'
             returns: this
             version: 0.1
             description: |
@@ -1093,7 +1093,7 @@ api:
           - v0.1
         category: manipulation
         signatures:
-          - signature: '.setOneIndexedMonth( [number_month] )'
+          - signature: '.setOneIndexedMonth( number_month )'
             returns: this
             version: 0.1
             description: |
@@ -1165,7 +1165,7 @@ api:
           - v0.1
         category: manipulation
         signatures:
-          - signature: '.setUTCMonth( [number_month] )'
+          - signature: '.setUTCMonth( number_month )'
             returns: this
             version: 0.1
             description: |
@@ -1271,7 +1271,7 @@ api:
           - v0.2
         category: manipulation
         signatures:
-          - signature: '.setWeek( [number_week] )'
+          - signature: '.setWeek( number_week )'
             returns: this
             version: 0.1
             description: |
