@@ -3075,3 +3075,318 @@ api:
               it will default to 1. For now, microseconds is emulated by adding 
               three 0s to milliseconds, until JavaScript supports a higher 
               resolution of time.
+
+  - title: Instance String Methods
+    functions: 
+
+      - title: toString
+        description: Returns a string representation of the date 
+        tags:
+          - v0.1
+        category: string
+        signatures:
+          - signature: '.toString( )'
+            returns: string
+            version: 0.1
+            description: |
+              Returns a string representation of the date, for example
+              "Mon Dec 31 2012 23:59:59 +0000"
+
+          - signature: '.toString( string_format )'
+            returns: string
+            version: 0.1
+            description: |
+              Returns a string representation of the date, based on the 
+              <var>string_format</var>.
+
+          - signature: '.toString( string_format_constant_name )'
+            returns: string
+            version: 0.1
+            description: |
+              Returns a string representation of the date, where 
+              <var>string_format_constant_name</var> is a predefined string 
+              format.
+
+      - title: toJSON
+        description: Returns a string representation of the date for use in JSON
+        tags:
+          - v0.1
+        category: string
+        signatures:
+          - signature: '.toJSON( )'
+            returns: string
+            version: 0.1
+            description: |
+              Returns a string representation of the date for use in JSON, 
+              for example "2012-12-31T23:59:59.000+0000". The output is the same
+              as <a href="/api/toISO8601String">toISO8601String</a>, or 
+              <a href="/api/toString">toString</a><code>('ISO8601')</code>
+
+      - title: toTimeString
+        description: Returns a string representation of the time
+        tags:
+          - v0.1
+        category: string
+        signatures:
+          - signature: '.toTimeString( )'
+            returns: string
+            version: 0.1
+            description: |
+              Returns a string representation of the time and timezone, for 
+              example "23:59:59 GMT+0000 (GMT)"
+
+      - title: toLocaleString
+        description: Returns a string representation of the datetime in the users locale
+        tags:
+          - v0.1
+        category: string
+        signatures:
+          - signature: '.toLocaleString( )'
+            returns: string
+            version: 0.1
+            description: |
+              Returns a string representation of the datetime in the users 
+              locale, for example "Mon Dec 31 2012 23:59:59 GMT+0000 (GMT)". 
+              However, by design this can output different looking string based 
+              on the users locale, operating system and browser
+
+      - title: toUTCString
+        description: Returns a UTC string representation of the date 
+        tags:
+          - v0.1
+        category: string
+        signatures:
+          - signature: '.toUTCString( )'
+            returns: string
+            version: 0.1
+            description: |
+              Returns a UTC string representation of the date, for example
+              "Mon, 31 Dec 2012 23:59:59 GMT". The string will always end in 
+              GMT.
+
+      - title: toLocaleTimeString
+        description: Returns a string representation of the time in the users locale
+        tags:
+          - v0.1
+        category: string
+        signatures:
+          - signature: '.toLocaleTimeString( )'
+            returns: string
+            version: 0.1
+            description: |
+              Returns a string representation of the time in the users locale, 
+              for example "23:59:59". However, by design this can output 
+              different looking string based on the users locale, operating 
+              system and browser
+
+      - title: toGMTString
+        description: Returns a GMT string representation of the date 
+        tags:
+          - v0.1
+        category: string
+        signatures:
+          - signature: '.toGMTString( )'
+            returns: string
+            version: 0.1
+            description: |
+              Returns a UTC string representation of the date, for example
+              "Mon, 31 Dec 2012 23:59:59 GMT". The string will always end in 
+              GMT.
+
+      - title: toLocaleDateString
+        description: Returns a string representation of the date in the users locale
+        tags:
+          - v0.1
+        category: string
+        signatures:
+          - signature: '.toLocaleTimeString( )'
+            returns: string
+            version: 0.1
+            description: |
+              Returns a string representation of the time in the users locale, 
+              for example "Monday, December 31, 2012". However, by design this 
+              can output different looking string based on the users locale,
+              operating system and browser
+
+      - title: toDateString
+        description: Returns a string representation of the date 
+        tags:
+          - v0.1
+        category: string
+        signatures:
+          - signature: '.toDateString( )'
+            returns: string
+            version: 0.1
+            description: |
+              Returns a string representation of the date, for example
+              "Mon Dec 31 2012"
+
+      - title: toISO8601String
+        description: Returns a ISO8601 string representation of the datetime
+        tags:
+          - v0.1
+        category: string
+        signatures:
+          - signature: '.toISO8601String( )'
+            returns: string
+            version: 0.1
+            description: |
+              Returns a ISO8601 string representation of the datetime, for 
+              example "2012-12-31T23:59:59.000+0000". This is the same as 
+              running <a href="/api/toJSON">toJSON</a>, or 
+              <a href="/api/toString">toString</a><code>('ISO8601')</code> 
+
+      - title: toISO8601DateString
+        description: Returns a ISO8601 string representation of the date 
+        tags:
+          - v0.1
+        category: string
+        signatures:
+          - signature: '.toISO8601DateString( )'
+            returns: string
+            version: 0.2
+            description: |
+              Returns a ISO8601 string representation of the date, for example
+              "2012-12-31". This is the same as running 
+              <a href="/api/toString">toString</a><code>('ISO8601Date')</code>
+
+
+      - title: toRFC1036String
+        description: Returns a RFC1036 string representation of the date 
+        tags:
+          - v0.1
+        category: string
+        signatures:
+          - signature: '.toRFC1036String( )'
+            returns: string
+            version: 0.1
+            description: |
+              Returns an RFC1036 string representation of the date, for example
+              "Mon, 31 Dec 12 23:59:59 +0000". This is the same as running 
+              <a href="/api/toString">toString</a><code>('RFC1036')</code>
+
+      - title: toRFC822String
+        description: Returns a RFC822 string representation of the date 
+        tags:
+          - v0.1
+        category: string
+        signatures:
+          - signature: '.toRFC822String( )'
+            returns: string
+            version: 0.1
+            description: |
+              Returns an RFC822 string representation of the date, for example
+              "Mon, 31 Dec 12 23:59:59 +0000". This is the same as running 
+              <a href="/api/toString">toString</a><code>('RFC822')</code>
+
+      - title: toRFC850String
+        description: Returns a RFC850 string representation of the date 
+        tags:
+          - v0.1
+        category: string
+        signatures:
+          - signature: '.toRFC850String( )'
+            returns: string
+            version: 0.1
+            description: |
+              Returns an RFC850 string representation of the date, for example
+              "Monday, 31-Dec-12 23:59:59 +00:00". This is the same as running 
+              <a href="/api/toString">toString</a><code>('RFC850')</code>
+
+      - title: toRFC3339String
+        description: Returns a RFC3339 string representation of the date 
+        tags:
+          - v0.1
+        category: string
+        signatures:
+          - signature: '.toRFC3339String( )'
+            returns: string
+            version: 0.1
+            description: |
+              Returns an RFC3339 string representation of the date, for example
+              "2012-12-31T23:59:59+00:00". This is the same as running 
+              <a href="/api/toString">toString</a><code>('RFC3339')</code>
+
+      - title: toRFC1123String
+        description: Returns a RFC1123 string representation of the date 
+        tags:
+          - v0.1
+        category: string
+        signatures:
+          - signature: '.toRFC1123String( )'
+            returns: string
+            version: 0.1
+            description: |
+              Returns an RFC1123 string representation of the date, for example
+              "Mon, 31 Dec 2012 23:59:59 +0000". This is the same as running 
+              <a href="/api/toString">toString</a><code>('RFC1123')</code>
+
+      - title: toRFC2822String
+        description: Returns a RFC2822 string representation of the date 
+        tags:
+          - v0.1
+        category: string
+        signatures:
+          - signature: '.toRFC2822String( )'
+            returns: string
+            version: 0.1
+            description: |
+              Returns an RFC2822 string representation of the date, for example
+              "Mon, 31 Dec 2012 23:59:59 +0000". This is the same as running 
+              <a href="/api/toString">toString</a><code>('RFC2822')</code>
+
+      - title: toNCC1701String
+        description: Returns a NCC1701 string representation of the date 
+        tags:
+          - v0.1
+        category: string
+        signatures:
+          - signature: '.toNCC1701String( )'
+            returns: string
+            version: 0.1
+            description: |
+              Returns an NCC1701 2009 era stardate, for example "2012.366".
+              This is the same as running 
+              <a href="/api/toString">toString</a><code>('NCC1701')</code>
+
+      - title: toW3CString
+        description: Returns a W3C string representation of the date 
+        tags:
+          - v0.1
+        category: string
+        signatures:
+          - signature: '.toW3CString( )'
+            returns: string
+            version: 0.1
+            description: |
+              Returns an W3C string representation of the date, for example
+              "2012-12-31T23:59:59+00:00". This is the same as running 
+              <a href="/api/toString">toString</a><code>('W3C')</code>
+
+      - title: toRSSString
+        description: Returns a RSS string representation of the date 
+        tags:
+          - v0.1
+        category: string
+        signatures:
+          - signature: '.toRSSString( )'
+            returns: string
+            version: 0.1
+            description: |
+              Returns an RSS string representation of the date, for example
+              "Mon, 31 Dec 2012 23:59:59 +0000". This is the same as running 
+              <a href="/api/toString">toString</a><code>('RSS')</code>
+
+      - title: toCOOKIEString
+        description: Returns a COOKIE string representation of the date 
+        tags:
+          - v0.1
+        category: string
+        signatures:
+          - signature: '.toCOOKIEString( )'
+            returns: string
+            version: 0.1
+            description: |
+              Returns an COOKIE string representation of the date, for example
+              "Monday, 31-Dec-12 23:59:59 +00:00". This is the same as running 
+              <a href="/api/toString">toString</a><code>('COOKIE')</code>
