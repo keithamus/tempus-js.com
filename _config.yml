@@ -2162,3 +2162,298 @@ api:
               Sets the time to <var>string_time</var>, which is a representation
               of NN:NN:NN, for example to set the time to half past 12, 
               <var>string_time</var> should be '12:30:00'.
+
+  - title: Instance Hour Methods
+    functions: 
+
+      - title: hours
+        description: Sets or gets the hour of the day (0-23)
+        tags:
+          - v0.1
+        category: manipulation
+        signatures:
+          - signature: '.hours( )'
+            returns: number
+            version: 0.1
+            description: |
+              Gets the hour of the day, from 0 to 23.
+
+          - signature: '.hours( number_hours )'
+            returns: this
+            version: 0.1
+            description: |
+              Sets the hour of the day to <var>number_hours</var>, which should 
+              be a number from 0 to 23.
+
+      - title: getHours
+        description: Gets the hour of the day (0-23)
+        tags:
+          - v0.1
+        category: properties
+        signatures:
+          - signature: '.getHours( )'
+            returns: number
+            version: 0.1
+            description: |
+              Gets the hour of the day, from 0 to 23.
+
+      - title: setHours
+        description: Sets the hour of the day (0-23)
+        tags:
+          - v0.1
+        category: manipulation
+        signatures:
+          - signature: '.setHours( number_hours )'
+            returns: this
+            version: 0.1
+            description: |
+              Sets the hour of the day to <var>number_hours</var>, which should 
+              be a number from 0 to 23.
+
+      - title: addHours
+        description: Adds a number of hours to the hour of the day
+        tags:
+          - v0.1
+          - math
+        category: manipulation
+        signatures:
+          - signature: '.addHours( [number_hours] )'
+            returns: this
+            version: 0.1
+            description: |
+              Adds <var>number_hours</var> to the set hour of the day. If 
+              <var>number_hours</var> is not present, it will default to 1
+              
+      - title: subHours
+        description: Subtracts a number of hours from the hour of the day
+        tags:
+          - v0.1
+          - math
+        category: manipulation
+        signatures:
+          - signature: '.subHours( [number_hours] )'
+            returns: this
+            version: 0.1
+            description: |
+              Subtracts <var>number_hours</var> to the set hour of the day. If 
+              <var>number_hours</var> is not present, it will default to 1
+
+      - title: UTCHours
+        description: Sets or gets the UTC hour of the day (0-23)
+        tags:
+          - v0.1
+        category: manipulation
+        signatures:
+          - signature: '.UTCHours( )'
+            returns: number
+            version: 0.1
+            description: |
+              Gets the UTC hour of the day, from 0 to 23.
+
+          - signature: '.UTCHours( number_hours )'
+            returns: this
+            version: 0.1
+            description: |
+              Sets the UTC hour of the day to <var>number_hours</var>, which 
+              should be a number from 0 to 23.
+
+      - title: getUTCHours
+        description: Gets the UTC hour of the day (0-23)
+        tags:
+          - v0.1
+        category: properties
+        signatures:
+          - signature: '.getUTCHours( )'
+            returns: number
+            version: 0.1
+            description: |
+              Gets the UTC hour of the day, from 0 to 23.
+
+      - title: setUTCHours
+        description: Sets or gets the hour of the day (0-23)
+        tags:
+          - v0.1
+        category: manipulation
+        signatures:
+          - signature: '.setUTCHours( number_hours )'
+            returns: this
+            version: 0.1
+            description: |
+              Sets the UTC hour of the day to <var>number_hours</var>, which 
+              should be a number from 0 to 23.
+
+      - title: addUTCHours
+        description: Adds a number of hours to the UTC hour of the day
+        tags:
+          - v0.1
+          - math
+        category: manipulation
+        signatures:
+          - signature: '.addUTCHours( [number_hours] )'
+            returns: this
+            version: 0.1
+            description: |
+              Adds <var>number_hours</var> to the set UTC hour of the day. If 
+              <var>number_hours</var> is not present, it will default to 1
+              
+      - title: subUTCHours
+        description: Subtracts a number of hours from the UTC hour of the day
+        tags:
+          - v0.1
+          - math
+        category: manipulation
+        signatures:
+          - signature: '.subUTCHours( [number_hours] )'
+            returns: this
+            version: 0.1
+            description: |
+              Subtracts <var>number_hours</var> to the set hour of the day. If 
+              <var>number_hours</var> is not present, it will default to 1
+
+      - title: ordinalHours
+        description: Sets or gets the hour of the day (1-12)
+        tags:
+          - v0.1
+        category: manipulation
+        signatures:
+          - signature: '.ordinalHours( )'
+            returns: number
+            version: 0.1
+            description: |
+              Gets the hour of the day, from 1 to 12.
+
+          - signature: '.ordinalHours( number_hours )'
+            returns: this
+            version: 0.1
+            description: |
+              Sets the hour of the day to <var>number_hours</var>, which should 
+              be a number from 1 to 12.
+
+      - title: getOrdinalHours
+        description: Gets the hour of the day (1-12)
+        tags:
+          - v0.1
+        category: properties
+        signatures:
+          - signature: '.getOrdinalHours( )'
+            returns: number
+            version: 0.1
+            description: |
+              Gets the hour of the day, from 1 to 12.
+
+      - title: setOrdinalHours
+        description: Sets the hour of the day (1-12)
+        tags:
+          - v0.1
+        category: manipulation
+        signatures:
+          - signature: '.setOrdinalHours( number_hours )'
+            returns: this
+            version: 0.1
+            description: |
+              Sets the hour of the day to <var>number_hours</var>, which should 
+              be a number from 1 to 12.
+
+      - title: addOrdinalHours
+        description: Adds a number of hours to the hour of the day
+        tags:
+          - v0.1
+          - math
+        category: manipulation
+        signatures:
+          - signature: '.addOrdinalHours( [number_hours] )'
+            returns: this
+            version: 0.1
+            description: |
+              Adds <var>number_hours</var> to the set hour of the day. If 
+              <var>number_hours</var> is not present, it will default to 1.
+              See also <a href="/api/addHours">addHours</a>
+              
+      - title: subOrdinalHours
+        description: Subtracts a number of hours from the hour of the day
+        tags:
+          - v0.1
+          - math
+        category: manipulation
+        signatures:
+          - signature: '.subOrdinalHours( [number_hours] )'
+            returns: this
+            version: 0.1
+            description: |
+              Subtracts <var>number_hours</var> to the set hour of the day. If 
+              <var>number_hours</var> is not present, it will default to 1.
+              See also <a href="/api/addHours">subHours</a>
+
+      - title: UTCOrdinalHours
+        description: Sets or gets the UTC hour of the day (1-12)
+        tags:
+          - v0.1
+        category: manipulation
+        signatures:
+          - signature: '.UTCOrdinalHours( )'
+            returns: number
+            version: 0.1
+            description: |
+              Gets the UTC hour of the day, from 1 to 12.
+
+          - signature: '.UTCOrdinalHours( number_hours )'
+            returns: this
+            version: 0.1
+            description: |
+              Sets the UTC hour of the day to <var>number_hours</var>, which 
+              should be a number from 1 to 12.
+
+      - title: getUTCOrdinalHours
+        description: Gets the UTC hour of the day (1-12)
+        tags:
+          - v0.1
+        category: properties
+        signatures:
+          - signature: '.getUTCOrdinalHours( )'
+            returns: number
+            version: 0.1
+            description: |
+              Gets the UTC hour of the day, from 1 to 12.
+
+      - title: setUTCOrdinalHours
+        description: Sets or gets the hour of the day (1-12)
+        tags:
+          - v0.1
+        category: manipulation
+        signatures:
+          - signature: '.setUTCOrdinalHours( number_hours )'
+            returns: this
+            version: 0.1
+            description: |
+              Sets the UTC hour of the day to <var>number_hours</var>, which 
+              should be a number from 1 to 12.
+
+      - title: addUTCOrdinalHours
+        description: Adds a number of hours to the UTC hour of the day
+        tags:
+          - v0.1
+          - math
+        category: manipulation
+        signatures:
+          - signature: '.addUTCOrdinalHours( [number_hours] )'
+            returns: this
+            version: 0.1
+            description: |
+              Adds <var>number_hours</var> to the set UTC hour of the day. If 
+              <var>number_hours</var> is not present, it will default to 1.
+              See also <a href="/api/addUTCHours">addUTCHours</a>
+              
+      - title: subUTCOrdinalHours
+        description: Subtracts a number of hours from the UTC hour of the day
+        tags:
+          - v0.1
+          - math
+        category: manipulation
+        signatures:
+          - signature: '.subUTCOrdinalHours( [number_hours] )'
+            returns: this
+            version: 0.1
+            description: |
+              Subtracts <var>number_hours</var> to the set hour of the day. If 
+              <var>number_hours</var> is not present, it will default to 1.
+              See also <a href="/api/subUTCHours">subUTCHours</a>
