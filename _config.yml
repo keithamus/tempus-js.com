@@ -2604,3 +2604,474 @@ api:
             description: |
               Subtracts <var>number_minutes</var> to the set UTC minutes. If 
               <var>number_minutes</var> is not present, it will default to 1.
+
+  - title: Instance Second Methods
+    functions: 
+
+      - title: seconds
+        description: Gets or sets the seconds (0 to 59)
+        tags:
+          - v0.1
+        category: manipulation
+        signatures:
+          - signature: '.seconds( )'
+            returns: number
+            version: 0.1
+            description: |
+              Gets the seconds (0 to 59)
+
+          - signature: '.seconds( number_seconds )'
+            returns: this
+            version: 0.1
+            description: |
+              Sets the seconds to <var>number_seconds</var>, which should be a
+              number between 0 and 59
+
+      - title: getSeconds
+        description: Gets the seconds (0 to 59)
+        tags:
+          - v0.1
+        category: properties
+        signatures:
+          - signature: '.getSeconds( )'
+            returns: number
+            version: 0.1
+            description: |
+              Gets the seconds (0 to 59)
+
+      - title: setSeconds
+        description: Sets the seconds (0 to 59)
+        tags:
+          - v0.1
+        category: manipulation
+        signatures:
+          - signature: '.setSeconds( number_seconds )'
+            returns: this
+            version: 0.1
+            description: |
+              Sets the seconds to <var>number_seconds</var>, which should be a
+              number between 0 and 59
+
+      - title: addSeconds
+        description: Adds a number of seconds to the set seconds
+        tags:
+          - v0.1
+          - math
+        category: manipulation
+        signatures:
+          - signature: '.addSeconds( [number_seconds] )'
+            returns: this
+            version: 0.1
+            description: |
+              Adds <var>number_seconds</var> to the set Seconds. If 
+              <var>number_seconds</var> is not present, it will default to 1.
+
+      - title: subSeconds
+        description: Subtracts a number of seconds to the set seconds
+        tags:
+          - v0.1
+          - math
+        category: manipulation
+        signatures:
+          - signature: '.subSeconds( [number_seconds] )'
+            returns: this
+            version: 0.1
+            description: |
+              Subtracts <var>number_seconds</var> to the set Seconds. If 
+              <var>number_seconds</var> is not present, it will default to 1.
+
+      - title: UTCSeconds
+        description: Gets or sets the UTC seconds (0 to 59)
+        tags:
+          - v0.1
+        category: manipulation
+        signatures:
+          - signature: '.UTCSeconds( )'
+            returns: number
+            version: 0.1
+            description: |
+              Gets the UTC seconds (0 to 59)
+
+          - signature: '.UTCSeconds( number_seconds )'
+            returns: this
+            version: 0.1
+            description: |
+              Sets the UTC seconds to <var>number_seconds</var>, which should be
+              a number between 0 and 59
+
+      - title: getUTCSeconds
+        description: Gets the UTC seconds (0 to 59)
+        tags:
+          - v0.1
+        category: properties
+        signatures:
+          - signature: '.getUTCSeconds( )'
+            returns: number
+            version: 0.1
+            description: |
+              Gets the UTC seconds (0 to 59)
+
+      - title: setUTCSeconds
+        description: Sets the UTC seconds (0 to 59)
+        tags:
+          - v0.1
+        category: manipulation
+        signatures:
+          - signature: '.setUTCSeconds( number_seconds )'
+            returns: this
+            version: 0.1
+            description: |
+              Sets the UTC seconds to <var>number_seconds</var>, which should be
+              a number between 0 and 59
+
+      - title: addUTCSeconds
+        description: Adds a number of seconds to the set UTC seconds
+        tags:
+          - v0.1
+          - math
+        category: manipulation
+        signatures:
+          - signature: '.addUTCSeconds( [number_seconds] )'
+            returns: this
+            version: 0.1
+            description: |
+              Adds <var>number_seconds</var> to the set UTC seconds. If 
+              <var>number_seconds</var> is not present, it will default to 1.
+
+      - title: subUTCSeconds
+        description: Subtracts a number of seconds to the set UTC seconds
+        tags:
+          - v0.1
+          - math
+        category: manipulation
+        signatures:
+          - signature: '.subUTCSeconds( [number_seconds] )'
+            returns: this
+            version: 0.1
+            description: |
+              Subtracts <var>number_seconds</var> to the set UTC seconds. If 
+              <var>number_seconds</var> is not present, it will default to 1.
+
+  - title: Instance Millisecond Methods
+    functions: 
+
+      - title: milliseconds
+        description: Gets or sets the milliseconds (0 to 999)
+        tags:
+          - v0.1
+        category: manipulation
+        signatures:
+          - signature: '.milliseconds( )'
+            returns: number
+            version: 0.1
+            description: |
+              Gets the milliseconds (0 to 999)
+
+          - signature: '.milliseconds( number_milliseconds )'
+            returns: this
+            version: 0.1
+            description: |
+              Sets the milliseconds to <var>number_milliseconds</var>, which 
+              should be a number between 0 and 999
+
+      - title: getMilliseconds
+        description: Gets the milliseconds (0 to 999)
+        tags:
+          - v0.1
+        category: properties
+        signatures:
+          - signature: '.getMilliseconds( )'
+            returns: number
+            version: 0.1
+            description: |
+              Gets the milliseconds (0 to 999)
+
+      - title: setMilliseconds
+        description: Sets the milliseconds (0 to 999)
+        tags:
+          - v0.1
+        category: manipulation
+        signatures:
+          - signature: '.setMilliseconds( number_milliseconds )'
+            returns: this
+            version: 0.1
+            description: |
+              Sets the milliseconds to <var>number_milliseconds</var>, which 
+              should be a number between 0 and 999
+
+      - title: addMilliseconds
+        description: Adds a number of milliseconds to the set milliseconds
+        tags:
+          - v0.1
+          - math
+        category: manipulation
+        signatures:
+          - signature: '.addMilliseconds( [number_milliseconds] )'
+            returns: this
+            version: 0.1
+            description: |
+              Adds <var>number_milliseconds</var> to the set milliseconds. If 
+              <var>number_milliseconds</var> is not present, it will default to
+              1.
+
+      - title: subMilliseconds
+        description: Subtracts a number of milliseconds to the set milliseconds
+        tags:
+          - v0.1
+          - math
+        category: manipulation
+        signatures:
+          - signature: '.subMilliseconds( [number_milliseconds] )'
+            returns: this
+            version: 0.1
+            description: |
+              Subtracts <var>number_milliseconds</var> to the set milliseconds. 
+              If <var>number_milliseconds</var> is not present, it will default
+              to 1.
+
+      - title: UTCMilliseconds
+        description: Gets or sets the UTC milliseconds (0 to 999)
+        tags:
+          - v0.1
+        category: manipulation
+        signatures:
+          - signature: '.UTCMilliseconds( )'
+            returns: number
+            version: 0.1
+            description: |
+              Gets the UTC milliseconds (0 to 999)
+
+          - signature: '.UTCMilliseconds( number_milliseconds )'
+            returns: this
+            version: 0.1
+            description: |
+              Sets the UTC milliseconds to <var>number_milliseconds</var>, which should be
+              a number between 0 and 999
+
+      - title: getUTCMilliseconds
+        description: Gets the UTC milliseconds (0 to 999)
+        tags:
+          - v0.1
+        category: properties
+        signatures:
+          - signature: '.getUTCMilliseconds( )'
+            returns: number
+            version: 0.1
+            description: |
+              Gets the UTC milliseconds (0 to 999)
+
+      - title: setUTCMilliseconds
+        description: Sets the UTC milliseconds (0 to 999)
+        tags:
+          - v0.1
+        category: manipulation
+        signatures:
+          - signature: '.setUTCMilliseconds( number_milliseconds )'
+            returns: this
+            version: 0.1
+            description: |
+              Sets the UTC milliseconds to <var>number_milliseconds</var>, which should be
+              a number between 0 and 999
+
+      - title: addUTCMilliseconds
+        description: Adds a number of Milliseconds to the set UTC milliseconds
+        tags:
+          - v0.1
+          - math
+        category: manipulation
+        signatures:
+          - signature: '.addUTCMilliseconds( [number_milliseconds] )'
+            returns: this
+            version: 0.1
+            description: |
+              Adds <var>number_milliseconds</var> to the set UTC milliseconds. If 
+              <var>number_milliseconds</var> is not present, it will default to 1.
+
+      - title: subUTCMilliseconds
+        description: Subtracts a number of Milliseconds to the set UTC milliseconds
+        tags:
+          - v0.1
+          - math
+        category: manipulation
+        signatures:
+          - signature: '.subUTCMilliseconds( [number_milliseconds] )'
+            returns: this
+            version: 0.1
+            description: |
+              Subtracts <var>number_milliseconds</var> to the set UTC milliseconds. If 
+              <var>number_milliseconds</var> is not present, it will default to 1.
+
+  - title: Instance MicroSecond Methods
+    functions: 
+
+      - title: microSeconds
+        description: Gets or sets the microseconds (0 to 999)
+        tags:
+          - v0.1
+        category: manipulation
+        signatures:
+          - signature: '.microSeconds( )'
+            returns: number
+            version: 0.1
+            description: |
+              Gets the microSeconds (0 to 999). For now, microseconds is 
+              emulated by adding three 0s to milliseconds, until JavaScript 
+              supports a higher resolution of time.
+
+          - signature: '.microSeconds( number_microseconds )'
+            returns: this
+            version: 0.1
+            description: |
+              Sets the microSeconds to <var>number_microseconds</var>, which 
+              should be a number between 0 and 999. For now, microseconds is 
+              emulated by adding three 0s to milliseconds, until JavaScript 
+              supports a higher resolution of time.
+
+      - title: getMicroSeconds
+        description: Gets the microseconds (0 to 999)
+        tags:
+          - v0.1
+        category: properties
+        signatures:
+          - signature: '.getMicroSeconds( )'
+            returns: number
+            version: 0.1
+            description: |
+              Gets the microSeconds (0 to 999). For now, microseconds is 
+              emulated by adding three 0s to milliseconds, until JavaScript 
+              supports a higher resolution of time.
+
+      - title: setMicroSeconds
+        description: Sets the microseconds (0 to 999)
+        tags:
+          - v0.1
+        category: manipulation
+        signatures:
+          - signature: '.setMicroSeconds( number_microseconds )'
+            returns: this
+            version: 0.1
+            description: |
+              Sets the microSeconds to <var>number_microseconds</var>, which 
+              should be a number between 0 and 999. For now, microseconds is 
+              emulated by adding three 0s to milliseconds, until JavaScript 
+              supports a higher resolution of time.
+
+      - title: addMicroSeconds
+        description: Adds a number of microseconds to the set microseconds
+        tags:
+          - v0.1
+          - math
+        category: manipulation
+        signatures:
+          - signature: '.addMicroSeconds( [number_microseconds] )'
+            returns: this
+            version: 0.1
+            description: |
+              Adds <var>number_microseconds</var> to the set microSeconds. If 
+              <var>number_microseconds</var> is not present, it will default to
+              1. For now, microseconds is emulated by adding three 0s to 
+              milliseconds, until JavaScript supports a higher resolution of 
+              time.
+
+      - title: subMicroSeconds
+        description: Subtracts a number of microseconds to the set microseconds
+        tags:
+          - v0.1
+          - math
+        category: manipulation
+        signatures:
+          - signature: '.subMicroSeconds( [number_microseconds] )'
+            returns: this
+            version: 0.1
+            description: |
+              Subtracts <var>number_microseconds</var> to the set microSeconds. 
+              If <var>number_microseconds</var> is not present, it will default
+              to 1. For now, microseconds is emulated by adding three 0s to 
+              milliseconds, until JavaScript supports a higher resolution of 
+              time.
+
+      - title: UTCMicroSeconds
+        description: Gets or sets the UTC microseconds (0 to 999)
+        tags:
+          - v0.1
+        category: manipulation
+        signatures:
+          - signature: '.UTCMicroSeconds( )'
+            returns: number
+            version: 0.1
+            description: |
+              Gets the UTC microseconds (0 to 999). For now, microseconds is 
+              emulated by adding three 0s to milliseconds, until JavaScript 
+              supports a higher resolution of time.
+
+          - signature: '.UTCMicroSeconds( number_microseconds )'
+            returns: this
+            version: 0.1
+            description: |
+              Sets the UTC microseconds to <var>number_microseconds</var>, which
+              should be a number between 0 and 999. For now, microseconds is 
+              emulated by adding three 0s to milliseconds, until JavaScript 
+              supports a higher resolution of time.
+
+      - title: getUTCMicroSeconds
+        description: Gets the UTC microseconds (0 to 999)
+        tags:
+          - v0.1
+        category: properties
+        signatures:
+          - signature: '.getUTCMicroSeconds( )'
+            returns: number
+            version: 0.1
+            description: |
+              Gets the UTC microseconds (0 to 999). For now, microseconds is 
+              emulated by adding three 0s to milliseconds, until JavaScript 
+              supports a higher resolution of time.
+
+      - title: setUTCMicroSeconds
+        description: Sets the UTC microseconds (0 to 999)
+        tags:
+          - v0.1
+        category: manipulation
+        signatures:
+          - signature: '.setUTCMicroSeconds( number_microseconds )'
+            returns: this
+            version: 0.1
+            description: |
+              Sets the UTC microseconds to <var>number_microseconds</var>, which 
+              should be a number between 0 and 999. For now, microseconds is 
+              emulated by adding three 0s to milliseconds, until JavaScript 
+              supports a higher resolution of time.
+
+      - title: addUTCMicroSeconds
+        description: Adds a number of MicroSeconds to the set UTC microseconds
+        tags:
+          - v0.1
+          - math
+        category: manipulation
+        signatures:
+          - signature: '.addUTCMicroSeconds( [number_microseconds] )'
+            returns: this
+            version: 0.1
+            description: |
+              Adds <var>number_microseconds</var> to the set UTC microseconds. 
+              If <var>number_microseconds</var> is not present, it will default 
+              to 1. For now, microseconds is emulated by adding three 0s to
+              milliseconds, until JavaScript supports a higher resolution of 
+              time.
+
+      - title: subUTCMicroSeconds
+        description: Subtracts a number of MicroSeconds to the set UTC microseconds
+        tags:
+          - v0.1
+          - math
+        category: manipulation
+        signatures:
+          - signature: '.subUTCMicroSeconds( [number_microseconds] )'
+            returns: this
+            version: 0.1
+            description: |
+              Subtracts <var>number_microseconds</var> to the set UTC 
+              microseconds. If <var>number_microseconds</var> is not present, 
+              it will default to 1. For now, microseconds is emulated by adding 
+              three 0s to milliseconds, until JavaScript supports a higher 
+              resolution of time.
