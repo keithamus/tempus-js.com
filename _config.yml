@@ -2457,3 +2457,150 @@ api:
               Subtracts <var>number_hours</var> to the set hour of the day. If 
               <var>number_hours</var> is not present, it will default to 1.
               See also <a href="/api/subUTCHours">subUTCHours</a>
+
+  - title: Instance Minute Methods
+    functions:
+
+      - title: minutes
+        description: Get or set the minutes (0 to 59)
+        tags:
+          - v0.1
+        category: manipulation
+        signatures:
+          - signature: '.minutes( )'
+            returns: number
+            version: 0.1
+            description: |
+              Get minutes (0 to 59)
+
+          - signature: '.minutes( number_minutes )'
+            returns: this
+            version: 0.1
+            description: |
+              Set minutes to <var>number_minutes</var>, which should be a number
+              between 0 and 59
+
+      - title: getMinutes
+        description: Get the minutes (0 to 59)
+        tags:
+          - v0.1
+        category: properties
+        signatures:
+          - signature: '.getMinutes( )'
+            returns: number
+            version: 0.1
+            description: |
+              Get minutes (0 to 59)
+
+      - title: setMinutes
+        description: Set the minutes (0 to 59)
+        tags:
+          - v0.1
+        category: manipulation
+        signatures:
+          - signature: '.setMinutes( number_minutes )'
+            returns: this
+            version: 0.1
+            description: |
+              Set minutes to <var>number_minutes</var>, which should be a number
+              between 0 and 59
+
+      - title: addMinutes
+        description: Adds a number of minutes to the set minutes
+        tags:
+          - v0.1
+          - math
+        category: manipulation
+        signatures:
+          - signature: '.addMinutes( [number_minutes] )'
+            returns: this
+            version: 0.1
+            description: |
+              Adds <var>number_minutes</var> to the set minutes. If 
+              <var>number_minutes</var> is not present, it will default to 1.
+
+      - title: subMinutes
+        description: Subtracts a number of Minutess to the current Minutes
+        tags:
+          - v0.1
+          - math
+        category: manipulation
+        signatures:
+          - signature: '.subMinutes( [number_minutes] )'
+            returns: this
+            version: 0.1
+            description: |
+              Subtracts <var>number_minutes</var> to the set minutes. If 
+              <var>number_minutes</var> is not present, it will default to 1.
+
+      - title: UTCMinutes
+        description: Get or set the UTC minutes (0 to 59)
+        tags:
+          - v0.1
+        category: manipulation
+        signatures:
+          - signature: '.UTCMinutes( )'
+            returns: number
+            version: 0.1
+            description: |
+              Get the UTC minutes (0 to 59)
+
+          - signature: '.UTCMinutes( number_minutes )'
+            returns: this
+            version: 0.1
+            description: |
+              Set the UTC minutes to <var>number_minutes</var>, which should be 
+              a number between 0 and 59
+
+      - title: getUTCMinutes
+        description: Get the UTC minutes (0 to 59)
+        tags:
+          - v0.1
+        category: properties
+        signatures:
+          - signature: '.getUTCMinutes( )'
+            returns: number
+            version: 0.1
+            description: |
+              Get the UTC minutes (0 to 59)
+
+      - title: setUTCMinutes
+        description: Set the UTC minutes (0 to 59)
+        tags:
+          - v0.1
+        category: manipulation
+        signatures:
+          - signature: '.setUTCMinutes( number_minutes )'
+            returns: this
+            version: 0.1
+            description: |
+              Set the UTC minutes to <var>number_minutes</var>, which should be 
+              a number between 0 and 59
+
+      - title: addUTCMinutes
+        description: Adds a number of minutes to the set UTC minutes
+        tags:
+          - v0.1
+          - math
+        category: manipulation
+        signatures:
+          - signature: '.addUTCMinutes( [number_minutes] )'
+            returns: this
+            version: 0.1
+            description: |
+              Adds <var>number_minutes</var> to the set UTC minutes. If 
+              <var>number_minutes</var> is not present, it will default to 1.
+
+      - title: subUTCMinutes
+        description: Subtracts a number of minutes to the set UTC minutes
+        tags:
+          - v0.1
+          - math
+        category: manipulation
+        signatures:
+          - signature: '.subUTCMinutes( [number_minutes] )'
+            returns: this
+            version: 0.1
+            description: |
+              Subtracts <var>number_minutes</var> to the set UTC minutes. If 
+              <var>number_minutes</var> is not present, it will default to 1.
