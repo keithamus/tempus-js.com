@@ -2520,7 +2520,7 @@ api:
               <var>number_minutes</var> is not present, it will default to 1.
 
       - title: subMinutes
-        description: Subtracts a number of Minutess to the current Minutes
+        description: Subtracts a number of minutes to the set minutes
         tags:
           - v0.1
           - math
