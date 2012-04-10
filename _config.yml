@@ -3390,3 +3390,216 @@ api:
               Returns an COOKIE string representation of the date, for example
               "Monday, 31-Dec-12 23:59:59 +00:00". This is the same as running 
               <a href="/api/toString">toString</a><code>('COOKIE')</code>
+
+  - title: Instance Misc Methods
+    functions: 
+      - title: isEqual
+        description: Assert that the set date is the same as another date
+        tags:
+          - v0.1
+        category: assertions
+        signatures:
+          - signature: '.isEqual( tempus_or_date_object )'
+            returns: boolean
+            version: 0.1
+            description: |
+              Assert that the set date is equal to the tempus_or_date_object. 
+              This is effectively the same as 
+              <code>.valueOf() === tempus_or_date_object</code>
+
+          - signature: '.isEqual( )'
+            returns: boolean
+            version: 0.1
+            description: |
+              Assert that the set date is equal to the current date and time.
+              This is effectively the same as same as using 
+              <code>.isEqual( Tempus.now() )</code>
+
+          - signature: '.isEqual( int_timestamp )'
+            returns: boolean
+            version: 0.1
+            description: |
+              Assert that the set date is equal to a date of the timestamp
+              <var>int_timestamp</var>. This is effectively the same as same as 
+              using <code>.isEqual( Tempus(int_timestamp) )</code>
+
+          - signature: '.isEqual( year, month [, date [, hour [, minute [, second [, millisecond [, timezoneOffset ]]]]]])'
+            returns: boolean
+            version: 0.1
+            description: |
+              Assert that the set date is equal to a date set using the values 
+              from <var>arguments</var>. This is effectively the same as using
+              <code>.isEqual( Tempus(year, month [, date [, hour [, minute [, second [, millisecond [, timezoneOffset ]]]]]]) )</code>
+
+          - signature: '.isEqual( date_string [, formatter_string ] )'
+            returns: boolean
+            version: 0.1
+            description: |
+              Assert that the date is equal to a recognisable
+              <var>date_string</var> such as 
+              "2011-01-01T12:00:00.000+0000". If 
+              <var>formatter_string</var> is available, it will use this 
+              as the <a href="/docs/reverse-formatting">reverse-formatter</a> 
+              to parse <var>date_string</var> with
+
+          - signature: '.isEqual( date_string, array_of_formatter_strings )'
+            returns: boolean
+            version: 0.1
+            description: |
+              Assert that the date is equal to a recognisable
+              <var>date_string</var> that has been parsed with one of the 
+              <var>array_of_formatter_strings</var>
+              (see <a href="/docs/reverse-formatting">reverse-formatting</a>)
+
+          - signature: '.isEqual( array_of_arguments )'
+            returns: boolean
+            version: 0.1
+            description: |
+              Assert that the set date is equal to a date set to the 
+              <var>array_of_arguments</var>, which will be extrapolated into a 
+              set of arguments, similar to the above signatures
+
+      - title: isBefore
+        description: Assert that the set date occurs before another date
+        tags:
+          - v0.1
+        category: assertions
+        signatures:
+          - signature: '.isBefore( tempus_or_date_object )'
+            returns: boolean
+            version: 0.1
+            description: |
+              Assert that the set date is before the tempus_or_date_object. 
+              This is effectively the same as 
+              <code>.valueOf() === tempus_or_date_object</code>
+
+          - signature: '.isBefore( )'
+            returns: boolean
+            version: 0.1
+            description: |
+              Assert that the set date is before the current date and time.
+              This is effectively the same as same as using 
+              <code>.isBefore( Tempus.now() )</code>
+
+          - signature: '.isBefore( int_timestamp )'
+            returns: boolean
+            version: 0.1
+            description: |
+              Assert that the set date is before a date of the timestamp
+              <var>int_timestamp</var>. This is effectively the same as same as 
+              using <code>.isBefore( Tempus(int_timestamp) )</code>
+
+          - signature: '.isBefore( year, month [, date [, hour [, minute [, second [, millisecond [, timezoneOffset ]]]]]])'
+            returns: boolean
+            version: 0.1
+            description: |
+              Assert that the set date is before a date set using the values 
+              from <var>arguments</var>. This is effectively the same as using
+              <code>.isBefore( Tempus(year, month [, date [, hour [, minute [, second [, millisecond [, timezoneOffset ]]]]]]) )</code>
+
+          - signature: '.isBefore( date_string [, formatter_string ] )'
+            returns: boolean
+            version: 0.1
+            description: |
+              Assert that the date is before a recognisable
+              <var>date_string</var> such as 
+              "2011-01-01T12:00:00.000+0000". If 
+              <var>formatter_string</var> is available, it will use this 
+              as the <a href="/docs/reverse-formatting">reverse-formatter</a> 
+              to parse <var>date_string</var> with
+
+          - signature: '.isBefore( date_string, array_of_formatter_strings )'
+            returns: boolean
+            version: 0.1
+            description: |
+              Assert that the date is before a recognisable
+              <var>date_string</var> that has been parsed with one of the 
+              <var>array_of_formatter_strings</var>
+              (see <a href="/docs/reverse-formatting">reverse-formatting</a>)
+
+          - signature: '.isBefore( array_of_arguments )'
+            returns: boolean
+            version: 0.1
+            description: |
+              Assert that the set date is before a date set to the 
+              <var>array_of_arguments</var>, which will be extrapolated into a 
+              set of arguments, similar to the above signatures
+
+      - title: isAfter
+        description: Assert that the set date occurs after another date
+        tags:
+          - v0.1
+        category: assertions
+        signatures:
+          - signature: '.isAfter( tempus_or_date_object )'
+            returns: boolean
+            version: 0.1
+            description: |
+              Assert that the set date is after the tempus_or_date_object. 
+              This is effectively the same as 
+              <code>.valueOf() === tempus_or_date_object</code>
+
+          - signature: '.isAfter( )'
+            returns: boolean
+            version: 0.1
+            description: |
+              Assert that the set date is after the current date and time.
+              This is effectively the same as same as using 
+              <code>.isAfter( Tempus.now() )</code>
+
+          - signature: '.isAfter( int_timestamp )'
+            returns: boolean
+            version: 0.1
+            description: |
+              Assert that the set date is after a date of the timestamp
+              <var>int_timestamp</var>. This is effectively the same as same as 
+              using <code>.isAfter( Tempus(int_timestamp) )</code>
+
+          - signature: '.isAfter( year, month [, date [, hour [, minute [, second [, millisecond [, timezoneOffset ]]]]]])'
+            returns: boolean
+            version: 0.1
+            description: |
+              Assert that the set date is after a date set using the values 
+              from <var>arguments</var>. This is effectively the same as using
+              <code>.isAfter( Tempus(year, month [, date [, hour [, minute [, second [, millisecond [, timezoneOffset ]]]]]]) )</code>
+
+          - signature: '.isAfter( date_string [, formatter_string ] )'
+            returns: boolean
+            version: 0.1
+            description: |
+              Assert that the date is after a recognisable
+              <var>date_string</var> such as 
+              "2011-01-01T12:00:00.000+0000". If 
+              <var>formatter_string</var> is available, it will use this 
+              as the <a href="/docs/reverse-formatting">reverse-formatter</a> 
+              to parse <var>date_string</var> with
+
+          - signature: '.isAfter( date_string, array_of_formatter_strings )'
+            returns: boolean
+            version: 0.1
+            description: |
+              Assert that the date is after a recognisable
+              <var>date_string</var> that has been parsed with one of the 
+              <var>array_of_formatter_strings</var>
+              (see <a href="/docs/reverse-formatting">reverse-formatting</a>)
+
+          - signature: '.isAfter( array_of_arguments )'
+            returns: boolean
+            version: 0.1
+            description: |
+              Assert that the set date is after a date set to the 
+              <var>array_of_arguments</var>, which will be extrapolated into a 
+              set of arguments, similar to the above signatures
+
+      - title: valueOf
+        description: Gets the current milliseconds since Epoch
+        tags:
+          - v0.1
+        category: properties
+        signatures:
+          - signature: '.valueOf( )'
+            returns: this
+            version: 0.1
+            description: |
+              Gets the current milliseconds since Epoch 
+              (Thu Jan 01 1970 00:00:00 GMT+0000)
