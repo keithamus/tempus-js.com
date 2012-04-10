@@ -2011,3 +2011,154 @@ api:
                 For more on iterators, see the 
                 <a href="/docs/method-type-rundown#iterators">iterators</a>
                 documentation
+
+  - title: Instance Time Methods
+    functions: 
+
+      - title: ampm
+        description: "Gets or sets the 12 hour time designation, 'am' or 'pm'"
+        tags:
+          - v0.1
+          - i18n
+        category: manipulation
+        signatures:
+          - signature: '.ampm( )'
+            returns: string
+            version: 0.1
+            description: |
+              Gets the 12 hour time designation, as a lower case string, in the 
+              default locale (English): either 'am' or 'pm'
+
+          - signature: '.ampm( string_am_or_pm )'
+            returns: this
+            version: 0.1
+            description: |
+              Sets the 12 hour time designation, to <var>string_am_or_pm</var>, 
+              which should be a string of either 'am' or 'pm'. The case is 
+              insensitive.
+
+      - title: getampm
+        description: "Gets the 12 hour time designation, 'am' or 'pm'"
+        tags:
+          - v0.1
+          - i18n
+        category: properties
+        signatures:
+          - signature: '.getampm( )'
+            returns: string
+            version: 0.1
+            description: |
+              Gets the 12 hour time designation, as a lower case string, in the 
+              default locale (English): either 'am' or 'pm'
+
+      - title: setampm
+        description: 
+        tags:
+          - v0.1
+          - i18n
+        category: manipulation
+        signatures:
+          - signature: '.setampm( string_am_or_pm )'
+            returns: this
+            version: 0.1
+            description: |
+              Sets the 12 hour time designation, to <var>string_am_or_pm</var>, 
+              which should be a string of either 'am' or 'pm'. The case is 
+              insensitive.
+
+      - title: AMPM
+        description: "Gets or sets the 12 hour time designation, 'AM' or 'PM'"
+        tags:
+          - v0.1
+          - i18n
+        category: manipulation
+        signatures:
+          - signature: '.AMPM( )'
+            returns: string
+            version: 0.1
+            description: |
+              Gets the 12 hour time designation, as an upper case string, in the
+              default locale (English): either 'AM' or 'PM'
+
+          - signature: '.AMPM( string_am_or_pm )'
+            returns: this
+            version: 0.1
+            description: |
+              Sets the 12 hour time designation, to <var>string_am_or_pm</var>, 
+              which should be a string of either 'AM' or 'PM'. The case is 
+              insensitive.
+
+      - title: getAMPM
+        description: 
+        tags:
+          - v0.1
+          - i18n
+        category: properties
+        signatures:
+          - signature: '.AMPM( )'
+            returns: string
+            version: 0.1
+            description: |
+              Gets the 12 hour time designation, as an upper case string, in the
+              default locale (English): either 'AM' or 'PM'
+
+      - title: setAMPM
+        description: 
+        tags:
+          - v0.1
+          - i18n
+        category: manipulation
+        signatures:
+          - signature: '.AMPM( string_am_or_pm )'
+            returns: this
+            version: 0.1
+            description: |
+              Sets the 12 hour time designation, to <var>string_am_or_pm</var>, 
+              which should be a string of either 'AM' or 'PM'. The case is 
+              insensitive.
+
+      - title: setTimeToNow
+        description: Set the time to the current time
+        tags:
+          - v0.1
+        category: manipulation
+        signatures:
+          - signature: '.setTimeToNow( )'
+            returns: this
+            version: 0.1
+            description: |
+              Sets the time to the current time.
+
+      - title: clearTime
+        description: Sets the time to 00:00:00
+        tags:
+          - v0.1
+        category: manipulation
+        signatures:
+          - signature: '.clearTime( )'
+            returns: this
+            version: 0.1
+            description: |
+              Sets the time to 00:00:00. This is the equivalent of 
+              .[timeString](/api/timeString)('00:00:00')
+
+      - title: timeString
+        description: Get or set the time as a string representation of NN:NN:NN
+        tags:
+          - v0.1
+        category: manipulation
+        signatures:
+          - signature: '.timeString( )'
+            returns: string
+            version: 0.1
+            description: |
+              Gets the time as a representation of NN:NN:NN, for example 
+              '12:30:00' for half past 12, or '04:00:05' for 5 seconds past 4am
+
+          - signature: '.timeString( string_time )'
+            returns: string
+            version: 0.1
+            description: |
+              Sets the time to <var>string_time</var>, which is a representation
+              of NN:NN:NN, for example to set the time to half past 12, 
+              <var>string_time</var> should be '12:30:00'.
