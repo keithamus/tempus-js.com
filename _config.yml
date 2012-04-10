@@ -1518,3 +1518,496 @@ api:
                 (English), this means either "th", "st", or "rd" is returned. 
                 For example, if <a href="/api/getDate">getDate()</a> returns 3,
                 then getDateOrdinal() will return "rd".
+
+  - title: Instance Day Methods
+    functions:
+
+      - title: day
+        description: Sets or gets the current day of week (0 = Sun - 6 = Sat)
+        tags:
+          - v0.1
+        category: manipulation
+        signatures:
+          - signature: '.day( )'
+            returns: number
+            version: 0.1
+            description: |
+              Gets the current day of the week, from 0 to 6, 0 being Sunday, and
+              6 being Saturday.
+
+          - signature: '.day( number_day )'
+            returns: this
+            version: 0.1
+            description: |
+              Sets the current day of the week, from 0 to 6, 0 being Sunday, and
+              6 being Saturday.
+
+      - title: getDay
+        description: Gets the current day of week (0 = Sun - 6 = Sat)
+        tags:
+          - v0.1
+        category: properties
+        signatures:
+          - signature: '.getDay( )'
+            returns: number
+            version: 0.1
+            description: |
+              Gets the current day of the week, from 0 to 6, 0 being Sunday, and
+              6 being Saturday.
+
+      - title: setDay
+        description: Sets the current day of week (0 = Sun - 6 = Sat)
+        tags:
+          - v0.2
+        category: manipulation
+        signatures:
+          - signature: '.setDay( number_day )'
+            returns: this
+            version: 0.2
+            description: |
+              Sets the current day of the week, from 0 to 6, 0 being Sunday, and
+              6 being Saturday.
+
+      - title: addDay
+        description: Adds a number of days to the current day
+        tags:
+          - v0.1
+          - math
+        category: manipulation
+        signatures:
+          - signature: '.addDay( [number_day] )'
+            returns: this
+            version: 0.1
+            description: |
+              Adds <var>number_day</var> from the current day. If 
+              <var>number_day</var> is not present, it will default to 1.
+
+      - title: subDay
+        description: Subtracts a number of days to the current day
+        tags:
+          - v0.1
+          - math
+        category: manipulation
+        signatures:
+          - signature: '.subDay( [number_day] )'
+            returns: this
+            version: 0.1
+            description: |
+              Subtracts <var>number_day</var> from the current day. If 
+              <var>number_day</var> is not present, it will default to 1.
+
+      - title: ISODay
+        description: Sets or gets the current day of week (1 = Mon - 7 = Sun)
+        tags:
+          - v0.1
+        category: manipulation
+        signatures:
+          - signature: '.ISODay( )'
+            returns: number
+            version: 0.1
+            description: |
+              Gets the current day of the week, from 1 to 7, 1 being Monday, and
+              7 being Sunday.
+
+          - signature: '.ISODay( number_day )'
+            returns: this
+            version: 0.1
+            description: |
+              Sets the current day of the week, from 1 to 7, 1 being Monday, and
+              7 being Sunday.
+
+      - title: getISODay
+        description: Gets the current day of week (1 = Mon - 7 = Sun)
+        tags:
+          - v0.1
+        category: properties
+        signatures:
+          - signature: '.getISODay( )'
+            returns: number
+            version: 0.1
+            description: |
+              Gets the current day of the week, from 1 to 7, 1 being Monday, and
+              7 being Sunday.
+
+      - title: setISODay
+        description: Sets the current day of week (1 = Mon - 7 = Sun)
+        tags:
+          - v0.1
+        category: manipulation
+        signatures:
+          - signature: '.setISODay( number_day )'
+            returns: this
+            version: 0.1
+            description: |
+              Sets the current day of the week, from 1 to 7, 1 being Monday, and
+              7 being Sunday.
+
+      - title: addISODay
+        description: Adds a number of days to the current day
+        tags:
+          - v0.1
+          - math
+        category: manipulation
+        signatures:
+          - signature: '.addISODay( [number_day] )'
+            returns: this
+            version: 0.1
+            description: |
+              Adds <var>number_day</var> from the current day. If 
+              <var>number_day</var> is not present, it will default to 1.
+              Similar to <a href="/api/addDay">addDay</a>
+
+      - title: subISODay
+        description: Subtracts a number of days to the current day
+        tags:
+          - v0.1
+          - math
+        category: manipulation
+        signatures:
+          - signature: '.subISODay( [number_day] )'
+            returns: this
+            version: 0.1
+            description: |
+              Subtracts <var>number_day</var> from the current day. If 
+              <var>number_day</var> is not present, it will default to 1.
+              Similar to <a href="/api/addDay">addDay</a>
+
+      - title: UTCDay
+        description: Sets or gets the current UTC day of week (0 = Sun - 6 = Sat)
+        tags:
+          - v0.1
+        category: manipulation
+        signatures:
+          - signature: '.UTCDay( )'
+            returns: number
+            version: 0.1
+            description: |
+              Gets the current UTC day of the week, from 0 to 6, 0 being Sunday,
+              and 6 being Saturday.
+
+          - signature: '.UTCDay( number_day )'
+            returns: this
+            version: 0.1
+            description: |
+              Sets the current UTC day of the week, from 0 to 6, 0 being Sunday,
+              and 6 being Saturday.
+
+      - title: getUTCDay
+        description: Gets the current day of week (0 = Sun - 6 = Sat)
+        tags:
+          - v0.1
+        category: properties
+        signatures:
+          - signature: '.getUTCDay( )'
+            returns: number
+            version: 0.1
+            description: |
+              Gets the current UTC day of the week, from 0 to 6, 0 being Sunday,
+              and 6 being Saturday.
+
+      - title: setUTCDay
+        description: Sets the current day of week (0 = Sun - 6 = Sat)
+        tags:
+          - v0.1
+        category: manipulation
+        signatures:
+          - signature: '.setUTCDay( number_day )'
+            returns: this
+            version: 0.1
+            description: |
+              Sets the current UTC day of the week, from 0 to 6, 0 being Sunday,
+              and 6 being Saturday.
+
+      - title: addUTCDay
+        description: Adds a number of UTC days to the current UTC day
+        tags:
+          - v0.1
+          - math
+        category: manipulation
+        signatures:
+          - signature: '.addUTCDay( [number_day] )'
+            returns: this
+            version: 0.1
+            description: |
+              Adds <var>number_day</var> from the current UTC day. If 
+              <var>number_day</var> is not present, it will default to 1.
+
+      - title: subUTCDay
+        description: Subtracts a number of UTC days to the current day
+        tags:
+          - v0.1
+          - math
+        category: manipulation
+        signatures:
+          - signature: '.subUTCDay( [number_day] )'
+            returns: this
+            version: 0.1
+            description: |
+              Subtracts <var>number_day</var> from the current UTC day. If 
+              <var>number_day</var> is not present, it will default to 1.
+
+      - title: UTCISODay
+        description: Sets or gets the current UTC day of week (1 = Mon - 7 = Sun)
+        tags:
+          - v0.1
+        category: manipulation
+        signatures:
+          - signature: '.UTCISODay( )'
+            returns: number
+            version: 0.1
+            description: |
+              Gets the current UTC day of the week, from 1 to 7, 1 being Monday,
+              and 7 being Sunday.
+
+          - signature: '.UTCISODay( number_day )'
+            returns: this
+            version: 0.1
+            description: |
+              Sets the current UTC day of the week, from 1 to 7, 1 being Monday,
+              and 7 being Sunday.
+
+      - title: getUTCISODay
+        description: Gets the current UTC day of week (1 = Mon - 7 = Sun)
+        tags:
+          - v0.1
+        category: properties
+        signatures:
+          - signature: '.getUTCISODay( )'
+            returns: number
+            version: 0.1
+            description: |
+              Gets the current UTC day of the week, from 1 to 7, 1 being Monday,
+              and 7 being Sunday.
+
+      - title: setUTCISODay
+        description: Sets the current UTC day of week (1 = Mon - 7 = Sun)
+        tags:
+          - v0.1
+        category: manipulation
+        signatures:
+          - signature: '.setUTCISODay( number_day )'
+            returns: this
+            version: 0.1
+            description: |
+              Sets the current UTC day of the week, from 1 to 7, 1 being Monday,
+              and 7 being Sunday.
+
+      - title: addUTCISODay
+        description: Adds a number of UTC days to the current UTC day
+        tags:
+          - v0.1
+          - math
+        category: manipulation
+        signatures:
+          - signature: '.addUTCISODay( [number_day] )'
+            returns: this
+            version: 0.1
+            description: |
+              Adds <var>number_day</var> from the current UTC day. If 
+              <var>number_day</var> is not present, it will default to 1.
+              Similar to <a href="/api/addUTCDay">addUTCDay</a>
+
+      - title: subUTCISODay
+        description: Subtracts a number of UTC days to the current UTC day
+        tags:
+          - v0.1
+          - math
+        category: manipulation
+        signatures:
+          - signature: '.subUTCISODay( [number_day] )'
+            returns: this
+            version: 0.1
+            description: |
+              Subtracts <var>number_day</var> from the current UTC day. If 
+              <var>number_day</var> is not present, it will default to 1.
+              Similar to <a href="/api/addUTCDay">addUTCDay</a>
+
+      - title: dayOfYear
+        description: Gets or sets the day of the year (1 to 366)
+        tags:
+          - v0.1
+        category: manipulation
+        signatures:
+          - signature: '.dayOfYear( )'
+            returns: number
+            version: 0.1
+            description: |
+              Gets the current day of the year, as a number from 1 to 366.
+
+          - signature: '.dayOfYear( [number_day] )'
+            returns: this
+            version: 0.1
+            description: |
+              Sets the current day of the year to <var>number_day</var>, which 
+              should be a number from 1 to 366.
+
+      - title: getDayOfYear
+        description: Gets the day of the year (1 to 366)
+        tags:
+          - v0.1
+        category: properties
+        signatures:
+          - signature: '.getDayOfYear( )'
+            returns: number
+            version: 0.1
+            description: |
+              Gets the current day of the year, as a number from 1 to 366.
+
+      - title: setDayOfYear
+        description: Sets the day of the year (1 to 366)
+        tags:
+          - v0.1
+        category: manipulation
+        signatures:
+          - signature: '.setDayOfYear( number_day )'
+            returns: this
+            version: 0.1
+            description: |
+              Sets the current day of the year to <var>number_day</var>, which 
+              should be a number from 1 to 366.
+
+      - title: addDayOfYear
+        description: Adds a number of days to the current day of the year
+        tags:
+          - v0.1
+          - math
+        category: manipulation
+        signatures:
+          - signature: '.addDayOfYear( [number_day] )'
+            returns: this
+            version: 0.1
+            description: |
+              Adds <var>number_day</var> to the current day of the year. If 
+              <var>number_day</var> is not present, it will default to 1.
+
+      - title: subDayOfYear
+        description: Subtracts a number of days to the current day of the year
+        tags:
+          - v0.1
+          - math
+        category: manipulation
+        signatures:
+          - signature: '.subDayOfYear( [number_day] )'
+            returns: this
+            version: 0.1
+            description: |
+              Subtracts <var>number_day</var> to the current day of the year. If 
+              <var>number_day</var> is not present, it will default to 1.
+
+      - title: getLastDayOfMonth
+        description: Gets the last day of the month (28 - 31)
+        tags:
+          - v0.1
+        category: properties
+        signatures:
+          - signature: '.getLastDayOfMonth( )'
+            returns: number
+            version: 0.1
+            description: |
+              Gets the last day of the month (28 - 31), for example, if the 
+              month is February <code>.getLastDayOfMonth()</code> will return 
+              <code>28</code>, for December: <code>31</code>.
+
+      - title: getDayName
+        description: Get the short day name ('Mon' to 'Sun') 
+        tags:
+          - v0.1
+          - i18n
+        category: properties
+        signatures:
+          - signature: '.getDayName( )'
+            returns: string
+            version: 0.1
+            description: |
+              Gets the name of the current day, as a shortened version of the 
+              day. For the English locale, this is a 3 letter representation of 
+              the full day name, from 'Mon' to 'Sun'
+
+      - title: getFullDayName
+        description: Get the full day name ('Monday' to 'Sunday')
+        tags:
+          - v0.1
+          - i18n
+        category: properties
+        signatures:
+          - signature: '.getFullDayName( )'
+            returns: this
+            version: 0.1
+            description: |
+              Gets the name of the current day, as the full version of the 
+              day. For the English locale, this is from 'Monday' to 'Sunday'
+
+      - title: eachDayOfWeek
+        description: Iterate through every day in a week (Sun-Sat)
+        tags:
+          - v0.2
+        category: iterators
+        signatures:
+          - signature: '.eachDayOfWeek( function_iterator )'
+            returns: this
+            version: 0.2
+            description: |
+              This will start with Sunday, and loop through each day, 
+              incrimenting by 1 until the following Saturday, running 
+              <var>function_iterator</var> for every iteration.
+              <var>function_iterator</var> should expect the arguments to be
+              <var>[number_day_of_week, tempus_object_set_to_day_of_week]</var>.
+              For more on iterators, see the 
+              <a href="/docs/method-type-rundown#iterators">iterators</a>
+              documentation
+
+      - title: eachISODayOfWeek
+        description: Iterate through every ISO day in a week (Mon-Sun)
+        tags:
+          - v0.2
+        category: iterators
+        signatures:
+          - signature: '.eachISODayOfWeek( function_iterator )'
+            returns: this
+            version: 0.2
+            description: |
+              This will start with Monday, and loop through each day, 
+              incrimenting by 1 until the following Sunday, running 
+              <var>function_iterator</var> for every iteration.
+              <var>function_iterator</var> should expect the arguments to be
+              <var>[number_day_of_week, tempus_object_set_to_day_of_week]</var>.
+              For more on iterators, see the 
+              <a href="/docs/method-type-rundown#iterators">iterators</a>
+              documentation
+
+      - title: eachDayOfMonth
+        description: Iterate through every day in a month
+        tags:
+          - v0.1
+        category: iterators
+        signatures:
+          - signature: '.eachDayOfMonth( function_iterator )'
+            returns: this
+            version: 0.1
+            description: |
+              This will start with the first day of the month, and loop 
+              through, incrimenting by 1 until the last day of the month, 
+              running <var>function_iterator</var> for every iteration.
+              <var>function_iterator</var> should expect the arguments to be
+              <var>[number_date, tempus_object_set_to_date]</var>. For more on
+              iterators, see the <a href="/docs/method-type-rundown#iterators">
+              iterators</a> documentation
+
+      - title: eachDayOfYear
+        description: Iterate through every day in a year
+        tags:
+          - v0.1
+        category: iterators
+        signatures:
+          - signature: '.eachDayOfYear( function_iterator )'
+            returns: this
+            version: 0.1
+            description: |
+                This will start with the first day of the year, and loop 
+                through, incrimenting by 1 until the last day of the year, 
+                running <var>function_iterator</var> for every iteration.
+                <var>function_iterator</var> should expect the arguments to be
+                <var>[number_day_of_year, tempus_object_set_to_day_of_year]</var>.
+                For more on iterators, see the 
+                <a href="/docs/method-type-rundown#iterators">iterators</a>
+                documentation
