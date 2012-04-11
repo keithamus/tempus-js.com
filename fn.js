@@ -4,14 +4,14 @@
         function () { window.console.log.apply(console, arguments); } : function () {};    
 
     try {
-        window.apiJSON = JSON.parse(sessionStorage['api']);
+        apiJSON = JSON.parse(sessionStorage['api']);
+        log('Loaded api from cache');
     } catch(e) {}
 
-    if (({}).toString.call(window.apiJSON) !== '[object Array]' || window.apiJSON.length < 1) {
+    if (({}).toString.call(apiJSON) !== '[object Array]' || apiJSON.length < 1) {
         $.getJSON('/api.json', {}, function (data) {
             log('Loaded api version ' + data.version);
             apiJSON = data.methods;
-            window.apiJSON = apiJSON;
             sessionStorage['api'] = JSON.stringify(apiJSON);
         });
     }
