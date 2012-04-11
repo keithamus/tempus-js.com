@@ -5,7 +5,8 @@ exclude:
   - config.rb
   - .sass-cache
 
-github_url: http://github.com/keithamus/Tempus
+github_url: https://github.com/keithamus/Tempus
+github_raw_url: https://raw.github.com/keithamus/Tempus
 
 disqus_shortname: tempus
 
@@ -19,6 +20,8 @@ authors:
       github: keithamus
       twitter: keithamus
       linkedin: http://www.linkedin.com/in/keithcirkel
+
+tempus_version: 0.1.0
 
 api_version: 0.2
 api:

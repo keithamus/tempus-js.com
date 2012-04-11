@@ -5,9 +5,15 @@
                 <h2>Time for a new Date()</h2>
                 {% if include_buttons %}
                 <div class="btn-group btn-group-two">
-                    <a class="btn btn-success btn-large" href="/tempus.js">Download <strong>Core</strong> (4.4kb min/gz)</a>
-                    <a class="btn btn-info btn-large" href="/build.html">Build your own (up to 7kb)</a>
-                    <p class="info">or run <code>npm install Tempus</code> from your command line</p>
+                    <a class="btn btn-success btn-large" href="{{ site.github_raw_url }}/{{ site.tempus_version }}/tempus.js">
+                        Download <strong>Core</strong> (4.4kb min/gz)
+                    </a>
+                    <a class="btn btn-info btn-large" href="/build.html">
+                        Build your own (up to 7kb)
+                    </a>
+                    <p class="info">
+                        or run <code>npm install Tempus</code> from your command line
+                    </p>
                 </div>
                 <div class="btn-group btn-group-four">
                     <a class="btn btn-large txthilite-success" href="/docs/">Docs</a>
