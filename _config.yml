@@ -1060,6 +1060,78 @@ api:
               Subtracts <var>number_month</var> from the set month. If 
               <var>number_month</var> is not present, it will default to 1
 
+      - title: UTCMonth
+        description: "Gets or sets the month as UTC"
+        tags:
+          - v0.1
+        category: manipulation
+        signatures:
+          - signature: '.UTCMonth( )'
+            returns: number
+            version: 0.1
+            description: |
+              Gets the zero-index UTC month (0 = Jan ... 11 = Dec)
+
+          - signature: '.UTCMonth( [number_month] )'
+            returns: this
+            version: 0.1
+            description: |
+              Sets the zero-index UTC month to <var>number_month</var> (0 = Jan ... 11 = Dec)
+
+      - title: getUTCMonth
+        description: "Gets the month as UTC"
+        tags:
+          - v0.1
+        category: properties
+        signatures:
+          - signature: '.getUTCMonth( )'
+            returns: number
+            version: 0.1
+            description: |
+              Gets the zero-index UTC month (0 = Jan ... 11 = Dec)
+
+      - title: setUTCMonth
+        description: "Sets the month as UTC"
+        tags:
+          - v0.1
+        category: manipulation
+        signatures:
+          - signature: '.setUTCMonth( number_month )'
+            returns: this
+            version: 0.1
+            description: |
+              Sets the zero-index UTC month to <var>number_month</var> (0 = Jan ... 11 = Dec)
+
+      - title: addUTCMonth
+        description: Add a number of months from the set month
+        tags:
+          - v0.1
+          - math
+        category: manipulation
+        signatures:
+          - signature: '.addUTCMonth( [number_month] )'
+            returns: this
+            version: 0.1
+            description: |
+              Adds <var>number_month</var> from the set UTC month. If 
+              <var>number_month</var> is not present, it will default to 1
+              Similar to <a href="/api/addMonth">addMonth</a>.
+
+      - title: subUTCMonth
+        description: Subtract a number of UTC months from the set month
+        tags:
+          - v0.1
+          - math
+        category: manipulation
+        signatures:
+          - signature: '.subUTCMonth( [number_month] )'
+            returns: this
+            version: 0.1
+            description: |
+              Subtracts <var>number_month</var> from the set UTC month. If 
+              <var>number_month</var> is not present, it will default to 1
+              Similar to <a href="/api/subMonth">subMonth</a>.
+
       - title: oneIndexedMonth
         description: "Gets or sets the month as a 1-indexed integer (1-12)"
         tags:
@@ -1132,76 +1204,77 @@ api:
               <var>number_month</var> is not present, it will default to 1.
               Similar to <a href="/api/subMonth">subMonth</a>.
 
-      - title: UTCMonth
-        description: "Gets or sets the month as UTC"
+      - title: UTCOneIndexedMonth
+        description: "Gets or sets the UTC month as a 1-indexed integer (1-12)"
         tags:
-          - v0.1
+          - v0.2
         category: manipulation
         signatures:
-          - signature: '.UTCMonth( )'
+          - signature: '.UTCOneIndexedMonth( )'
             returns: number
-            version: 0.1
+            version: 0.2
             description: |
-              Gets the zero-index UTC month (0 = Jan ... 11 = Dec)
+              Gets the UTC 1-index month (1 = Jan ... 12 = Dec)
 
-          - signature: '.UTCMonth( [number_month] )'
+          - signature: '.UTCOneIndexedMonth( [number_month] )'
             returns: this
             version: 0.1
             description: |
-              Sets the zero-index UTC month to <var>number_month</var> (0 = Jan ... 11 = Dec)
+              Sets the UTC 1-index month to <var>number_month</var> (1 = Jan ... 12 = Dec)
 
-      - title: getUTCMonth
-        description: "Gets the month as UTC"
+      - title: getUTCOneIndexedMonth
+        description: "Gets the UTC month as a 1-indexed integer (1-12)"
         tags:
-          - v0.1
+          - v0.2
         category: properties
         signatures:
-          - signature: '.getUTCMonth( )'
+          - signature: '.getUTCOneIndexedMonth( )'
             returns: number
-            version: 0.1
+            version: 0.2
             description: |
-              Gets the zero-index UTC month (0 = Jan ... 11 = Dec)
+              Gets the UTC 1-index month (1 = Jan ... 12 = Dec)
 
-      - title: setUTCMonth
-        description: "Sets the month as UTC"
+      - title: setUTCOneIndexedMonth
+        description: "Sets the UTC month, as a 1-indexed integer (1-12)"
         tags:
-          - v0.1
+          - v0.2
         category: manipulation
         signatures:
-          - signature: '.setUTCMonth( number_month )'
+          - signature: '.setUTCOneIndexedMonth( number_month )'
             returns: this
-            version: 0.1
+            version: 0.2
             description: |
-              Sets the zero-index UTC month to <var>number_month</var> (0 = Jan ... 11 = Dec)
+              Sets the UTC 1-index month to <var>number_month</var> 
+              (1 = Jan ... 12 = Dec)
 
-      - title: addUTCMonth
-        description: Add a number of months from the set month
+      - title: addUTCOneIndexedMonth
+        description: Add a number of months from the set UTC month
         tags:
-          - v0.1
+          - v0.2
           - math
         category: manipulation
         signatures:
-          - signature: '.addUTCMonth( [number_month] )'
+          - signature: '.addUTCOneIndexedMonth( [number_month] )'
             returns: this
-            version: 0.1
+            version: 0.2
             description: |
               Adds <var>number_month</var> from the set UTC month. If 
-              <var>number_month</var> is not present, it will default to 1
+              <var>number_month</var> is not present, it will default to 1.
               Similar to <a href="/api/addMonth">addMonth</a>.
 
-      - title: subUTCMonth
-        description: Subtract a number of UTC months from the set month
+      - title: subUTCOneIndexedMonth
+        description: Subtract a number of months from the set UTC month
         tags:
-          - v0.1
+          - v0.2
           - math
         category: manipulation
         signatures:
-          - signature: '.subUTCMonth( [number_month] )'
+          - signature: '.subUTCOneIndexedMonth( [number_month] )'
             returns: this
-            version: 0.1
+            version: 0.2
             description: |
-              Subtracts <var>number_month</var> from the set UTC month. If 
-              <var>number_month</var> is not present, it will default to 1
+              Subtracts <var>number_month</var> from the set UTC month. If
+              <var>number_month</var> is not present, it will default to 1.
               Similar to <a href="/api/subMonth">subMonth</a>.
 
       - title: getFullMonthName
