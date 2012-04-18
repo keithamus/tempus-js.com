@@ -4,6 +4,7 @@ exclude:
   - README.md
   - config.rb
   - .sass-cache
+  - grunt.js
 
 github_url: https://github.com/keithamus/Tempus
 github_raw_url: https://raw.github.com/keithamus/Tempus
