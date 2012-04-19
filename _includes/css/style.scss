@@ -168,21 +168,6 @@ article {
     text-decoration: none;
 }
 
-.navbar .brand a {
-    color: #fff;
-
-    .logo {
-        background: white;
-        width: 15px;
-        height: 15px;
-        display: block;
-        content: '';
-        margin: 2px 7px 0 0;
-        padding: 0;
-        float: left;
-    }
-}
-
 .opaque50 { @include opacity(.5); }
 .opaque75 { @include opacity(.75); }
 .opaque25 { @include opacity(.25); }
@@ -304,7 +289,7 @@ article {
         margin: 0 0 0 30px;
 
         .logo {
-            background: black;
+            background: url(/img/logo.png);
             height: 60px;
             width: 60px;
             display: inline-block;
