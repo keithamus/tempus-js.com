@@ -3,4 +3,4 @@
 	url = git://github.com/jquery/qunit.git
 [submodule "tempus"]
 	path = tempus
-	url = https://github.com/keithamus/Tempus
+	url = git://github.com/keithamus/Tempus.git
