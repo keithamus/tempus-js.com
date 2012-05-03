@@ -93,7 +93,7 @@ api:
               similar to the above signatures
 
       - title: now
-        description: 'Returns the seconds since Epoch (Thu Jan 01 1970 00:00:00 GMT+0000)'
+        description: 'Returns the milliseconds since Epoch (Thu Jan 01 1970 00:00:00 GMT+0000)'
         category: core
         tags:
           - v0.1
@@ -102,7 +102,7 @@ api:
             returns: Number
             version: 0.1
             description: |
-              Returns the seconds since Epoch (Thu Jan 01 1970 00:00:00 GMT+0000)
+              Returns the milliseconds since Epoch (Thu Jan 01 1970 00:00:00 GMT+0000)
 
 
       - title: addParser
