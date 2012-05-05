@@ -30,7 +30,7 @@ the other languages mentioned above:
 |  '%c'  | A shortcut for '%a %b %d %T %Y'       | '%a %b %d %T %Y'            |
 |  '%C'  | The century                           | 2011 => '20', 1900 => '19'  |
 |  '%d'  | 0-padded date                         | '01', '05', '12', '31'      |
-|  '%D'  | A shortcut for '%a %b %d %T %Y'       | '%a %b %d %T %Y'            |
+|  '%D'  | A shortcut for '%m/%d/%y'             | '%m/%d/%y'                  |
 |  '%e'  | Space-padded date                     | ' 1', ' 5', '12', '31'      |
 |  '%f'† | 0-padded microseconds                 | '100000', '023422'          |
 |  '%F'  | A shortcut for '%Y-%m-%d'             | '%Y-%m-%d'                  |
