@@ -119,6 +119,38 @@ api:
               called from set, and <var>testerFn</var> passes, 
               <var>parserFn</var> will run.
 
+      - title: addLocale
+        description: 'Adds a locale to the list of locales available for Tempus'
+        tags:
+          - v0.2
+          - i18n
+        category: extending
+        signatures:
+          - signature: 'Tempus.addLocale( localeNameString , fullMonthsArray, shortMonthsArray, fullDaysArray, shortDaysArray, ampmArray )'
+            version: 0.2
+            description: |
+              Adds a locale of <var>localeName</var> to Tempus' list of locales.
+
+      - title: addTimeFormat
+        description: 'Adds a time format for Tempus to use in toString and reverse formatting'
+        tags:
+          - v0.2
+        category: extending
+        signatures:
+          - signature: 'Tempus.addTimeFormat( formatNameString , formatString )'
+            version: 0.2
+            description: |
+              Adds a time format of <var>formatNameString</var>, with the format
+              of <var>formatString</var> to Tempus' list of time formats.
+              <var>formatString</var> should be an strptime style string, as 
+              used for custom dates in <a href="/api/toString">toString</a>.
+          - signature: 'Tempus.addTimeFormat( formatsObject )'
+            version: 0.2
+            description: |
+              Adds a time format for each property inside 
+              <var>formatsObject</var>, given that the <var>key</var> is a 
+              <var>formatNameString</var> and the value is a 
+              <var>formatString</var>.
 
   - title: Utility
     functions: 
