@@ -3229,8 +3229,8 @@ api:
             description: |
               Returns a string representation of the date for use in JSON, 
               for example "2012-12-31T23:59:59.000+0000". The output is the same
-              as <a href="/api/toISO8601String">toISO8601String</a>, or 
-              <a href="/api/toString">toString</a><code>('ISO8601')</code>
+              as <a href="/api/toISOString">toISOString</a>, or 
+              <a href="/api/toString">toString</a><code>('ISO')</code>
 
       - title: toTimeString
         description: Returns a string representation of the time
@@ -3331,34 +3331,34 @@ api:
               Returns a string representation of the date, for example
               "Mon Dec 31 2012"
 
-      - title: toISO8601String
+      - title: toISOString
         description: Returns a ISO8601 string representation of the datetime
         tags:
           - v0.1
         category: string
         signatures:
-          - signature: '.toISO8601String( )'
+          - signature: '.toISOString( )'
             returns: string
             version: 0.1
             description: |
               Returns a ISO8601 string representation of the datetime, for 
               example "2012-12-31T23:59:59.000+0000". This is the same as 
               running <a href="/api/toJSON">toJSON</a>, or 
-              <a href="/api/toString">toString</a><code>('ISO8601')</code> 
+              <a href="/api/toString">toString</a><code>('ISO')</code> 
 
-      - title: toISO8601DateString
+      - title: toISODateString
         description: Returns a ISO8601 string representation of the date 
         tags:
           - v0.1
         category: string
         signatures:
-          - signature: '.toISO8601DateString( )'
+          - signature: '.toISODateString( )'
             returns: string
             version: 0.2
             description: |
               Returns a ISO8601 string representation of the date, for example
               "2012-12-31". This is the same as running 
-              <a href="/api/toString">toString</a><code>('ISO8601Date')</code>
+              <a href="/api/toString">toString</a><code>('ISODate')</code>
 
 
       - title: toRFC1036String
