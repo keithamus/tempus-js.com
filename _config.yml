@@ -2862,6 +2862,174 @@ api:
               Subtracts <var>number_seconds</var> to the set UTC seconds. If 
               <var>number_seconds</var> is not present, it will default to 1.
 
+      - title: secondFractional
+        description: Gets or sets the fraction of a second to any number of dp
+        tags:
+          - v0.2
+        category: manipulation
+        signatures:
+          - signature: '.secondFractional( )'
+            returns: number
+            version: 0.2
+            description: |
+              Gets the second fraction to largest number of decimal places 
+              available. This is currently milliseconds, 3dp (000 to 999)
+
+          - signature: '.secondFractional( number_secondFractional )'
+            returns: this
+            version: 0.2
+            description: |
+              Sets the secondFractional to <var>number_secondFractional</var>, 
+              which is a 0 padded number of any length. secondFractional will 
+              normalise this down to the largest number of decimal places 
+              available, which is currently milliseconds (3dp).
+
+      - title: getSecondFractional
+        description: Gets the fraction of a second to largest number of dp
+        tags:
+          - v0.2
+        category: properties
+        signatures:
+          - signature: '.getSecondFractional( )'
+            returns: number
+            version: 0.2
+            description: |
+              Gets the second fraction to largest number of decimal places 
+              available. This is currently milliseconds, 3dp (000 to 999)
+
+      - title: setSecondFractional
+        description: Sets the fraction of a second to any number of dp
+        tags:
+          - v0.2
+        category: manipulation
+        signatures:
+          - signature: '.setsecondFractional( number_secondFractional )'
+            returns: this
+            version: 0.2
+            description: |
+              Sets the secondFractional to <var>number_secondFractional</var>, 
+              which is a 0 padded number of any length. secondFractional will 
+              normalise this down to the largest number of decimal places 
+              available, which is currently milliseconds (3dp).
+
+      - title: addSecondFractional
+        description: Adds a number of fractional seconds to the set fractional seconds
+        tags:
+          - v0.2
+          - math
+        category: manipulation
+        signatures:
+          - signature: '.addSecondFractional( [number_secondFractional] )'
+            returns: this
+            version: 0.1
+            description: |
+              Adds <var>number_secondFractional</var>, to the set fractional 
+              seconds. <var>number_secondFractional</var> must be a 0 padded 
+              number of any length. secondFractional will normalise this down to
+              the largest number of decimal places available, which is currently
+              milliseconds (3dp).
+
+      - title: subSecondFractional
+        description: Subtracts a number of fractional seconds to the set fractional seconds
+        tags:
+          - v0.1
+          - math
+        category: manipulation
+        signatures:
+          - signature: '.subSecondFractional( [number_secondFractional] )'
+            returns: this
+            version: 0.1
+            description: |
+              Subtracts <var>number_secondFractional</var>, to the set 
+              fractional seconds. <var>number_secondFractional</var> must be a 0 
+              padded number of any length. secondFractional will normalise this 
+              down to the largest number of decimal places available, which is 
+              currently milliseconds (3dp).
+
+      - title: UTCSecondFractional
+        description: Gets or sets the fraction of a second to any number of dp
+        tags:
+          - v0.2
+        category: manipulation
+        signatures:
+          - signature: '.UTCSecondFractional( )'
+            returns: number
+            version: 0.2
+            description: |
+              Gets the second fraction to largest number of decimal places 
+              available. This is currently milliseconds, 3dp (000 to 999)
+
+          - signature: '.UTCSecondFractional( number_secondFractional )'
+            returns: this
+            version: 0.2
+            description: |
+              Sets the secondFractional to <var>number_secondFractional</var>, 
+              which is a 0 padded number of any length. secondFractional will 
+              normalise this down to the largest number of decimal places 
+              available, which is currently milliseconds (3dp).
+
+      - title: getUTCSecondFractional
+        description: Gets the fraction of a second to largest number of dp
+        tags:
+          - v0.2
+        category: properties
+        signatures:
+          - signature: '.getUTCSecondFractional( )'
+            returns: number
+            version: 0.2
+            description: |
+              Gets the second fraction to largest number of decimal places 
+              available. This is currently milliseconds, 3dp (000 to 999)
+
+      - title: setUTCSecondFractional
+        description: Sets the fraction of a second to any number of dp
+        tags:
+          - v0.2
+        category: manipulation
+        signatures:
+          - signature: '.setUTCSecondFractional( number_secondFractional )'
+            returns: this
+            version: 0.2
+            description: |
+              Sets the secondFractional to <var>number_secondFractional</var>, 
+              which is a 0 padded number of any length. secondFractional will 
+              normalise this down to the largest number of decimal places 
+              available, which is currently milliseconds (3dp).
+
+      - title: addUTCSecondFractional
+        description: Adds a number of fractional seconds to the set fractional seconds
+        tags:
+          - v0.2
+          - math
+        category: manipulation
+        signatures:
+          - signature: '.addUTCSecondFractional( [number_secondFractional] )'
+            returns: this
+            version: 0.1
+            description: |
+              Adds <var>number_secondFractional</var>, to the set fractional 
+              seconds. <var>number_secondFractional</var> must be a 0 padded 
+              number of any length. secondFractional will normalise this down to
+              the largest number of decimal places available, which is currently
+              milliseconds (3dp).
+
+      - title: subUTCSecondFractional
+        description: Subtracts a number of fractional seconds to the set fractional seconds
+        tags:
+          - v0.1
+          - math
+        category: manipulation
+        signatures:
+          - signature: '.subSecondFractional( [number_secondFractional] )'
+            returns: this
+            version: 0.1
+            description: |
+              Subtracts <var>number_secondFractional</var>, to the set 
+              fractional seconds. <var>number_secondFractional</var> must be a 0 
+              padded number of any length. secondFractional will normalise this 
+              down to the largest number of decimal places available, which is 
+              currently milliseconds (3dp).
+
   - title: Instance Millisecond Methods
     functions: 
 
