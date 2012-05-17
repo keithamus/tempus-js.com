@@ -17,8 +17,8 @@
 |  '%H'  | 0-padding 24 based hour               | '01', '08', '16', '23'      |
 |  '%I'  | 0-padding 12 based hour               | '01', '08', '04', '11'      |
 |  '%j'  | 0-padded day of the year              | '001', 055', '366'          |
-|  '%H'  | Space padding 24 hour                 | ' 1', ' 8', '16', '23'      |
-|  '%I'  | Space padding 12 hour                 | ' 1', ' 8', ' 4', '11'      |
+|  '%k'  | Space padding 24 hour                 | ' 1', ' 8', '16', '23'      |
+|  '%l'  | Space padding 12 hour                 | ' 1', ' 8', ' 4', '11'      |
 |  '%L'  | 0-padded milliseconds                 | '003', '085', '617', '999'  |
 |  '%m'  | 0-padded month                        | '01', '03', '09', '12'      |
 |  '%M'  | 0-padded minute                       | '01', '05', '15', '59'      |
