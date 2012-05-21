@@ -35,13 +35,13 @@ breadcrumbs: [blog]
                             <span class="author row">Posted by <strong>{{ author.name }}</strong></span>
                             <span class="description row">{{ author.description }}</span>
                             <ul class="social-links row">
-                            {% if author.twitter %}
-                                <li><a href="https://twitter.com/#!/{{ author.twitter }}" title="Follow {{ author.name | capitalize }} on Twitter">
-                                    <i class="icon-twitter-sign">Twitter</i>
-                                </a></li>
-                            {% endif %}{% if author.github %}
+                            {% if author.github %}
                                 <li><a href="https://github.com/{{ author.github }}" title="Follow {{ author.name | capitalize }}'s code on GitHub">
                                     <i class="icon-github-sign">GitHub</i>
+                                </a></li>
+                            {% endif %}{% if author.twitter %}
+                                <li><a href="https://twitter.com/#!/{{ author.twitter }}" title="Follow {{ author.name | capitalize }} on Twitter">
+                                    <i class="icon-twitter-sign">Twitter</i>
                                 </a></li>
                             {% endif %}{% if author.linkedin %}
                                 <li><a href="{{ author.linkedin }}" title="Follow {{ author.name | capitalize }} on LinkedIn">
