@@ -15,6 +15,7 @@ disqus_shortname: tempus
 authors:
   keithamus: 
       name: Keith Cirkel
+      gravatar: 5cf481ac043b5ca0ea05ccdd70e677b2
       description: |
         JavaScript developer, creator of Tempus, as well as other libraries,
         such as <a href="http://keithcirkel.co.uk/jwerty/">jwerty</a>, and 
