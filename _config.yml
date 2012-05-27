@@ -798,7 +798,7 @@ api:
               <var>number_year</var> is not present, it will default to 1
 
       - title: year
-        description: "Set or get the full, 4 digit year"
+        description: "Set or get the short, 2 digit year"
         tags:
           - v0.1
         category: manipulation
@@ -816,7 +816,7 @@ api:
               Set the 2 digit year to <var>number_year</var>
 
       - title: setYear
-        description: "Set the full, 4 digit year"
+        description: "Set the short, 2 digit year"
         tags:
           - v0.1
         category: manipulation
@@ -828,7 +828,7 @@ api:
               Set the 2 digit year to <var>number_year</var>
 
       - title: getYear
-        description: "Get the full, 4 digit year"
+        description: "Get the short, 2 digit year"
         tags:
           - v0.1
         category: properties
