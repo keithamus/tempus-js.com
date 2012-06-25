@@ -3882,3 +3882,66 @@ api:
             description: |
               Gets the current milliseconds since Epoch 
               (Thu Jan 01 1970 00:00:00 GMT+0000)
+
+      - title: toggleUTC
+        description: Converts the timezone to UTC and back again
+        tags:
+          - v0.2
+        category: properties
+        signatures:
+          - signature: '.toggleUTC( )'
+            returns: this
+            version: 0.1
+            description: |
+              Will convert the timezone to UTC. Running a second time will reset
+              the timezone back to its' previous value, unless the timezone has
+              changed.
+          - signature: '.toggleUTC(true)'
+            returns: this
+            version: 0.1
+            description: |
+              Force the timezone to be reset to UTC. Running a second time will 
+              keep the timezone at UTC.
+
+          - signature: '.toggleUTC(false)'
+            returns: this
+            version: 0.1
+            description: |
+              Always attempt to return the timezone back to its' previous value.
+              Running a second time will keep the timezone at its non-UTC state.
+
+  - title: Timer
+    functions: 
+
+      - title: Tempus.Timer
+        description: 'Creates a Timer object to execute a function after a period of time'
+        category: timer
+        tags:
+          - v0.2
+          - timer
+        signatures:
+          - signature: '[ new ]Tempus.Timer( )'
+            returns: this
+            version: 0.2
+            description: |
+              Creates a Timer object with no set arguments.
+
+          - signature: '[ new ]Tempus.Timer( function [, number_after [, object_ctx ]] )'
+            returns: this
+            version: 0.2
+            description: |
+              Creates a new Timer object with <var>function</var> as the defined
+              function. If <var>number_after</var> is supplied, when started the
+              timer will execute <var>function</var> in <var>number_after</var>
+              milliseconds. If <var>object_ctx</var> is supplied then 
+              <var>function</var> will be called with <var>object_ctx</var> as 
+              the `this` value. If it is not supplied, it will be called with 
+              the timer class as the `this` value.
+
+          - signature: '[ new ]Tempus.Timer( array_of_arguments )'
+            returns: this
+            version: 0.2
+            description: |
+              Creates a new Timer object, extrapolating 
+              <var>array_of_arguments</var> into a set of arguments, using one 
+              of the above signatues with them.
