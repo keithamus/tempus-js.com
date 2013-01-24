@@ -49,7 +49,7 @@ uncompressed version. You should always make sure your JavaScript assets as
 compressed as possible. For more information on building Tempus, please refer to
 the [build documentation for browsers](/docs/browser-building-tempus)
 
-[setInterval]: https://developer.mozilla.org/en/JavaScript/Reference/setInterval
-[setTimeout]: https://developer.mozilla.org/en/JavaScript/Reference/setTimeout
+[setInterval]: http://docs.webplatform.org/wiki/dom/methods/setInterval
+[setTimeout]: http://docs.webplatform.org/wiki/dom/methods/setTimeout
 [Timer]: /docs/module-timer
 [Interval]: /docs/module-interval
