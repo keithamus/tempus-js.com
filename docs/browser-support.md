@@ -10,9 +10,9 @@ Tempus works in many browsers - it has official support for the following:
 
 |         Browser         | Tested Versions |
 |-------------------------| :-------------: |
-| [Firefox][Firefox]      |      3.6-12     |
-| [Chrome][Chrome]        |      13-19      |
-| [Internet Explorer][IE] |      6-10       |
+| [Firefox][Firefox]      |    3.6-Latest   |
+| [Chrome][Chrome]        |     13-Latest   |
+| [Internet Explorer][IE] |     6-Latest    |
 | [Opera][Opera]          |      Latest     |
 | [Safari][Safari]        |      Latest     |
 {: .table .table-striped .table-bordered    }
