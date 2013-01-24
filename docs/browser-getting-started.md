@@ -44,8 +44,8 @@ If you want to read more on using AMD, then you can see the
 
 ### Minifying Tempus
 
-Tempus -- when fully uncompressed -- is in around 10 times the size of the fully
-uncompressed version. You should always make sure your JavaScript assets as 
+Tempus -- when fully compressed -- is abound 10 times smaller than the full,
+uncompressed version. You should always make sure your JavaScript assets as
 compressed as possible. For more information on building Tempus, please refer to
 the [build documentation for browsers](/docs/browser-building-tempus)
 
