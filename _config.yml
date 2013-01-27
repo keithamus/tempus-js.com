@@ -1,5 +1,9 @@
 permalink: /blog/:title
-pygments: true
+future:    false
+pygments:  true
+lsi:       false
+safe:      true
+
 exclude:
   - README.md
   - config.rb
