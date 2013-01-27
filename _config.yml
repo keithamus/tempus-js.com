@@ -12,7 +12,7 @@ exclude:
 markdown:  kramdown
 
 github_project_url: https://github.com/keithamus/Tempus
-github_raw_project_url: https://github.com/keithamus/Tempus
+github_raw_project_url: https://raw.github.com/keithamus/Tempus
 github_url: https://github.com/keithamus/tempus-js.com
 github_raw_url: https://raw.github.com/keithamus/tempus-js.com
 
