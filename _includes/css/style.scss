@@ -190,7 +190,7 @@ article {
 }
 .icon-quote {
     line-height: 23px;
-    
+
     &::before {
         font-size: 25px;
         line-height: 0;
@@ -228,7 +228,7 @@ article {
         text-align: center;
     }
 
-    .brand { 
+    .brand {
         @include text-shadow(1px 1px #fff);
         font-size: 81px;
     }
@@ -507,7 +507,7 @@ article hr {
     header {
         margin: 0 20px;
 
-        h2 { 
+        h2 {
             display: inline-block;
             float: left;
         }
@@ -607,7 +607,7 @@ var {
 
 .breadcrumbs {
     &, i, p, a {
-       display: inline-block; 
+       display: inline-block;
     }
 }
 
@@ -701,7 +701,7 @@ var {
     overflow: hidden;
     zoom: 1;
     margin: 10px 0 0;
-    
+
     li {
         height: 24px;
         width: 24px;
