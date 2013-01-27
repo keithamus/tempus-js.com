@@ -67,10 +67,11 @@
 //     Generic.Subheading:            'gu',
 //     Generic.Traceback:             'gt',
 @import "compass";
+@import "compass/css3/user-interface";
 
 .highlight {
 
-    pre { 
+    pre {
         margin: 0;
         background: #F7F7F9;
         border: 1px solid #E1E1E8;
